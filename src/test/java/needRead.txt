@@ -1,0 +1,16 @@
+viết code trước vào "Test Packages"
+
+test rồi comment lỗi hoặc tính năng cần thêm lên đầu file (nếu có)
+
+format:
+/** Lỗi
+* lỗi 1
+* ...
+*/
+
+/** Cần thêm
+* tính năng 1
+* ...
+*/
+
+cần phát triển thêm gì khác (chưa có file) thì ghi vào file này
