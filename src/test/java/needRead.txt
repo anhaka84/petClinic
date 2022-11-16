@@ -14,3 +14,15 @@ format:
 */
 
 cần phát triển thêm gì khác (chưa có file) thì ghi vào file này
+
+entity
+
+doctor
+user
+pet
+staff
+service
+medication
+booking
+bill
+prescription
