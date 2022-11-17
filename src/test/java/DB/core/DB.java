@@ -97,6 +97,7 @@ public class DB<T> {
         }
         return isTrue;
     }
+//offer
 
     public <T extends DBCommon<T>>
             boolean add(String query, List condition, T classObject) {
@@ -108,7 +109,7 @@ public class DB<T> {
                 return true;
             }
         } catch (SQLException ex) {
-            System.out.println("add fail ! sql error");
+            System.out.println("failed sql error");
         } finally {
             JDBCConnect.closeJDBCConnection(rs, preparedStatement, connection);
         }
@@ -117,12 +118,13 @@ public class DB<T> {
 //update
 
     public <T extends DBCommon<T>>
-            boolean update() {
-                
-                
-        return false;
+            boolean update(String query, List condition, T classObject) {
+        return add(query, condition, classObject);
     }
 //delete
 
-    
+    public <T extends DBCommon<T>>
+            boolean delete(String query, List condition, T classObject) {
+        return add(query, condition, classObject);
+    }
 }
