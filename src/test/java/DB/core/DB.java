@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class DB<T> {
@@ -42,7 +41,7 @@ public class DB<T> {
             setPreparedStatement(condition);
             rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                return classObject.setValue(classObject, rs);
+                return classObject.setResultSetValue(classObject, rs);
             }
         } catch (SQLException ex) {
             System.out.println("getOne Fail !");
@@ -63,7 +62,7 @@ public class DB<T> {
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 T obj = (T) Class.forName(className).getDeclaredConstructor().newInstance();
-                arrayList.add(obj.setValue(obj, rs));
+                arrayList.add(obj.setResultSetValue(obj, rs));
             }
             return arrayList;
         } catch (SQLException ex) {
@@ -87,7 +86,7 @@ public class DB<T> {
         try {
             connection = JDBCConnect.getJDBCConnection();
             preparedStatement = connection.prepareStatement(query);
-            classObject.setvalue(classObject, preparedStatement);
+            classObject.setPreparedStatementValue(classObject, preparedStatement);
             if (preparedStatement.executeUpdate() > 0) {
                 isTrue = true;
             }
@@ -125,46 +124,5 @@ public class DB<T> {
     }
 //delete
 
-    /**
-     * main
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-
-        DB<Student> db = new DB<>();
-
-//getOne
-        System.out.println("getOne()");
-        Student student = new Student();
-
-        String getOne_sql = "SELECT * FROM student WHERE rollNumber = ?";
-        List condition = Arrays.asList(1); // nhap vao rollNumber va nhung dieu kien khac 
-
-        System.out.println(db.getOne(getOne_sql, condition, student));
-
-//getAll
-        System.out.println("getAll()");
-        String getAll_sql = "SELECT * FROM student";
-        for (Student s : db.getAll(getAll_sql, new Student())) {
-            System.out.println(s);
-        }
-//add
-//cach 1
-        System.out.println("add()");
-
-        String add_sql = "INSERT INTO student VALUES (?,?,?,?,?,?,?,?)";
-
-        Student new_std1
-                = new Student(5, "name5", 0, "11-11-2011", "name5@name5.com", "1234567890", "abcxyz");
-        System.out.println(db.add(add_sql, new_std1));
-//cach 2
-        Student new_std2
-                = new Student(7, "name7", 0, "11-11-2011", "name7@name7.com", "1234567890", "abcxyz");
-
-        List condition2 = new_std2.setvalue(new_std2);
-        System.out.println(db.add(add_sql, condition2, new_std2));
-//update
-//delete
-    }
+    
 }

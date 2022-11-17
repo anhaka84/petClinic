@@ -87,7 +87,19 @@ public class Student extends DBCommon<Student> {
     }
 
     @Override
-    public Student setValue(Student classObj, ResultSet rs)
+    public String toString() {
+        return "Student{" + "rollNumber=" + rollNumber
+                + ", name=" + name
+                + ", gender=" + gender
+                + ", dob=" + dob
+                + ", email=" + email
+                + ", mobile=" + mobile
+                + ", address=" + address
+                + '}';
+    }
+
+    @Override
+    public Student setResultSetValue(Student classObj, ResultSet rs)
             throws SQLException {
         classObj.setRollNumber(rs.getInt("rollNumber"));
         classObj.setName(rs.getString("name"));
@@ -100,21 +112,21 @@ public class Student extends DBCommon<Student> {
     }
 
     @Override
-    public Student setvalue(Student object, PreparedStatement preparedStatement)
+    public Student setPreparedStatementValue(Student obj, PreparedStatement ps)
             throws SQLException {
-        preparedStatement.setInt(1, object.getRollNumber());
-        preparedStatement.setString(2, object.getName());
-        preparedStatement.setInt(3, object.getGender());
-        preparedStatement.setString(4, object.getDob());
-        preparedStatement.setString(5, object.getEmail());
-        preparedStatement.setString(6, object.getMobile());
-        preparedStatement.setString(7, object.getAddress());
-        preparedStatement.setString(8, "0");
-        return object;
+        ps.setInt(1, obj.getRollNumber());
+        ps.setString(2, obj.getName());
+        ps.setInt(3, obj.getGender());
+        ps.setString(4, obj.getDob());
+        ps.setString(5, obj.getEmail());
+        ps.setString(6, obj.getMobile());
+        ps.setString(7, obj.getAddress());
+        ps.setString(8,"0");
+        return obj;
     }
 
     @Override
-    public List setvalue(Student object) {
+    public List setPreparedStatementValue(Student object) {
         List condition = Arrays.asList(
                 object.getRollNumber(),
                 object.getName(),
@@ -127,25 +139,4 @@ public class Student extends DBCommon<Student> {
         );
         return condition;
     }
-
-    @Override
-    public String toString() {
-        return "Student{" + "rollNumber=" + rollNumber
-                + ", name=" + name
-                + ", gender=" + gender
-                + ", dob=" + dob
-                + ", email=" + email
-                + ", mobile=" + mobile
-                + ", address=" + address
-                + '}';
-    }
-
-//    public static void main(String[] args) {
-//        StudentModel sm = new StudentModel();
-//        sm.getAll().forEach(s -> System.out.println(s));
-//        System.out.println(sm.getOne(3));
-//
-//        Student s1 = new Student(1, "name1", 0, "11/11/1111", "name1@name1.com", "9999999999", "address");
-//        System.out.println(sm.delete(4));
-//    }
 }

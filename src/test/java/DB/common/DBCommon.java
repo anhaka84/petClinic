@@ -10,9 +10,18 @@ import java.util.List;
  */
 public abstract class DBCommon<T> {
 
-    public abstract T setValue(T object, ResultSet rs) throws SQLException;
+    public T setResultSetValue(T object, ResultSet rs)
+            throws SQLException {
+        return null;
+    }
 
-    public abstract T setvalue(T object, PreparedStatement preparedStatement) throws SQLException;
+    public T setPreparedStatementValue(T object, PreparedStatement preparedStatement)
+            throws SQLException {
+        return null;
+    }
 
-    public abstract List setvalue(T object);
+    public List setPreparedStatementValue(T object) {
+        return null;
+    }
+
 }

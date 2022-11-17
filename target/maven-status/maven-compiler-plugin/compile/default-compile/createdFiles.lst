@@ -1,5 +1,4 @@
 com\aptech\mavenproject2\petclinic\SecondaryController.class
 module-info.class
 com\aptech\mavenproject2\petclinic\App.class
-Models\Account.class
 com\aptech\mavenproject2\petclinic\PrimaryController.class
