@@ -1,16 +1,6 @@
-/**
- * user_id
- * role_id
- * full_name
- * gender
- * dob
- * email
- * phone_number
- * address
- * username
- * password
- */
 package Entities;
+
+import java.sql.Date;
 
 public class User {
 
@@ -18,13 +8,27 @@ public class User {
     private int role_id;
     private String full_name;
     private int gender;
+    private Date dob;
     private String email;
-    private String phone_number;
     private String address;
+    private String phone_number;
     private String username;
     private String password;
 
     public User() {
+    }
+
+    public User(int user_id, int role_id, String full_name, int gender, Date dob, String email, String address, String phone_number, String username, String password) {
+        this.user_id = user_id;
+        this.role_id = role_id;
+        this.full_name = full_name;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.username = username;
+        this.password = password;
     }
 
     public int getUser_id() {
@@ -59,6 +63,14 @@ public class User {
         this.gender = gender;
     }
 
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -67,20 +79,20 @@ public class User {
         this.email = email;
     }
 
-    public String getPhone_number() {
-        return phone_number;
-    }
-
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String getUsername() {

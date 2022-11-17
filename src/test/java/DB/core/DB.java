@@ -22,12 +22,7 @@ public class DB<T> {
     private void setPreparedStatement(List list) throws SQLException {
         int index = 1;
         for (Object obj : list) {
-            if ("Integer".equals(obj.getClass().getSimpleName())) {
-                preparedStatement.setInt(index, (int) obj);
-            }
-            if ("String".equals(obj.getClass().getSimpleName())) {
-                preparedStatement.setString(index, obj.toString());
-            }
+            preparedStatement.setObject(index, obj);
             index++;
         }
     }
@@ -81,26 +76,7 @@ public class DB<T> {
 //add
 
     public <T extends DBCommon<T>>
-            boolean add(String query, T classObject) {
-        boolean isTrue = false;
-        try {
-            connection = JDBCConnect.getJDBCConnection();
-            preparedStatement = connection.prepareStatement(query);
-            classObject.setPreparedStatementValue(classObject, preparedStatement);
-            if (preparedStatement.executeUpdate() > 0) {
-                isTrue = true;
-            }
-        } catch (SQLException ex) {
-            System.out.println("add fail ! sql error");
-        } finally {
-            JDBCConnect.closeJDBCConnection(rs, preparedStatement, connection);
-        }
-        return isTrue;
-    }
-//offer
-
-    public <T extends DBCommon<T>>
-            boolean add(String query, List condition, T classObject) {
+            boolean setSqlRow(String query, List condition, T classObject) {
         try {
             connection = JDBCConnect.getJDBCConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -114,17 +90,5 @@ public class DB<T> {
             JDBCConnect.closeJDBCConnection(rs, preparedStatement, connection);
         }
         return false;
-    }
-//update
-
-    public <T extends DBCommon<T>>
-            boolean update(String query, List condition, T classObject) {
-        return add(query, condition, classObject);
-    }
-//delete
-
-    public <T extends DBCommon<T>>
-            boolean delete(String query, List condition, T classObject) {
-        return add(query, condition, classObject);
     }
 }

@@ -61,4 +61,8 @@ public class JDBCConnect {
             System.out.println("Close Connection fails");
         }
     }
+    
+//    public static void main(String[] args) {
+//        System.out.println(getJDBCConnection());
+//    }
 }
