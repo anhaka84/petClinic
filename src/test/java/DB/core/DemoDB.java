@@ -68,20 +68,12 @@ public class DemoDB {
                 update_data.getRollNumber()
         );
 
-        System.out.println("add success ? " + db.setSqlRow(update_query, update_condition, update_data));
+        System.out.println("update success ? " + db.setSqlRow(update_query, update_condition, update_data));
 //
-//        /**
-//         * method delete()
-//         */
-//        System.out.println("----------<delete()>----------\n");
-//        System.out.println("-----<Example>-----\n");
-//
-//        String delete_sql = "DELETE FROM student WHERE rollNumber = ?";
-//
-//        List delete_condition = Arrays.asList(9);
-//
-//        System.out.println("delete success ? " + db.delete(delete_sql, delete_condition, new Student()));
-//
-//        System.out.println("\n-----<End Example>-----\n");
+        System.out.println("----------<delete()>----------\n");
+
+        String delete_sql = "DELETE FROM student WHERE rollNumber = ?";
+        List delete_condition = Arrays.asList(9);
+        System.out.println("delete success ? " + db.setSqlRow(delete_sql, delete_condition, new Student()));
     }
 }
