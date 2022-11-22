@@ -1,5 +1,6 @@
 package DB.core;
 
+import DB.main.DB;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class DemoDB {
                 "0"
         );
 
-        System.out.println("add success ? " + db.setSqlRow(add_query, add_condition, std));
+//        System.out.println("add success ? " + db.setSqlRow(add_query, add_condition, std));
 //
         System.out.println("----------<update()>----------\n");
 
@@ -68,12 +69,12 @@ public class DemoDB {
                 update_data.getRollNumber()
         );
 
-        System.out.println("update success ? " + db.setSqlRow(update_query, update_condition, update_data));
+//        System.out.println("update success ? " + db.setSqlRow(update_query, update_condition, update_data));
 //
         System.out.println("----------<delete()>----------\n");
 
         String delete_sql = "DELETE FROM student WHERE rollNumber = ?";
         List delete_condition = Arrays.asList(9);
-        System.out.println("delete success ? " + db.setSqlRow(delete_sql, delete_condition, new Student()));
+//        System.out.println("delete success ? " + db.setSqlRow(delete_sql, delete_condition, new Student()));
     }
 }

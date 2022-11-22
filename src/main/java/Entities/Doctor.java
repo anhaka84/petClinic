@@ -2,7 +2,7 @@ package Entities;
 
 import java.sql.Date;
 
-public class Doctor extends User {
+public class Doctor {
 
     private int doctor_id;
     private String title;
@@ -28,7 +28,7 @@ public class Doctor extends User {
             Date schedual_date, String schedual_time, int user_id, int role_id,
             String full_name, int gender, Date dob, String email, String address,
             String phone_number, String username, String password) {
-        super(user_id, role_id, full_name, gender, dob, email, address, phone_number, username, password);
+//        super(user_id, role_id, full_name, gender, dob, email, address, phone_number, username, password);
         this.doctor_id = doctor_id;
         this.title = title;
         this.degree = degree;
@@ -83,6 +83,11 @@ public class Doctor extends User {
 
     public void setSchedual_time(String schedual_time) {
         this.schedual_time = schedual_time;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor{" + "doctor_id=" + doctor_id + ", title=" + title + ", degree=" + degree + ", update_date=" + update_date + ", schedual_date=" + schedual_date + ", schedual_time=" + schedual_time + '}';
     }
 
 }

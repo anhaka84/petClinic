@@ -1,4 +1,4 @@
-package DB.core;
+package DB.main;
 
 import DB.common.DBCommon;
 import DB.dao.JDBCConnect;
@@ -69,7 +69,7 @@ public class DB<T> {
         return null;
     }
 
-    public <T extends DBCommon<T>> boolean setSqlRow(String query, List condition, T classObject) {
+    public <T extends DBCommon<T>> boolean setSqlDataRow(String query, List condition, T classObject) {
         try {
             connection = JDBCConnect.getJDBCConnection();
             preparedStatement = connection.prepareStatement(query);
