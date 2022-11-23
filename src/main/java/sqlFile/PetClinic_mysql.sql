@@ -4,6 +4,14 @@ USE `Pet_Clinic`;
 
 -- DROP DATABASE `Pet_Clinic`;
 
+-- SELECT u.*, dl.*, ds.* 
+-- FROM pet_clinic.User AS u 
+-- INNER JOIN pet_clinic.DoctorLevel AS dl 
+-- ON u.user_id = dl.user_id
+-- INNER JOIN pet_clinic.doctorschedual AS ds
+-- ON u.user_id = ds.user_id
+-- WHERE u.user_id = 2;
+
 CREATE TABLE `Role` (
     `role_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `role_name` VARCHAR(10) NOT NULL

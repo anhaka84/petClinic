@@ -2,6 +2,7 @@ package Models;
 
 import DB.main.DB;
 import Entities.User;
+import Session.SessionWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,8 +10,9 @@ import java.util.List;
 public class UserModel {
 
     DB<User> db = new DB<>();
+    SessionWriter sessionWr = new SessionWriter();
     String query;
-    List condition = new ArrayList();
+    List condition;
     String columns = "(user_id, role_id"
             + ", full_name, gender, dob, email, address, phone_number"
             + ", username, password"
@@ -30,9 +32,15 @@ public class UserModel {
         }
     }
 
+    public User getSessionUser() {
+        String line0 = sessionWr.getSession().get(0);
+        int id = Integer.parseInt(line0.split("=")[1]);
+        return getOneUser(id);
+    }
+
     public User getOneUser(int user_id) {
         query = "SELECT * FROM User WHERE user_id = ?";
-        condition.add(user_id);
+        condition = Arrays.asList(user_id);
         return db.getOne(query, condition, new User());
     }
 
@@ -45,17 +53,17 @@ public class UserModel {
         query = "INSERT INTO User " + columns
                 + " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         condition = Arrays.asList(
-                user.getUser_id(),
+                user.getUserId(),
                 user.getRole(),
-                user.getFull_name(),
+                user.getFullName(),
                 user.getGender(),
                 user.getDob(),
                 user.getEmail(),
                 user.getAddress(),
-                user.getPhone_number(),
+                user.getPhoneNumber(),
                 user.getAccount().getUsername(),
                 user.getAccount().getPassword(),
-                user.getStatus()
+                user.getAccount().getStatus()
         );
         return db.setSqlDataRow(query, condition, user);
     }
@@ -72,13 +80,13 @@ public class UserModel {
                 + " WHERE user_id = ?";
         condition = Arrays.asList(
                 user.getRole(),
-                user.getFull_name(),
+                user.getFullName(),
                 user.getGender(),
                 user.getDob(),
                 user.getEmail(),
                 user.getAddress(),
-                user.getPhone_number(),
-                user.getUser_id()
+                user.getPhoneNumber(),
+                user.getUserId()
         );
         return db.setSqlDataRow(query, condition, user);
     }

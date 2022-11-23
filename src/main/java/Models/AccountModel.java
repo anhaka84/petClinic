@@ -1,3 +1,6 @@
+/**
+ * can phat trien activeAccount
+ */
 package Models;
 
 import DB.main.DB;
@@ -17,6 +20,10 @@ public class AccountModel {
     public AccountModel() {
     }
 
+    public boolean isExistAccount(String username) {
+        return getOneAccount(username) != null;
+    }
+
     public boolean isUniqueAccount(String username) {
         return getOneAccount(username) == null;
     }
@@ -26,14 +33,21 @@ public class AccountModel {
     }
 
     public Account getOneAccount(String username) {
-        query = "SELECT username, password "
-                + "FROM User WHERE username = ?";
+        query = "SELECT username, password, status"
+                + " FROM User WHERE username = ?";
         condition = Arrays.asList(username);
         return db.getOne(query, condition, new Account());
     }
 
+    public int getAccountId(String username) {
+        query = "SELECT *"
+                + " FROM User WHERE username = ?";
+        condition = Arrays.asList(username);
+        return db.getOne(query, condition, new User()).getUserId();
+    }
+
     public ArrayList<Account> getAllAccount() {
-        query = "SELECT username, password"
+        query = "SELECT username, password, status"
                 + " FROM User";
         return db.getAll(query, new Account());
     }
@@ -45,7 +59,6 @@ public class AccountModel {
     public boolean deleteAccount(int user_id) {
         query = "UPDATE User SET status = 0 WHERE user_id = ?";
         condition = Arrays.asList(user_id);
-        System.out.println(condition);
         return db.setSqlDataRow(query, condition, new User());
     }
 

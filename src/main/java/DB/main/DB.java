@@ -19,7 +19,8 @@ public class DB<T> {
     public DB() {
     }
 
-    private void setPreparedStatement(List list) throws SQLException {
+    private void setPreparedStatement(List list)
+            throws SQLException {
         int index = 1;
         for (Object obj : list) {
             preparedStatement.setObject(index, obj);
@@ -27,7 +28,8 @@ public class DB<T> {
         }
     }
 
-    public <T extends DBCommon<T>> T getOne(String query, List condition, T classObject) {
+    public <T extends DBCommon<T>>
+            T getOne(String query, List condition, T classObject) {
         try {
             connection = JDBCConnect.getJDBCConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -44,7 +46,8 @@ public class DB<T> {
         return null;
     }
 
-    public <T extends DBCommon<T>> ArrayList<T> getAll(String query, T classObject) {
+    public <T extends DBCommon<T>>
+            ArrayList<T> getAll(String query, T classObject) {
         ArrayList<T> arrayList = new ArrayList<>();
         try {
             String className = classObject.getClass().getName();
@@ -69,7 +72,8 @@ public class DB<T> {
         return null;
     }
 
-    public <T extends DBCommon<T>> boolean setSqlDataRow(String query, List condition, T classObject) {
+    public <T extends DBCommon<T>>
+            boolean setSqlDataRow(String query, List condition, T classObject) {
         try {
             connection = JDBCConnect.getJDBCConnection();
             preparedStatement = connection.prepareStatement(query);

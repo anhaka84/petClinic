@@ -7,66 +7,63 @@ import java.sql.SQLException;
 
 public class User extends DBCommon<User> {
 
-    private int user_id;
-    private String full_name;
+    private int userId;
+    private String fullName;
     private int gender;//0-male 1-female 2-other
     private Date dob;
     private String email;
     private String address;
-    private String phone_number;
+    private String phoneNumber;
     private int role;//1-admin 2-doctor 3-client
     private Account account;
-    private int status;//0-inactive 1-active
 
     public User() {
     }
 
-    public User(int user_id,
-            String full_name, int gender, Date dob,
-            String email, String address, String phone_number,
-            int role, Account account, int status) {
-        this.user_id = user_id;
-        this.full_name = full_name;
+    public User(int userId,
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
+            int role, Account account) {
+        this.userId = userId;
+        this.fullName = fullName;
         this.gender = gender;
         this.dob = dob;
         this.email = email;
         this.address = address;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
         this.role = role;
         this.account = account;
-        this.status = status;
     }
 
-    public User(int user_id,
-            String full_name, int gender, Date dob,
-            String email, String address, String phone_number,
+    public User(int userId,
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
             int role, String username, String passowrd, int status) {
-        this.user_id = user_id;
-        this.full_name = full_name;
+        this.userId = userId;
+        this.fullName = fullName;
         this.gender = gender;
         this.dob = dob;
         this.email = email;
         this.address = address;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
         this.role = role;
-        this.account = new Account(username, passowrd);
-        this.status = status;
+        this.account = new Account(username, passowrd, status);
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setFullName(String full_name) {
+        this.fullName = full_name;
     }
 
     public int getGender() {
@@ -101,12 +98,12 @@ public class User extends DBCommon<User> {
         this.address = address;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phone_number) {
+        this.phoneNumber = phone_number;
     }
 
     public int getRole() {
@@ -125,42 +122,32 @@ public class User extends DBCommon<User> {
         this.account = account;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
-        return "User{" + "user_id=" + user_id
-                + ", full_name=" + full_name
+        return "User{" + "userId=" + userId
+                + ", role=" + role
+                + ", fullName=" + fullName
                 + ", gender=" + gender
                 + ", dob=" + dob
                 + ", email=" + email
                 + ", address=" + address
-                + ", phone_number=" + phone_number
-                + ", role=" + role
+                + ", phoneNumber=" + phoneNumber
                 + ", account=" + account
-                + ", status=" + status
                 + '}';
     }
 
     @Override
     public User setResultSetValue(User user, ResultSet rs)
             throws SQLException {
-        user.setUser_id(rs.getInt("user_id"));
-        user.setFull_name(rs.getString("full_name"));
+        user.setUserId(rs.getInt("user_id"));
+        user.setFullName(rs.getString("full_name"));
         user.setGender(rs.getInt("gender"));
         user.setDob(rs.getDate("dob"));
         user.setEmail(rs.getString("email"));
         user.setAddress(rs.getString("address"));
-        user.setPhone_number(rs.getString("phone_number"));
+        user.setPhoneNumber(rs.getString("phone_number"));
         user.setRole(rs.getInt("role_id"));
-        user.setAccount(new Account(rs.getString("username"), rs.getString("password")));
-        user.setStatus(rs.getInt("status"));
+        user.setAccount(new Account(rs.getString("username"), rs.getString("password"), rs.getInt("status")));
         return user;
     }
 }
