@@ -65,7 +65,7 @@ public class UserModel {
                 user.getAccount().getPassword(),
                 user.getAccount().getStatus()
         );
-        return db.setSqlDataRow(query, condition, user);
+        return db.setSqlDataRow(query, condition, new User());
     }
 
     public boolean updateUser(User user) {
@@ -88,7 +88,7 @@ public class UserModel {
                 user.getPhoneNumber(),
                 user.getUserId()
         );
-        return db.setSqlDataRow(query, condition, user);
+        return db.setSqlDataRow(query, condition, new User());
     }
 
 }
