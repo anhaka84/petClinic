@@ -33,19 +33,35 @@ public class SessionWriter {
         return null;
     }
 
-    public void setSession(List<String> listLine) {
+    public boolean setSession(List<String> listLine) {
         try (
                  BufferedWriter buffWrite = Files.newBufferedWriter(write, StandardCharsets.UTF_8);) {
-            for (String line : listLine) {
-                buffWrite.append(line);
-                buffWrite.newLine();
+            if (checkInputSession(listLine)) {
+                for (String line : listLine) {
+                    buffWrite.append(line);
+                    buffWrite.newLine();
+                }
+                return true;
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+        return false;
     }
 
-    public boolean checkInputSession() {
+    private boolean checkInputSession(List<String> list) {
+        for (String str : list) {
+            if (str.split(" ").length > 1) {
+                System.out.println(str);
+                return false;
+            }
+        }
+
+        for (String line : list) {
+            if (line.matches("[a-zA-Z0-9]+[=][a-zA-Z0-9]+")) {
+                return true;
+            }
+        }
         return false;
     }
 

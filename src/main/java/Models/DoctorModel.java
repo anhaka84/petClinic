@@ -9,12 +9,6 @@ import java.util.List;
 
 public class DoctorModel {
 
-    /**
-     * SELECT u.*, dl.*, ds.* FROM pet_clinic.User AS u INNER JOIN
-     * pet_clinic.DoctorLevel AS dl ON u.user_id = dl.user_id INNER JOIN
-     * pet_clinic.doctorschedual AS ds ON u.user_id = ds.user_id WHERE u.user_id
-     * = 2;
-     */
     DB<DoctorLevel> db = new DB<>();
     String query;
     List condition;

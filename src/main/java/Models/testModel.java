@@ -6,6 +6,7 @@ import Entities.User;
 import Session.SessionWriter;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class testModel {
@@ -28,20 +29,29 @@ public class testModel {
 //
 //        User user4 = new User(5, "Vuong Quang Huy", 0, Date.valueOf("2003-01-01"),
 //                "huy.vq.@aptechlearning.edu.vn", "Ha Noi", "0385897664", 3, "memberQuangHuy", "123456", 1);
+//        User user5 = new User(6, "Vuong Huy", 0, Date.valueOf("2003-01-01"),
+//                "huy.vq.@aptechlearning.edu.vn", "Ha Noi", "0385897664", 3, "member", "abcxyz", 1);
 ////add user
 //        System.out.println("add user0 success ? " + userModel.addUser(user0));
 //        System.out.println("add user1 success ? " + userModel.addUser(user1));
 //        System.out.println("add user2 success ? " + userModel.addUser(user2));
 //        System.out.println("add user3 success ? " + userModel.addUser(user3));
-//        System.out.println("add user4 success ? " + userModel.addUser(user4));
+//        System.out.println("add user4 success ? " + userModel.addUser(user5));
 ////get all user
 //        for (User us : userModel.getAllUser()) {
+//            System.out.println(us);
+//        }
+//        for (User us : userModel.getAllUserActive()) {
 //            System.out.println(us);
 //        }
 ////get one user
 //        System.out.println(userModel.getOneUser(1));
 ////get user in session
 //        System.out.println(userModel.getSessionUser());
+//other
+//        for (User us : userModel.isExistUser(user4)) {
+//            System.out.println(us);
+//        }
 //
 //        AccountModel accModel = new AccountModel();
 ////get one account
@@ -59,36 +69,23 @@ public class testModel {
 //        System.out.println(accModel.isUniqueAccount("user1"));
 //        System.out.println(accModel.isExistAccount("admin"));
 //
-        DoctorModel doctorModel = new DoctorModel();
-
-        System.out.println(doctorModel.getOneUserDoctor(2));
-        System.out.println(doctorModel.getOneDoctor(1));
-
-        for (User dtr : doctorModel.getAllDoctor()) {
-            System.out.println(dtr);
-        }
-
-        SignModel signModel = new SignModel();
-
-//        System.out.println(signModel.checkSignIn("admin", "123456"));
+//        DoctorModel doctorModel = new DoctorModel();
+//
+//        System.out.println(doctorModel.getOneUserDoctor(2));
+//        System.out.println(doctorModel.getOneDoctor(1));
+//
+//        for (User dtr : doctorModel.getAllDoctor()) {
+//            System.out.println(dtr);
+//        }
+//
+//        SignModel signModel = new SignModel();
+//
 //        System.out.println(signModel.signIn("admin", "123456", true));
 //        System.out.println(signModel.signIn("admin", "123456", false));
-        System.out.println(signModel.signOut());
+//        System.out.println(signModel.signIn("memberQuangHuy", "123456", true));
+//        System.out.println(signModel.signUp(user5));
+//        System.out.println(signModel.signOut());
+//
 
-        SessionWriter sessionWr = new SessionWriter();
-        List<String> lineSess = new ArrayList<>();
-
-        //
-        //        
-        //
-        //        for (String line : sessionWr.getSession()) {
-        //            System.out.println(line);
-        //        }
-        //        sessionWr.setSession(lineSess);
-        //        signModel.signOut();
-//        for (String line : sessionWr.getSession()) {
-//            System.out.println(line);
-//        }
-//        System.out.println(sessionWr.getSession().get(2));
     }
 }

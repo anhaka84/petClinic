@@ -1,6 +1,3 @@
-/**
- * can phat trien activeAccount
- */
 package Models;
 
 import DB.main.DB;
@@ -54,6 +51,14 @@ public class AccountModel {
         return db.setSqlDataRow(query, condition, new User());
     }
 
+    public boolean updateAccount(String username, String password, int status, int userId) {
+        query = "UPDATE User"
+                + " SET username = ?, password = ?, status = ?"
+                + " WHERE user_id = ?";
+        condition = Arrays.asList(username, password, status, userId);
+        return db.setSqlDataRow(query, condition, new User());
+    }
+
     public boolean deleteAccount(int userId) {
         query = "UPDATE User SET status = 0 WHERE user_id = ?";
         condition = Arrays.asList(userId);
@@ -70,7 +75,10 @@ public class AccountModel {
     }
 
     public boolean activeAccount(User user) {
-        return false;
+        if (isExistAccount(user.getAccount().getUsername())) {
+            int id = getAccountId(user.getAccount().getUsername());
+            return updateAccount(user.getAccount().getUsername(), user.getAccount().getPassword(), 1, id);
+        }
+        return userModel.addUser(user);
     }
-
 }

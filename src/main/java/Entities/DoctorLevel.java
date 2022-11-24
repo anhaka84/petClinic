@@ -14,20 +14,20 @@ public class DoctorLevel extends User {
     public DoctorLevel() {
     }
 
-    public DoctorLevel(int doctor_level_id,
-            String title, String degree, Date update_date) {
-        this.doctorLevelId = doctor_level_id;
+    public DoctorLevel(int doctorLevelId,
+            String title, String degree, Date updateDate) {
+        this.doctorLevelId = doctorLevelId;
         this.title = title;
         this.degree = degree;
-        this.updateDate = update_date;
+        this.updateDate = updateDate;
     }
 
-    public int getDoctor_level_id() {
+    public int getDoctorLevelId() {
         return doctorLevelId;
     }
 
-    public void setDoctor_level_id(int doctor_level_id) {
-        this.doctorLevelId = doctor_level_id;
+    public void setDoctorLevelId(int doctorLevelId) {
+        this.doctorLevelId = doctorLevelId;
     }
 
     public String getTitle() {
@@ -50,8 +50,8 @@ public class DoctorLevel extends User {
         return updateDate;
     }
 
-    public void setUpdateDate(Date update_date) {
-        this.updateDate = update_date;
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class DoctorLevel extends User {
     public User setResultSetValue(User user, ResultSet rs)
             throws SQLException {
         super.setResultSetValue(user, rs);
-        this.setDoctor_level_id(rs.getInt("doctor_level_id"));
+        this.setDoctorLevelId(rs.getInt("doctor_level_id"));
         this.setTitle(rs.getString("title"));
         this.setDegree(rs.getString("degree"));
         this.setUpdateDate(rs.getDate("update_date"));

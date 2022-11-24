@@ -13,23 +13,12 @@ public class UserModel {
     SessionWriter sessionWr = new SessionWriter();
     String query;
     List condition;
-    String columns = "(user_id, role_id"
+    String columns = "(role_id"
             + ", full_name, gender, dob, email, address, phone_number"
             + ", username, password"
             + ", status)";
 
     public UserModel() {
-    }
-
-    public String changeGender(int gender) {
-        switch (gender) {
-            case 0:
-                return "Male";
-            case 1:
-                return "Female";
-            default:
-                return "Other";
-        }
     }
 
     public User getSessionUser() {
@@ -49,11 +38,15 @@ public class UserModel {
         return db.getAll(query, new User());
     }
 
+    public List<User> getAllUserActive() {
+        query = "SELECT * FROM User WHERE status = 1";
+        return db.getAll(query, new User());
+    }
+
     public boolean addUser(User user) {
         query = "INSERT INTO User " + columns
-                + " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                + " VALUES (?,?,?,?,?,?,?,?,?,?)";
         condition = Arrays.asList(
-                user.getUserId(),
                 user.getRole(),
                 user.getFullName(),
                 user.getGender(),
@@ -89,6 +82,17 @@ public class UserModel {
                 user.getUserId()
         );
         return db.setSqlDataRow(query, condition, new User());
+    }
+
+    public String changeGender(int gender) {
+        switch (gender) {
+            case 0:
+                return "Male";
+            case 1:
+                return "Female";
+            default:
+                return "Other";
+        }
     }
 
 }

@@ -19,15 +19,6 @@ public class DB<T> {
     public DB() {
     }
 
-    private void setPreparedStatement(List list)
-            throws SQLException {
-        int index = 1;
-        for (Object obj : list) {
-            preparedStatement.setObject(index, obj);
-            index++;
-        }
-    }
-
     public <T extends DBCommon<T>>
             T getOne(String query, List condition, T classObject) {
         try {
@@ -73,6 +64,33 @@ public class DB<T> {
     }
 
     public <T extends DBCommon<T>>
+            ArrayList<T> getAll(String query, List condition, T classObject) {
+        ArrayList<T> arrayList = new ArrayList<>();
+        try {
+            String className = classObject.getClass().getName();
+            connection = JDBCConnect.getJDBCConnection();
+            preparedStatement = connection.prepareStatement(query);
+            setPreparedStatement(condition);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                T obj = (T) Class.forName(className).getDeclaredConstructor().newInstance();
+                arrayList.add(obj.setResultSetValue(obj, rs));
+            }
+            return arrayList;
+        } catch (SQLException ex) {
+            System.out.println("sql error !");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("ClassNotFound");
+        } catch (NoSuchMethodException | SecurityException | IllegalArgumentException
+                | InvocationTargetException | InstantiationException | IllegalAccessException ex) {
+            System.out.println(ex);
+        } finally {
+            JDBCConnect.closeJDBCConnection(rs, preparedStatement, connection);
+        }
+        return null;
+    }
+
+    public <T extends DBCommon<T>>
             boolean setSqlDataRow(String query, List condition, T classObject) {
         try {
             connection = JDBCConnect.getJDBCConnection();
@@ -88,4 +106,16 @@ public class DB<T> {
         }
         return false;
     }
+
+    private void setPreparedStatement(List list)
+            throws SQLException {
+        int index = 1;
+        if (!list.isEmpty()) {
+            for (Object obj : list) {
+                preparedStatement.setObject(index, obj);
+                index++;
+            }
+        }
+    }
+
 }
