@@ -1,0 +1,19 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 16, 2022, 10:22:19 PM
+    Author     : Hoang Anh
+*/
+.root { 
+    -fx-background-image:url('../Img/background-login.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.login-btn{
+    -fx-background-color: #123c69;
+    -fx-cusor: pointer;
+}
+
