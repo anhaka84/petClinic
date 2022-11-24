@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="258.0" fitWidth="264.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/logo%201.png" />
+                  <Image url="@../../../../Img/logo.png" />
                </image>
             </ImageView>
             <Button id="my_button" layoutY="320.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="270.0" styleClass="button_deffault" stylesheets="@../../../../CSS/Button.css" text="Our Services">
@@ -50,12 +50,12 @@
                   <Font size="20.0" />
                </font>
             </Button>
-                 <FontAwesomeIconView glyphName="HOME" layoutX="100.0" layoutY="284.0" text="" />
-            <FontAwesomeIconView glyphName="PAW" layoutX="89.0" layoutY="525.0" text="" />
-            <FontAwesomeIconView glyphName="USER" layoutX="79.0" layoutY="445.0" text="" />
-            <FontAwesomeIconView glyphName="GEAR" layoutX="78.0" layoutY="364.0" />
-            <FontAwesomeIconView glyphName="CALENDAR" layoutX="89.0" layoutY="607.0" text="" />
-            <FontAwesomeIconView glyphName="FILE" layoutX="106.0" layoutY="688.0" text="" />
+                 <FontAwesomeIconView glyphName="HOME" layoutX="94.0" layoutY="284.0" text="" />
+            <FontAwesomeIconView glyphName="PAW" layoutX="83.0" layoutY="527.0" text="" />
+            <FontAwesomeIconView glyphName="USER" layoutX="69.0" layoutY="444.0" text="" />
+            <FontAwesomeIconView glyphName="GEAR" layoutX="68.0" layoutY="365.0" />
+            <FontAwesomeIconView glyphName="CALENDAR" layoutX="83.0" layoutY="607.0" text="" />
+            <FontAwesomeIconView glyphName="FILE" layoutX="105.0" layoutY="687.0" text="" />
          </children></AnchorPane>
    </left>
    <center>
