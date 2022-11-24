@@ -22,14 +22,25 @@ public class DoctorModel {
     public DoctorModel() {
     }
 
-    public User getOneDoctor(int user_id) {
+    public User getOneUserDoctor(int userId) {
         query = "SELECT u.*, dl.*"
                 + " FROM pet_clinic.User AS u"
                 + " INNER JOIN pet_clinic.DoctorLevel AS dl"
                 + " ON u.user_id = dl.user_id"
                 + " WHERE u.user_id = ?"
                 + " AND u.role_id = 2";
-        condition = Arrays.asList(user_id);
+        condition = Arrays.asList(userId);
+        return db.getOne(query, condition, new DoctorLevel());
+    }
+
+    public User getOneDoctor(int doctorId) {
+        query = "SELECT u.*, dl.*"
+                + " FROM pet_clinic.User AS u"
+                + " INNER JOIN pet_clinic.DoctorLevel AS dl"
+                + " ON u.user_id = dl.user_id"
+                + " WHERE dl.doctor_level_id = ?"
+                + " AND u.role_id = 2";
+        condition = Arrays.asList(doctorId);
         return db.getOne(query, condition, new DoctorLevel());
     }
 

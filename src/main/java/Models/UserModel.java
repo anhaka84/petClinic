@@ -38,9 +38,9 @@ public class UserModel {
         return getOneUser(id);
     }
 
-    public User getOneUser(int user_id) {
+    public User getOneUser(int userId) {
         query = "SELECT * FROM User WHERE user_id = ?";
-        condition = Arrays.asList(user_id);
+        condition = Arrays.asList(userId);
         return db.getOne(query, condition, new User());
     }
 
