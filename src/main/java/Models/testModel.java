@@ -50,30 +50,41 @@ public class testModel {
 //        for (Account acc : accModel.getAllAccount()) {
 //            System.out.println(acc);
 //        }
+////update account
+//        System.out.println(accModel.updateAccount("username", "password"));
+////        System.out.println(accModel.updateAccount("admin", "123456"));
+////delete account
+//        System.out.println(accModel.deleteAccount(5));
 ////check account
 //        System.out.println(accModel.isUniqueAccount("user1"));
 //        System.out.println(accModel.isExistAccount("admin"));
-////delete account
-//        System.out.println(accModel.deleteAccount(5));
 //
         DoctorModel doctorModel = new DoctorModel();
 
+        System.out.println(doctorModel.getOneUserDoctor(2));
+        System.out.println(doctorModel.getOneDoctor(1));
+
+        for (User dtr : doctorModel.getAllDoctor()) {
+            System.out.println(dtr);
+        }
+
         SignModel signModel = new SignModel();
+
+//        System.out.println(signModel.checkSignIn("admin", "123456"));
+//        System.out.println(signModel.signIn("admin", "123456", true));
+//        System.out.println(signModel.signIn("admin", "123456", false));
+        System.out.println(signModel.signOut());
+
         SessionWriter sessionWr = new SessionWriter();
         List<String> lineSess = new ArrayList<>();
 
-        //        System.out.println(doctorModel.getOneDoctor(3));
         //
-        //        for (User dtr : dtm.getAllDoctor()) {
-        //            System.out.println(dtr);
-        //        }
-        //        System.out.println(signModel.checkSignIn("admin", "123456"));
+        //        
         //
         //        for (String line : sessionWr.getSession()) {
         //            System.out.println(line);
         //        }
         //        sessionWr.setSession(lineSess);
-//                System.out.println(signModel.signIn("admin", "123456", true));
         //        signModel.signOut();
 //        for (String line : sessionWr.getSession()) {
 //            System.out.println(line);

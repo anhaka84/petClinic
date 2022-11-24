@@ -45,4 +45,8 @@ public class SessionWriter {
         }
     }
 
+    public boolean checkInputSession() {
+        return false;
+    }
+
 }

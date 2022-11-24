@@ -11,9 +11,6 @@ public class SignModel {
     UserModel userModel = new UserModel();
     SessionWriter sessionWr = new SessionWriter();
     List<String> lineSession;
-    private String username;
-    private String password;
-    private boolean remember;
 
     public SignModel() {
     }
@@ -23,24 +20,16 @@ public class SignModel {
             int userId = accModel.getAccountId(username);
             User user = userModel.getOneUser(userId);
 
-            this.username = username;
-            this.password = password;
-            this.remember = remember;
-
-            lineSession = Arrays.asList(
-                    "userId=" + user.getUserId()
-            //                    "fullName=" + user.getFullName(),
-            //                    "gender=" + user.getGender(),
-            //                    "dob=" + user.getDob(),
-            //                    "email=" + user.getEmail(),
-            //                    "address=" + user.getAddress(),
-            //                    "phoneNumber=" + user.getPhoneNumber(),
-            //                    "roleId=" + user.getRole(),
-            //                    "username=" + user.getAccount().getUsername(),
-            //                    "password=" + user.getAccount().getPassword(),
-            //                    "status=" + user.getAccount().getStatus(),
-            //                    "remember=" + remember
-            );
+            if (remember) {
+                lineSession = Arrays.asList(
+                        "userId=" + user.getUserId(),
+                        "remember=" + remember,
+                        "username=" + username,
+                        "password=" + password
+                );
+            } else {
+                lineSession = Arrays.asList("userId=" + user.getUserId());
+            }
             sessionWr.setSession(lineSession);
 
             return true;
@@ -60,12 +49,24 @@ public class SignModel {
         return userModel.addUser(user);
     }
 
-    public void signOut() {
-        lineSession = Arrays.asList(
-                "remember=" + this.remember,
-                "username=" + this.username,
-                "password=" + this.password
-        );
-        sessionWr.setSession(lineSession);
+    public boolean signOut() {
+        List<String> newLines = sessionWr.getSession();
+        String remember = "";
+        boolean isTrue = false;
+        if (newLines.size() > 1) {
+            remember = newLines.get(1);
+        }
+        if (newLines.size() > 1 && remember.split("=").length == 2) {
+            isTrue = Boolean.parseBoolean(remember.split("=")[1]);
+        }
+        if (isTrue) {
+            lineSession = Arrays.asList(
+                    newLines.get(2),
+                    newLines.get(3)
+            );
+            sessionWr.setSession(lineSession);
+            return true;
+        }
+        return false;
     }
 }

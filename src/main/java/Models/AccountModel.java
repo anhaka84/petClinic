@@ -13,30 +13,23 @@ import java.util.List;
 public class AccountModel {
 
     DB<User> db = new DB<>();
-    UserModel um = new UserModel();
+    UserModel userModel = new UserModel();
     String query;
     List condition = new ArrayList();
 
     public AccountModel() {
     }
-
-    public boolean isExistAccount(String username) {
-        return getOneAccount(username) != null;
-    }
-
-    public boolean isUniqueAccount(String username) {
-        return getOneAccount(username) == null;
-    }
-
-    public Account getOneAccount(int user_id) {
-        return um.getOneUser(user_id).getAccount();
-    }
+//crud
 
     public Account getOneAccount(String username) {
         query = "SELECT username, password, status"
                 + " FROM User WHERE username = ?";
         condition = Arrays.asList(username);
         return db.getOne(query, condition, new Account());
+    }
+
+    public Account getOneAccount(int userId) {
+        return userModel.getOneUser(userId).getAccount();
     }
 
     public int getAccountId(String username) {
@@ -52,14 +45,32 @@ public class AccountModel {
         return db.getAll(query, new Account());
     }
 
-    public boolean activeAccount() {
-        return false;
+    public boolean updateAccount(String username, String password) {
+        int userId = userModel.getSessionUser().getUserId();
+        query = "UPDATE User"
+                + " SET username = ?, password = ?"
+                + " WHERE user_id = ?";
+        condition = Arrays.asList(username, password, userId);
+        return db.setSqlDataRow(query, condition, new User());
     }
 
-    public boolean deleteAccount(int user_id) {
+    public boolean deleteAccount(int userId) {
         query = "UPDATE User SET status = 0 WHERE user_id = ?";
-        condition = Arrays.asList(user_id);
+        condition = Arrays.asList(userId);
         return db.setSqlDataRow(query, condition, new User());
+    }
+//other
+
+    public boolean isExistAccount(String username) {
+        return getOneAccount(username) != null;
+    }
+
+    public boolean isUniqueAccount(String username) {
+        return getOneAccount(username) == null;
+    }
+
+    public boolean activeAccount(User user) {
+        return false;
     }
 
 }

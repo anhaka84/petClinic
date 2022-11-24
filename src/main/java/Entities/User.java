@@ -62,8 +62,8 @@ public class User extends DBCommon<User> {
         return fullName;
     }
 
-    public void setFullName(String full_name) {
-        this.fullName = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getGender() {
@@ -102,8 +102,8 @@ public class User extends DBCommon<User> {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phone_number) {
-        this.phoneNumber = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public int getRole() {
