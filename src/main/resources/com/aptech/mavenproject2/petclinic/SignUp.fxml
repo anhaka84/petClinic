@@ -19,13 +19,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <Pane prefHeight="540.0" prefWidth="459.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="83.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Img/logo.png" />
+                  <Image url="@../../../../Img/logo.png" />
                </image>
             </ImageView>
             <Text layoutX="83.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" wrappingWidth="310.9367218017578">
@@ -50,7 +50,7 @@
                 <RowConstraints maxHeight="91.4" minHeight="10.0" prefHeight="91.4" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <GridPane layoutX="104.0" layoutY="128.0" prefHeight="463.0" prefWidth="570.0">
+            <GridPane layoutX="213.0" layoutY="136.0" prefHeight="496.0" prefWidth="685.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.20001220703125" minWidth="10.0" prefWidth="215.8000244140625" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.3999481201172" minWidth="10.0" prefWidth="307.79997558593755" />
@@ -125,7 +125,7 @@
                   <TextField prefHeight="32.0" promptText="Enter your email" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <TextField prefHeight="32.0" promptText="Enter your address" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                   <TextField prefHeight="32.0" promptText="Enter your phone number" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <DatePicker prefHeight="32.0" prefWidth="331.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker prefHeight="32.0" prefWidth="413.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <RadioButton mnemonicParsing="false" prefHeight="41.0" prefWidth="48.0" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <toggleGroup>
                         <ToggleGroup fx:id="gender" />
@@ -143,7 +143,7 @@
                   </RadioButton>
                </children>
             </GridPane>
-            <Button layoutX="604.0" layoutY="600.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="login-btn" stylesheets="@../CSS/Login.css" text="Sign Up" textFill="WHITE">
+            <Button layoutX="674.0" layoutY="669.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="login-btn" stylesheets="@../CSS/Login.css" text="Sign Up" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
