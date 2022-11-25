@@ -1,28 +1,9 @@
-viết code trước vào "Test Packages"
+functions
 
-test rồi comment lỗi hoặc tính năng cần thêm lên đầu file (nếu có)
+sign up = new user / old user change account
 
-format:
-/** Lỗi
-* lỗi 1
-* ...
-*/
+sign in
 
-/** Cần thêm
-* tính năng 1
-* ...
-*/
+sign out
 
-cần phát triển thêm gì khác (chưa có file) thì ghi vào file này
-
-entity
-
-doctor
-user
-pet
-staff
-service
-medication
-booking
-bill
-prescription
+session

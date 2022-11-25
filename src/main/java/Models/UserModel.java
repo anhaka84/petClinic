@@ -11,22 +11,30 @@ public class UserModel {
 
     DB<User> db = new DB<>();
     SessionWriter sessionWr = new SessionWriter();
+
     String query;
     List condition;
-    String columns = "(role_id"
-            + ", full_name, gender, dob, email, address, phone_number"
-            + ", username, password"
-            + ", status)";
+    String columns = "("
+            + "role_id"
+            + ", full_name"
+            + ", gender"
+            + ", dob"
+            + ", email"
+            + ", address"
+            + ", phone_number"
+            + ", username"
+            + ", password"
+            + ", status"
+            + ")";
 
     public UserModel() {
     }
 
-    public User getSessionUser() {
-        String line0 = sessionWr.getSession().get(0);
-        int id = Integer.parseInt(line0.split("=")[1]);
-        return getOneUser(id);
-    }
-
+    /**
+     * crud
+     * @param userId
+     * @return 
+     */
     public User getOneUser(int userId) {
         query = "SELECT * FROM User WHERE user_id = ?";
         condition = Arrays.asList(userId);
@@ -39,7 +47,8 @@ public class UserModel {
     }
 
     public List<User> getAllUserActive() {
-        query = "SELECT * FROM User WHERE status = 1";
+        query = "SELECT * FROM User"
+                + " WHERE status = 1";
         return db.getAll(query, new User());
     }
 
@@ -82,6 +91,29 @@ public class UserModel {
                 user.getUserId()
         );
         return db.setSqlDataRow(query, condition, new User());
+    }
+
+    /**
+     * other
+     * @param user
+     * @return 
+     */
+    public boolean addDefaultUser(User user) {
+        user.setRole(3);
+        return addUser(user);
+    }
+
+    public int getUserId(String email, String username) {
+        query = "SELECT * FROM User"
+                + " WHERE email = ? AND username = ?";
+        condition = Arrays.asList(email, username);
+        return db.getOne(query, condition, new User()).getUserId();
+    }
+
+    public User getSessionUser() {
+        String line0 = sessionWr.getSession().get(0);
+        int id = Integer.parseInt(line0.split("=")[1]);
+        return getOneUser(id);
     }
 
     public String changeGender(int gender) {

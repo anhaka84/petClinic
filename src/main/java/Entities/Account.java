@@ -51,7 +51,8 @@ public class Account extends DBCommon<Account> {
 
     @Override
     public String toString() {
-        return "Account{" + "username=" + username
+        return "Account{"
+                + "username=" + username
                 + ", password=" + password
                 + ", status=" + status
                 + '}';

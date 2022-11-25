@@ -22,6 +22,25 @@ public class DoctorLevel extends User {
         this.updateDate = updateDate;
     }
 
+    public DoctorLevel(String title, String degree, Date updateDate) {
+        this.title = title;
+        this.degree = degree;
+        this.updateDate = updateDate;
+    }
+
+    public DoctorLevel(User user, String title, String degree, Date updateDate) {
+        super(user.getFullName(),
+                user.getGender(),
+                user.getDob(),
+                user.getEmail(),
+                user.getPhoneNumber(),
+                user.getAddress(),
+                user.getAccount());
+        this.title = title;
+        this.degree = degree;
+        this.updateDate = updateDate;
+    }
+
     public int getDoctorLevelId() {
         return doctorLevelId;
     }

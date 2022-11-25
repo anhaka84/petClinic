@@ -8,46 +8,61 @@ import java.sql.SQLException;
 public class User extends DBCommon<User> {
 
     private int userId;
+    private int role;//1-admin 2-doctor 3-client
     private String fullName;
     private int gender;//0-male 1-female 2-other
     private Date dob;
     private String email;
     private String address;
     private String phoneNumber;
-    private int role;//1-admin 2-doctor 3-client
     private Account account;
 
     public User() {
     }
 
-    public User(int userId,
+    public User(
             String fullName, int gender, Date dob,
             String email, String address, String phoneNumber,
-            int role, Account account) {
-        this.userId = userId;
+            Account account
+    ) {
         this.fullName = fullName;
         this.gender = gender;
         this.dob = dob;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.role = role;
         this.account = account;
     }
 
-    public User(int userId,
+    public User(int role,
             String fullName, int gender, Date dob,
             String email, String address, String phoneNumber,
-            int role, String username, String passowrd, int status) {
-        this.userId = userId;
+            Account account
+    ) {
+        this.role = role;
         this.fullName = fullName;
         this.gender = gender;
         this.dob = dob;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.account = account;
+    }
+
+    public User(int userId, int role,
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
+            Account account
+    ) {
+        this.userId = userId;
         this.role = role;
-        this.account = new Account(username, passowrd, status);
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.account = account;
     }
 
     public int getUserId() {
@@ -56,6 +71,14 @@ public class User extends DBCommon<User> {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 
     public String getFullName() {
@@ -106,14 +129,6 @@ public class User extends DBCommon<User> {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
-    }
-
     public Account getAccount() {
         return account;
     }
@@ -124,7 +139,8 @@ public class User extends DBCommon<User> {
 
     @Override
     public String toString() {
-        return "User{" + "userId=" + userId
+        return "User{"
+                + "userId=" + userId
                 + ", role=" + role
                 + ", fullName=" + fullName
                 + ", gender=" + gender
@@ -132,7 +148,6 @@ public class User extends DBCommon<User> {
                 + ", email=" + email
                 + ", address=" + address
                 + ", phoneNumber=" + phoneNumber
-                + ", account=" + account
                 + '}';
     }
 
@@ -147,7 +162,6 @@ public class User extends DBCommon<User> {
         user.setAddress(rs.getString("address"));
         user.setPhoneNumber(rs.getString("phone_number"));
         user.setRole(rs.getInt("role_id"));
-        user.setAccount(new Account(rs.getString("username"), rs.getString("password"), rs.getInt("status")));
         return user;
     }
 }

@@ -24,7 +24,7 @@ CREATE TABLE `User` (
     `full_name` VARCHAR(50) NOT NULL,
     `gender` INT,
     `dob` DATE,
-    `email` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL UNIQUE,
     `address` VARCHAR(255) NOT NULL,
     `phone_number` CHAR(10) NOT NULL,
     `username` VARCHAR(50) NOT NULL UNIQUE,

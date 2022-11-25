@@ -16,8 +16,15 @@ public class AccountModel {
 
     public AccountModel() {
     }
-//crud
 
+    /**
+     * crud
+     */
+    /**
+     *
+     * @param username
+     * @return
+     */
     public Account getOneAccount(String username) {
         query = "SELECT username, password, status"
                 + " FROM User WHERE username = ?";
@@ -64,8 +71,15 @@ public class AccountModel {
         condition = Arrays.asList(userId);
         return db.setSqlDataRow(query, condition, new User());
     }
-//other
 
+    /**
+     * other
+     */
+    /**
+     *
+     * @param username
+     * @return
+     */
     public boolean isExistAccount(String username) {
         return getOneAccount(username) != null;
     }
