@@ -1,8 +1,7 @@
 package Models;
 
 import DB.main.DB;
-import Entities.Account;
-import Entities.User;
+import Entities.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +10,7 @@ public class AccountModel {
 
     DB<User> db = new DB<>();
     UserModel userModel = new UserModel();
+
     String query;
     List condition = new ArrayList();
 
@@ -84,15 +84,31 @@ public class AccountModel {
         return getOneAccount(username) != null;
     }
 
-    public boolean isUniqueAccount(String username) {
-        return getOneAccount(username) == null;
-    }
-
     public boolean activeAccount(User user) {
-        if (isExistAccount(user.getAccount().getUsername())) {
+        if (userModel.isOldUser(user.getEmail(), user.getAccount().getUsername())) {
             int id = getAccountId(user.getAccount().getUsername());
             return updateAccount(user.getAccount().getUsername(), user.getAccount().getPassword(), 1, id);
         }
+        if (isExistAccount(user.getAccount().getUsername())) {
+            return false;
+        }
         return userModel.addUser(user);
+    }
+
+    public boolean checkInputAccount(String username, String password) {
+        String regex = ""
+                //                + "\\s{1,}"//find white space
+                + "[\'|\"][\'|\"]"//find ''
+                //                + "\\s{1,}"
+                + "[a-zA-Z0-9]+"
+                + "\\s{1,}"
+                + "[=]"
+                + " "
+                + "[a-zA-Z0-9]+"
+                + "\\s{1,}";
+        if (!username.matches(regex) && !password.matches(regex)) {
+            return true;
+        }
+        return false;
     }
 }

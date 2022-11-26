@@ -13,6 +13,7 @@ public class Test {
         RoleModel roleM = new RoleModel();
         UserModel userM = new UserModel();
         DoctorModel doctorM = new DoctorModel();
+        AccountModel accountM = new AccountModel();
 
         List list;
         User user;
@@ -53,6 +54,12 @@ public class Test {
 //                new Account("memberQuangHuy", "123456")
 //        );
 //        System.out.println("User:add success ? " + userM.addDefaultUser(user));//add client (role id = 3)
+//        System.out.println(accountM.activeAccount(user));
+//        System.out.println(accountM.getOneAccount("admin"));
+//        for (Account acc : accountM.getAllAccount()) {
+//            System.out.println(acc);
+//        }
+        System.out.println(accountM.checkInputAccount("abc", "''abc= abc "));
 //        /**
 //         * test doctor
 //         */

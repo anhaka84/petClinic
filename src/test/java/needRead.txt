@@ -1,9 +1,48 @@
 functions
 
 sign up = new user / old user change account
+==> check enique columns : email, username 
+
+method : (SignModel) signUp(User user) 
+@return boolean
+-> method : (AccountModel) activeAccount (User user) 
+@return boolean
+-> method : (UserModel) isOldUser (String email, String username) 
+@return boolean
+    -> ? true 
+        -> method : {
+            -> ? (AccountModel) getAccountId (String username)
+            @return int
+            -> ? (UserModel) getUserId (String email, String username)
+            @return int
+        } -> method : (AccountModel) updateAccount
+                                (String username, String password, int status, int userId)
+        @return boolean
+    -> ? false
+        -> method : (UserModel) addUser(User user)
+        @return boolean
 
 sign in
 
 sign out
 
 session
+
+booking -( choose )-> doctor -( choose )-> schedual date & time 
+==> select  all schedual of one doctor 
+==> check schedual date 
+
+method : (DoctorModel) isExistSchedualDate (Date date) 
+@return boolean 
+    -> ? true 
+        -> method : (DoctorModel) isExistSchedualTime (String time) 
+            @return boolean 
+                -> ? true -> suggest other time
+                -> ? false -> suggest this time
+    -> ? false -> suggest this date -> suggest time
+--> suggest date 
+-> method : (DoctorModel) suggestDate(Date date)
+@return Date
+--> suggest time 
+-> method : (DoctorModel) suggestTime(String time)
+@return String

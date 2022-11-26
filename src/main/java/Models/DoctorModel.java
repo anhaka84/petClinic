@@ -121,4 +121,12 @@ public class DoctorModel {
         );
         return db.setSqlDataRow(query, condition, new DoctorSchedual());
     }
+
+    public boolean deleteSchedual(int schedualId) {
+        query = "DELETE FROM DoctorSchedual"
+                + " WHERE doctor_schedual_id = ?";
+        condition = Arrays.asList(schedualId);
+        return db.setSqlDataRow(query, condition, new DoctorSchedual());
+    }
+
 }

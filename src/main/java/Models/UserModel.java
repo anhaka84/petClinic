@@ -1,7 +1,7 @@
 package Models;
 
 import DB.main.DB;
-import Entities.User;
+import Entities.*;
 import Session.SessionWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,8 +32,10 @@ public class UserModel {
 
     /**
      * crud
+     */
+    /**
      * @param userId
-     * @return 
+     * @return
      */
     public User getOneUser(int userId) {
         query = "SELECT * FROM User WHERE user_id = ?";
@@ -95,8 +97,10 @@ public class UserModel {
 
     /**
      * other
+     */
+    /**
      * @param user
-     * @return 
+     * @return
      */
     public boolean addDefaultUser(User user) {
         user.setRole(3);
@@ -127,4 +131,13 @@ public class UserModel {
         }
     }
 
+    public boolean isOldUser(String email, String username) {
+        query = "SELECT * FROM User"
+                + " WHERE email = ? AND username = ? AND status = 0";
+        condition = Arrays.asList(email, username);
+        if (db.getOne(query, condition, new User()) != null) {
+            return true;
+        }
+        return false;
+    }
 }
