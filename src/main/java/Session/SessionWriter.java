@@ -56,7 +56,6 @@ public class SessionWriter {
                 return false;
             }
         }
-
         for (String line : list) {
             if (line.matches("[a-zA-Z0-9]+[=][a-zA-Z0-9]+")) {
                 return true;

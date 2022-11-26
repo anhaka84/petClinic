@@ -1,6 +1,6 @@
-CREATE DATABASE `Pet_Clinic`;
+CREATE DATABASE `PetClinic`;
 
-USE `Pet_Clinic`;
+USE `PetClinic`;
 
 -- DROP DATABASE `Pet_Clinic`;
 
@@ -13,8 +13,8 @@ USE `Pet_Clinic`;
 -- WHERE u.user_id = 2;
 
 CREATE TABLE `Role` (
-    `role_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `role_name` VARCHAR(10) NOT NULL
+    `roleId` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `roleName` VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE `User` (

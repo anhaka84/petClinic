@@ -1,3 +1,31 @@
+Tính năng:
+
+admin: xem thêm sửa xóa người dùng,
+            xem thêm sửa xóa thuốc,
+            xem thêm sửa xóa booking.
+==>class : AdminEntity
+--user
+-> get one method : getOneUser, getOneDoctor, getOneEmployee
+-> get all method : getAllUser, getAllDoctor, getAllEmployee
+-> update method : updateUser, updateDoctor, updateEmployee
+-> delete method : deleteUser, deleteDoctor, deleteEmployee
+--medication
+-> get one method : getOneMedication
+-> get all method : getAllMedication
+-> update method : updateMedication
+-> delete method : deleteMedication
+
+
+bsi: xem thêm sửa xóa thông tin,
+       xem thêm sửa xóa lịch lm vc,
+       xem thêm đơn thuốc,
+       xem booking.
+
+cus: xem thêm sửa xóa thông tin,
+        xem thêm sửa xóa thú cung,
+        xem dịch vụ,
+        xem bsi.
+
 functions
 
 sign up = new user / old user change account
