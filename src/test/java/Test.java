@@ -21,26 +21,26 @@ public class Test {
         UserModel user;
         DoctorLevelModel doctor;
         AccountModel account;
-//        /**
-//         * test role
-//         */
-//        list = Arrays.asList(
-//                new Role(1, "Admin"),
-//                new Role(2, "Doctor"),
-//                new Role(3, "Client"),
-//                new Role(4, "RoleTest")//update, delete
-//        );
-//        list.forEach(role -> {
-//            System.out.println("Role:add success ? " + roleM.addRole((Role) role));
-//        });
-//        roleM.getAllRole().forEach(role -> {
-//            System.out.println("Role:getAll=" + role);
-//        });
-//        System.out.println("Role:getOne=" + roleM.getOneRole(1));
-//        System.out.println("Role:update success ? " + roleM.updateRole(new Role(4, "Updated")));
-//        System.out.println("Role:getOne=" + roleM.getOneRole(4));
-//        System.out.println("Role:delete success ? " + roleM.deleteRole(4));
-//        System.out.println("Role:getOne=" + roleM.getOneRole(4));
+        /**
+         * test role
+         */
+        list = Arrays.asList(
+                new Role(1, "Admin"),
+                new Role(2, "Doctor"),
+                new Role(3, "Client"),
+                new Role(4, "RoleTest")//update, delete
+        );
+        list.forEach(role -> {
+            System.out.println("Role:add success ? " + roleM.addRole((Role) role));
+        });
+        roleM.getAllRole().forEach(role -> {
+            System.out.println("Role:getAll=" + role);
+        });
+        System.out.println("Role:getOne=" + roleM.getOneRole(1));
+        System.out.println("Role:update success ? " + roleM.updateRole(new Role(4, "Updated")));
+        System.out.println("Role:getOne=" + roleM.getOneRole(4));
+        System.out.println("Role:delete success ? " + roleM.deleteRole(4));
+        System.out.println("Role:getOne=" + roleM.getOneRole(4));
 //        /**
 //         * test user
 //         */

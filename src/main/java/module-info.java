@@ -12,4 +12,7 @@ module com.aptech.mavenproject2.petclinic {
     
     opens Models to javafx.fxml;
     exports Models;
+    
+    opens Controller to javafx.fxml;
+    exports Controller;
 }
