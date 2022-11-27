@@ -106,6 +106,13 @@ public class UserEntity {
         return getOneUser(id);
     }
 
+    public boolean checkPhoneNumber(String phoneNumber) {
+        if (phoneNumber.matches("\\d{10}")) {
+            return true;
+        }
+        return false;
+    }
+
     public String changeGender(int gender) {
         switch (gender) {
             case 0:
