@@ -1,28 +1,76 @@
-viết code trước vào "Test Packages"
+Tính năng:
 
-test rồi comment lỗi hoặc tính năng cần thêm lên đầu file (nếu có)
+admin: xem thêm sửa xóa người dùng,
+            xem thêm sửa xóa thuốc,
+            xem thêm sửa xóa booking.
+==>class : AdminEntity
+--user
+-> get one method : getOneUser, getOneDoctor, getOneEmployee
+-> get all method : getAllUser, getAllDoctor, getAllEmployee
+-> update method : updateUser, updateDoctor, updateEmployee
+-> delete method : deleteUser, deleteDoctor, deleteEmployee
+--medication
+-> get one method : getOneMedication
+-> get all method : getAllMedication
+-> update method : updateMedication
+-> delete method : deleteMedication
 
-format:
-/** Lỗi
-* lỗi 1
-* ...
-*/
 
-/** Cần thêm
-* tính năng 1
-* ...
-*/
+bsi: xem thêm sửa xóa thông tin,
+       xem thêm sửa xóa lịch lm vc,
+       xem thêm đơn thuốc,
+       xem booking.
 
-cần phát triển thêm gì khác (chưa có file) thì ghi vào file này
+cus: xem thêm sửa xóa thông tin,
+        xem thêm sửa xóa thú cung,
+        xem dịch vụ,
+        xem bsi.
 
-entity
+functions
 
-doctor
-user
-pet
-staff
-service
-medication
-booking
-bill
-prescription
+sign up = new user / old user change account
+==> check enique columns : email, username 
+
+method : (SignModel) signUp(User user) 
+@return boolean
+-> method : (AccountModel) activeAccount (User user) 
+@return boolean
+-> method : (UserModel) isOldUser (String email, String username) 
+@return boolean
+    -> ? true 
+        -> method : {
+            -> ? (AccountModel) getAccountId (String username)
+            @return int
+            -> ? (UserModel) getUserId (String email, String username)
+            @return int
+        } -> method : (AccountModel) updateAccount
+                                (String username, String password, int status, int userId)
+        @return boolean
+    -> ? false
+        -> method : (UserModel) addUser(User user)
+        @return boolean
+
+sign in
+
+sign out
+
+session
+
+booking -( choose )-> doctor -( choose )-> schedual date & time 
+==> select  all schedual of one doctor 
+==> check schedual date 
+
+method : (DoctorModel) isExistSchedualDate (Date date) 
+@return boolean 
+    -> ? true 
+        -> method : (DoctorModel) isExistSchedualTime (String time) 
+            @return boolean 
+                -> ? true -> suggest other time
+                -> ? false -> suggest this time
+    -> ? false -> suggest this date -> suggest time
+--> suggest date 
+-> method : (DoctorModel) suggestDate(Date date)
+@return Date
+--> suggest time 
+-> method : (DoctorModel) suggestTime(String time)
+@return String

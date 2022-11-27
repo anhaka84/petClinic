@@ -1,94 +1,173 @@
 package Models;
 
-import DB.main.DB;
-import Entities.User;
-import Session.SessionWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import DB.common.DBCommon;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class UserModel {
+public class UserModel extends DBCommon<UserModel> {
 
-    DB<User> db = new DB<>();
-    SessionWriter sessionWr = new SessionWriter();
-    String query;
-    List condition;
-    String columns = "(user_id, role_id"
-            + ", full_name, gender, dob, email, address, phone_number"
-            + ", username, password"
-            + ", status)";
+    private int userId;
+    private int role;//1-admin 2-doctor 3-client
+    private String fullName;
+    private int gender;//0-male 1-female 2-other
+    private Date dob;
+    private String email;
+    private String address;
+    private String phoneNumber;
+    private AccountModel account;
 
     public UserModel() {
     }
 
-    public String changeGender(int gender) {
-        switch (gender) {
-            case 0:
-                return "Male";
-            case 1:
-                return "Female";
-            default:
-                return "Other";
-        }
+    public UserModel(
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
+            AccountModel account
+    ) {
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.account = account;
     }
 
-    public User getSessionUser() {
-        String line0 = sessionWr.getSession().get(0);
-        int id = Integer.parseInt(line0.split("=")[1]);
-        return getOneUser(id);
+    public UserModel(int role,
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
+            AccountModel account
+    ) {
+        this.role = role;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.account = account;
     }
 
-    public User getOneUser(int userId) {
-        query = "SELECT * FROM User WHERE user_id = ?";
-        condition = Arrays.asList(userId);
-        return db.getOne(query, condition, new User());
+    public UserModel(int userId, int role,
+            String fullName, int gender, Date dob,
+            String email, String address, String phoneNumber,
+            AccountModel account
+    ) {
+        this.userId = userId;
+        this.role = role;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.account = account;
     }
 
-    public ArrayList<User> getAllUser() {
-        query = "SELECT * FROM User";
-        return db.getAll(query, new User());
+    public int getUserId() {
+        return userId;
     }
 
-    public boolean addUser(User user) {
-        query = "INSERT INTO User " + columns
-                + " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-        condition = Arrays.asList(
-                user.getUserId(),
-                user.getRole(),
-                user.getFullName(),
-                user.getGender(),
-                user.getDob(),
-                user.getEmail(),
-                user.getAddress(),
-                user.getPhoneNumber(),
-                user.getAccount().getUsername(),
-                user.getAccount().getPassword(),
-                user.getAccount().getStatus()
-        );
-        return db.setSqlDataRow(query, condition, new User());
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public boolean updateUser(User user) {
-        query = "UPDATE User SET "
-                + "role_id = ?"
-                + ",full_name = ?"
-                + ",gender = ?"
-                + ",dob = ?"
-                + ",email = ?"
-                + ",address = ?"
-                + ",phone_number = ?"
-                + " WHERE user_id = ?";
-        condition = Arrays.asList(
-                user.getRole(),
-                user.getFullName(),
-                user.getGender(),
-                user.getDob(),
-                user.getEmail(),
-                user.getAddress(),
-                user.getPhoneNumber(),
-                user.getUserId()
-        );
-        return db.setSqlDataRow(query, condition, new User());
+    public int getRole() {
+        return role;
     }
 
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public AccountModel getAccount() {
+        return account;
+    }
+
+    public void setAccount(AccountModel account) {
+        this.account = account;
+    }
+
+    @Override
+    public String toString() {
+        return "User{"
+                + "userId=" + userId
+                + ", role=" + role
+                + ", fullName=" + fullName
+                + ", gender=" + gender
+                + ", dob=" + dob
+                + ", email=" + email
+                + ", address=" + address
+                + ", phoneNumber=" + phoneNumber
+                + '}';
+    }
+
+    @Override
+    public UserModel setResultSetValue(UserModel user, ResultSet rs)
+            throws SQLException {
+        user.setUserId(rs.getInt("user_id"));
+        user.setFullName(rs.getString("full_name"));
+        user.setGender(rs.getInt("gender"));
+        user.setDob(rs.getDate("dob"));
+        user.setEmail(rs.getString("email"));
+        user.setAddress(rs.getString("address"));
+        user.setPhoneNumber(rs.getString("phone_number"));
+        user.setRole(rs.getInt("role_id"));
+        user.setAccount(
+                new AccountModel(
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getInt("status")
+                ));
+        return user;
+    }
 }

@@ -33,19 +33,51 @@ public class SessionWriter {
         return null;
     }
 
-    public void setSession(List<String> listLine) {
+    public String getLineStartWith(String condition) {
+        for (String line : getSession()) {
+            if (line.startsWith(condition)) {
+                return line;
+            }
+        }
+        return null;
+    }
+
+    public boolean isLineOfSession(String line) {
+        for (String sessLine : getSession()) {
+            if (sessLine.equals(line)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setSession(List<String> listLine) {
         try (
                  BufferedWriter buffWrite = Files.newBufferedWriter(write, StandardCharsets.UTF_8);) {
-            for (String line : listLine) {
-                buffWrite.append(line);
-                buffWrite.newLine();
+            if (checkInputSession(listLine)) {
+                for (String line : listLine) {
+                    buffWrite.append(line);
+                    buffWrite.newLine();
+                }
+                return true;
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+        return false;
     }
 
-    public boolean checkInputSession() {
+    private boolean checkInputSession(List<String> list) {
+        for (String str : list) {
+            if (str.split(" ").length > 1) {
+                return false;
+            }
+        }
+        for (String line : list) {
+            if (line.matches("[a-zA-Z0-9]+[=][a-zA-Z0-9]+")) {
+                return true;
+            }
+        }
         return false;
     }
 

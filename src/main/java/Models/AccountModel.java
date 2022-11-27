@@ -1,76 +1,70 @@
-/**
- * can phat trien activeAccount
- */
 package Models;
 
-import DB.main.DB;
-import Entities.Account;
-import Entities.User;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import DB.common.DBCommon;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class AccountModel {
+public class AccountModel extends DBCommon<AccountModel> {
 
-    DB<User> db = new DB<>();
-    UserModel userModel = new UserModel();
-    String query;
-    List condition = new ArrayList();
+    private String username;
+    private String password;
+    private int status;//0-inactive 1-active
 
     public AccountModel() {
     }
-//crud
 
-    public Account getOneAccount(String username) {
-        query = "SELECT username, password, status"
-                + " FROM User WHERE username = ?";
-        condition = Arrays.asList(username);
-        return db.getOne(query, condition, new Account());
+    public AccountModel(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.status = 1;
     }
 
-    public Account getOneAccount(int userId) {
-        return userModel.getOneUser(userId).getAccount();
+    public AccountModel(String username, String password, int status) {
+        this.username = username;
+        this.password = password;
+        this.status = status;
     }
 
-    public int getAccountId(String username) {
-        query = "SELECT *"
-                + " FROM User WHERE username = ?";
-        condition = Arrays.asList(username);
-        return db.getOne(query, condition, new User()).getUserId();
+    public String getUsername() {
+        return username;
     }
 
-    public ArrayList<Account> getAllAccount() {
-        query = "SELECT username, password, status"
-                + " FROM User";
-        return db.getAll(query, new Account());
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public boolean updateAccount(String username, String password) {
-        int userId = userModel.getSessionUser().getUserId();
-        query = "UPDATE User"
-                + " SET username = ?, password = ?"
-                + " WHERE user_id = ?";
-        condition = Arrays.asList(username, password, userId);
-        return db.setSqlDataRow(query, condition, new User());
+    public String getPassword() {
+        return password;
     }
 
-    public boolean deleteAccount(int userId) {
-        query = "UPDATE User SET status = 0 WHERE user_id = ?";
-        condition = Arrays.asList(userId);
-        return db.setSqlDataRow(query, condition, new User());
-    }
-//other
-
-    public boolean isExistAccount(String username) {
-        return getOneAccount(username) != null;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public boolean isUniqueAccount(String username) {
-        return getOneAccount(username) == null;
+    public int getStatus() {
+        return status;
     }
 
-    public boolean activeAccount(User user) {
-        return false;
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountModel{"
+                + "username=" + username
+                + ", password=" + password
+                + ", status=" + status
+                + '}';
+    }
+
+    @Override
+    public AccountModel setResultSetValue(AccountModel object, ResultSet rs)
+            throws SQLException {
+        object.setUsername(rs.getString("username"));
+        object.setPassword(rs.getString("password"));
+        object.setStatus(rs.getInt("status"));
+        return object;
     }
 
 }
