@@ -25,7 +25,8 @@
             <children>
                 <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="89.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Img/logo.png" />
+                  <!--<Image url="@../../../../Img/logo.png" />-->
+                  <Image url="@../Img/logo.png" />
                </image>
                 </ImageView>
                 <Text layoutX="57.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" textAlignment="CENTER" wrappingWidth="358.13670349121094">
