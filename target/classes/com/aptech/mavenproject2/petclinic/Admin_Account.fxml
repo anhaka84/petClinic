@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.Admin_AccountController">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -73,18 +73,7 @@
                   <Insets />
                </opaqueInsets>
                 </Button>
-                <Button layoutY="515.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-               <graphic>
-                  <FontAwesomeIconView glyphName="CALENDAR" size="20" text="" />
-               </graphic>
-                </Button>
-            <Button layoutY="590.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
+            <Button layoutY="524.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -93,17 +82,6 @@
                </cursor>
                <graphic>
                   <FontAwesomeIconView glyphName="TINT" size="20" />
-               </graphic>
-            </Button>
-            <Button layoutY="665.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <graphic>
-                  <FontAwesomeIconView glyphName="FILE" size="20" />
                </graphic>
             </Button>
             </children>
@@ -147,7 +125,7 @@
                         <Font size="16.0" />
                     </font>
                 </Text>
-                <Hyperlink layoutX="103.0" layoutY="632.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
+                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -155,27 +133,17 @@
                         <FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />
                     </graphic>
                 </Hyperlink>
-                <Text layoutX="111.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="71.7366943359375">
+                <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Text>
-                <Text layoutX="120.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
+                <Text layoutX="78.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Text>
-                <Text layoutX="78.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="106.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" wrappingWidth="80.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="113.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
+                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
                     <font>
                         <Font size="20.0" />
                     </font>
