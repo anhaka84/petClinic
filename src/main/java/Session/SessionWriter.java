@@ -33,6 +33,24 @@ public class SessionWriter {
         return null;
     }
 
+    public String getLineStartWith(String condition) {
+        for (String line : getSession()) {
+            if (line.startsWith(condition)) {
+                return line;
+            }
+        }
+        return null;
+    }
+
+    public boolean isLineOfSession(String line) {
+        for (String sessLine : getSession()) {
+            if (sessLine.equals(line)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean setSession(List<String> listLine) {
         try (
                  BufferedWriter buffWrite = Files.newBufferedWriter(write, StandardCharsets.UTF_8);) {
@@ -52,7 +70,6 @@ public class SessionWriter {
     private boolean checkInputSession(List<String> list) {
         for (String str : list) {
             if (str.split(" ").length > 1) {
-                System.out.println(str);
                 return false;
             }
         }

@@ -10,6 +10,7 @@ public class SignEntity {
     AccountEntity accModel = new AccountEntity();
     UserEntity userModel = new UserEntity();
     SessionWriter sessionWr = new SessionWriter();
+
     List<String> lineSession;
 
     public SignEntity() {
@@ -26,7 +27,7 @@ public class SignEntity {
             if (accModel.getOneAccount(username).getStatus() == 0) {
                 return false;
             }
-            if (remember) {
+            if (remember == true) {
                 lineSession = Arrays.asList(
                         "userId=" + user.getUserId(),
                         "remember=" + remember,
@@ -44,19 +45,16 @@ public class SignEntity {
     }
 
     public boolean signOut() {
-        List<String> newLines = sessionWr.getSession();
-        String remember = "";
-        boolean isTrue = false;
-        if (newLines.size() > 1) {
-            remember = newLines.get(1);
+        boolean remember = false;
+        lineSession = Arrays.asList("remember=false");
+        if (sessionWr.getLineStartWith("remember=") != null) {
+            remember = true;
         }
-        if (newLines.size() > 2 && remember.split("=").length == 2) {
-            isTrue = Boolean.parseBoolean(remember.split("=")[1]);
-        }
-        if (isTrue) {
+        if (remember == true) {
             lineSession = Arrays.asList(
-                    newLines.get(2),
-                    newLines.get(3)
+                    sessionWr.getLineStartWith("remember="),
+                    sessionWr.getLineStartWith("username="),
+                    sessionWr.getLineStartWith("password=")
             );
         }
         return sessionWr.setSession(lineSession);
