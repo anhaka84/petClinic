@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import com.gluonhq.charm.glisten.control.Avatar?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+<?import com.gluonhq.charm.glisten.control.Avatar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -27,32 +27,54 @@
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="277.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage User" textFill="WHITE">
+                <Button layoutY="279.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="USER_MD" size="20" text="" />-->
-               </graphic>
+                    <graphic>
+                        <FontAwesomeIconView glyphName="USER" size="20" text="" />
+                    </graphic>
                 </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
+                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="HOME" size="20" text="" />-->
-               </graphic>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
+                    <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="20" text="" />
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
                 </Button>
-            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
+                <Button layoutY="355.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                        <FontAwesomeIconView glyphName="GEAR" size="20" />
+                    </graphic>
+                </Button>
+                <Button layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                        <FontAwesomeIconView glyphName="FILE" size="20" />
+                    </graphic>
+                </Button>
+            <Button layoutY="434.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -60,10 +82,10 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <!--<FontAwesomeIconView glyphName="TINT" size="20" />-->
+                  <FontAwesomeIconView glyphName="PAW" size="20" />
                </graphic>
             </Button>
-            <Button layoutY="457.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Turnover" textFill="WHITE">
+            <Button layoutY="517.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -71,7 +93,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <!--<FontAwesomeIconView glyphName="FILE" size="20" />-->
+                  <FontAwesomeIconView glyphName="CALENDAR" size="20" />
                </graphic>
             </Button>
             </children>
@@ -99,7 +121,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <!--<FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
+                                <FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="13.0" />
@@ -134,7 +156,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <!--<FontAwesomeIconView glyphName="USER_PLUS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
+                                <FontAwesomeIconView glyphName="USER_PLUS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="13.0" />
@@ -169,7 +191,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <!--<FontAwesomeIconView glyphName="USER_CIRCLE" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
+                                <FontAwesomeIconView glyphName="USER_CIRCLE" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New account today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="13.0" />
@@ -204,7 +226,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
+                                <FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="13.0" />
@@ -252,7 +274,7 @@
                         <Font size="16.0" />
                     </font>
                     <graphic>
-                        <!--<FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />-->
+                        <FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />
                     </graphic>
                 </Hyperlink>
                 <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
@@ -270,11 +292,11 @@
                         <Font size="20.0" />
                     </font>
                 </Text>
-<!--                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
+                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
                     <image>
                         <Image url="@../../../../Img/avatar.png" />
                     </image>
-                </Avatar>-->
+                </Avatar>
             </children>
         </Pane>
     </right>

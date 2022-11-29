@@ -143,12 +143,12 @@
                   </RadioButton>
                </children>
             </GridPane>
-            <Button layoutX="674.0" layoutY="669.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="login-btn" stylesheets="@../CSS/Login.css" text="Sign Up" textFill="WHITE">
+            <Button layoutX="808.0" layoutY="667.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Hyperlink layoutX="400.0" layoutY="667.0" prefHeight="39.0" prefWidth="239.0" text="Already have an account? Login now">
+            <Hyperlink layoutX="546.0" layoutY="665.0" prefHeight="39.0" prefWidth="239.0" text="Already have an account? Login now">
                <font>
                   <Font size="14.0" />
                </font>
