@@ -19,39 +19,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
     <left>
-        <Pane prefHeight="700.0" prefWidth="390.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="540.0" prefWidth="459.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
-<<<<<<< HEAD
                 <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="89.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <!--<Image url="@../../../../Img/logo.png" />-->
                         <Image url="@../../../../Img/logo.png" />
                     </image>
-=======
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="48.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <!--<Image url="@../../../../Img/logo.png" />-->
-                  <Image url="@../../../../Img/logo.png" />
-               </image>
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
                 </ImageView>
-                <Text layoutX="36.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" textAlignment="CENTER" wrappingWidth="318.93669509887695">
+                <Text layoutX="57.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" textAlignment="CENTER" wrappingWidth="358.13670349121094">
                     <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                     </font>
                 </Text>
             </children>
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="700.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <GridPane layoutX="93.0" layoutY="190.0" prefHeight="347.0" prefWidth="456.0">
+                <GridPane layoutX="219.0" layoutY="243.0" prefHeight="347.0" prefWidth="614.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="137.5999755859375" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="318.4000244140625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="114.1999755859375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="273.4000244140625" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
@@ -74,18 +66,13 @@
                                 <Font size="24.0" />
                             </font>
                         </Label>
-<<<<<<< HEAD
                         <Button fx:id="buttonSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#SignInEvent" prefHeight="36.0" prefWidth="105.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="5">
-=======
-                        <Button fx:id="buttonSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#SignInEvent" prefHeight="36.0" prefWidth="105.0" styleClass="login-btn" stylesheets="@../../../../CSS/Login.css" text="Sign In" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
                             <GridPane.margin>
                                 <Insets left="200.0" />
                             </GridPane.margin>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
-<<<<<<< HEAD
                         </Button>
                         <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <PasswordField fx:id="inputTextPassword" prefHeight="38.0" prefWidth="284.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -105,28 +92,13 @@
                         </HBox>
                         <Label fx:id="errorUsername" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="errorPassword" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-=======
-                            <effect>
-                                <Glow level="0.32" />
-                            </effect>
-                        </Button>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="69.0" prefHeight="54.0" prefWidth="94.0" text="Sign In" GridPane.columnIndex="1">
-                            <font>
-                                <Font size="30.0" />
-                            </font>
-                        </Label>
-                        <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="129.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Hyperlink fx:id="linkSignUp" alignment="CENTER" prefHeight="24.0" prefWidth="302.0" text="Don't have account? Sign up now" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Hyperlink>
-                        <PasswordField fx:id="inputTextPassword" onAction="#SignInEvent" prefHeight="38.0" prefWidth="284.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
                     </children>
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
                 </GridPane>
                 <Label alignment="CENTER" layoutX="480.0" layoutY="181.0" text="Sign In">
                     <font>

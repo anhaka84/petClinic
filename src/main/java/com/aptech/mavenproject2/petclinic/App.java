@@ -32,8 +32,6 @@ public class App extends Application {
             }
         });
         stage.setResizable(false);
-        stage.setWidth(1200);
-        stage.setHeight(800);
         stage.show();
     }
 
