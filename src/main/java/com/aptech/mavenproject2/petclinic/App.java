@@ -20,7 +20,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Admin_Homepage"));
+        scene = new Scene(loadFXML("Login"));
         stage.setScene(scene);
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -34,6 +34,8 @@ public class App extends Application {
             }
         });
         stage.setResizable(false);
+        stage.setWidth(1200);
+        stage.setHeight(800);
         stage.show();
     }
 

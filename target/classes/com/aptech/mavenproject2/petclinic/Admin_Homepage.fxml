@@ -2,10 +2,10 @@
 
 <!--<?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,77 +18,65 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.Admin_HomepageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.Admin_HomepageController">
     <left>
-        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="274.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="277.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage User" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="USER_MD" size="20" text="" />-->
-               </graphic>
-                </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="HOME" size="20" text="" />-->
-               </graphic>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-                </Button>
-            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
+            <Button layoutY="329.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="TINT" size="20" />-->
-               </graphic>
             </Button>
-            <Button layoutY="457.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Turnover" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
+            <Button layoutY="262.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <!--<FontAwesomeIconView glyphName="FILE" size="20" />-->
-               </graphic>
+            </Button>
+            <Button layoutY="396.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="195.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="463.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="530.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="597.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Change Info">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             </children>
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="822.0" prefWidth="644.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
             <children>
-                <Text layoutX="173.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" underline="true" wrappingWidth="297.33658599853516">
+                <Text layoutX="196.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" underline="true" wrappingWidth="412.5365982055664">
                     <font>
-                        <Font size="30.0" />
+                        <Font size="41.0" />
                     </font>
                     <effect>
                         <Bloom />
                     </effect>
                 </Text>
-                <HBox layoutX="41.0" layoutY="278.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="127.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -116,6 +104,11 @@
                                         <Insets bottom="20.0" />
                                     </GridPane.margin>
                                 </Text>
+                        <ImageView fitHeight="104.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/calendar-icon.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </GridPane>
                     </children>
@@ -123,7 +116,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox layoutX="350.0" layoutY="278.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="463.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -140,7 +133,7 @@
                                         <Font size="13.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="30.0" />
+                                        <Insets top="26.0" />
                                     </GridPane.margin>
                                 </Text>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
@@ -148,9 +141,17 @@
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets bottom="20.0" />
+                                        <Insets bottom="30.0" />
                                     </GridPane.margin>
                                 </Text>
+                        <ImageView fitHeight="90.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/doctor-icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="14.0" />
+                           </GridPane.margin>
+                        </ImageView>
                             </children>
                         </GridPane>
                     </children>
@@ -158,7 +159,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox layoutX="350.0" layoutY="445.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="463.0" layoutY="395.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -186,6 +187,14 @@
                                         <Insets bottom="20.0" />
                                     </GridPane.margin>
                                 </Text>
+                        <ImageView fitHeight="68.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/account-icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </ImageView>
                             </children>
                         </GridPane>
                     </children>
@@ -193,7 +202,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox layoutX="41.0" layoutY="445.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="137.0" layoutY="395.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -210,7 +219,7 @@
                                         <Font size="13.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="40.0" />
+                                        <Insets top="26.0" />
                                     </GridPane.margin>
                                 </Text>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
@@ -221,6 +230,14 @@
                                         <Insets bottom="20.0" />
                                     </GridPane.margin>
                                 </Text>
+                        <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/employee_icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="19.0" />
+                           </GridPane.margin>
+                        </ImageView>
                             </children>
                         </GridPane>
                     </children>
@@ -234,48 +251,4 @@
             </cursor>
         </Pane>
     </center>
-    <right>
-        <Pane prefHeight="822.0" prefWidth="293.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <Text layoutX="68.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doan Hoang Anh" wrappingWidth="156.2978515625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text fill="#5e5959" layoutX="118.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="56.4398193359375">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-                        <!--<FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />-->
-                    </graphic>
-                </Hyperlink>
-                <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="78.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-<!--                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
-                    <image>
-                        <Image url="@../../../../Img/avatar.png" />
-                    </image>
-                </Avatar>-->
-            </children>
-        </Pane>
-    </right>
 </BorderPane>
