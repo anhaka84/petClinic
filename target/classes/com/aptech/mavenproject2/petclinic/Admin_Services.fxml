@@ -85,36 +85,24 @@
                   <RowConstraints maxHeight="162.39999389648438" minHeight="10.0" prefHeight="99.00001831054686" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="162.39999389648438" minHeight="10.0" prefHeight="99.00001831054686" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="162.39999389648438" minHeight="10.0" prefHeight="99.00001831054686" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="162.39999389648438" minHeight="10.0" prefHeight="99.00001831054686" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="162.39999389648438" minHeight="10.0" prefHeight="99.00001831054686" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label prefHeight="38.0" prefWidth="118.0" text="Full Name">
+                  <Label prefHeight="38.0" prefWidth="118.0" text="Service ID">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="133.0" prefHeight="38.0" prefWidth="224.0" text="Username" GridPane.rowIndex="1">
+                  <Label layoutX="10.0" layoutY="133.0" prefHeight="38.0" prefWidth="224.0" text="Service Type" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="134.0" prefHeight="38.0" prefWidth="118.0" text="Password" GridPane.rowIndex="2">
+                  <Label layoutX="10.0" layoutY="134.0" prefHeight="38.0" prefWidth="162.0" text="Service Name" GridPane.rowIndex="2">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="193.0" prefHeight="38.0" prefWidth="192.0" text="Confirm password" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="292.0" prefHeight="38.0" prefWidth="224.0" text="Email" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="387.0" prefHeight="38.0" prefWidth="224.0" text="Phone number" GridPane.rowIndex="5">
+                  <Label layoutX="10.0" layoutY="193.0" prefHeight="38.0" prefWidth="192.0" text="Service Price" GridPane.rowIndex="3">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -123,11 +111,9 @@
                   <TextField prefHeight="32.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField prefHeight="32.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField prefHeight="32.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
-            <Text layoutX="253.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Account" wrappingWidth="299.07049560546875">
+            <Text layoutX="253.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Services" wrappingWidth="299.07049560546875">
                <font>
                   <Font size="30.0" />
                </font>

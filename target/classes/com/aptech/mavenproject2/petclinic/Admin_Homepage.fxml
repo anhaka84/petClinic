@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import com.gluonhq.charm.glisten.control.Avatar?>
-<?import de.jensd.fx.glyphs.fontawesome.*?>-->
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -17,267 +13,210 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Hyperlink?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" 
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controller.AdminHomepageController">
-    <left>
-        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+        <Pane prefHeight="822.0" prefWidth="274.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="226.0" fitWidth="250.0" layoutX="26.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="277.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage User" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="USER_MD" size="20" text="" />
-                    </graphic>-->
-                </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="HOME" size="20" text="" />
-                    </graphic>-->
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-                <Button layoutY="364.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="TINT" size="20" />
-                    </graphic>-->
-                </Button>
-                <Button layoutY="457.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Turnover" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="FILE" size="20" />
-                    </graphic>-->
-                </Button>
+            <Button layoutY="329.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="262.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="396.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="195.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="463.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="530.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="597.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Change Info">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Hyperlink layoutX="95.0" layoutY="664.0" prefHeight="34.0" prefWidth="86.0" text="Log Out">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Hyperlink>
             </children>
         </Pane>
     </left>
-    <center>
-        <Pane prefHeight="822.0" prefWidth="644.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
-            <children>
-                <Text layoutX="173.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" underline="true" wrappingWidth="297.33658599853516">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                    <effect>
-                        <Bloom />
-                    </effect>
-                </Text>
-                <HBox layoutX="41.0" layoutY="278.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                    <children>
-                        <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <!--<FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font size="13.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
-                                    </GridPane.margin>
-                                </Text>
-                            </children>
-                        </GridPane>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </HBox>
-                <HBox layoutX="350.0" layoutY="278.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                    <children>
-                        <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <!--<FontAwesomeIconView glyphName="USER_PLUS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font size="13.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets top="30.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
-                                    </GridPane.margin>
-                                </Text>
-                            </children>
-                        </GridPane>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </HBox>
-                <HBox layoutX="350.0" layoutY="445.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                    <children>
-                        <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <!--<FontAwesomeIconView glyphName="USER_CIRCLE" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New account today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font size="13.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
-                                    </GridPane.margin>
-                                </Text>
-                            </children>
-                        </GridPane>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </HBox>
-                <HBox layoutX="41.0" layoutY="445.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                    <children>
-                        <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font size="13.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets top="40.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
-                                    </GridPane.margin>
-                                </Text>
-                            </children>
-                        </GridPane>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </HBox>
-            </children>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Pane>
-    </center>
-    <right>
-        <Pane prefHeight="822.0" prefWidth="293.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <Text layoutX="68.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doan Hoang Anh" wrappingWidth="156.2978515625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text fill="#5e5959" layoutX="118.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="56.4398193359375">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-                        <!--<FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />-->
-                    </graphic>
-                </Hyperlink>
-                <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="78.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <!--                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
-                    <image>
-                        <Image url="@../../../../Img/avatar.png" />
-                    </image>
-                </Avatar>-->
-            </children>
-        </Pane>
-    </right>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="212.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" wrappingWidth="329.33673095703125">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <HBox layoutX="112.0" layoutY="183.0" prefHeight="100.0" prefWidth="200.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+               <children>
+                  <GridPane prefHeight="97.0" prefWidth="213.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="72.6000244140625" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.5999755859375" minWidth="10.0" prefWidth="126.99997558593752" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="104.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/calendar-icon.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="59.583017349243164" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="16.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="#8e8787" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="117.9830436706543" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets top="23.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox layoutX="112.0" layoutY="369.0" prefHeight="100.0" prefWidth="200.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="81.60003662109375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.39996337890625" minWidth="10.0" prefWidth="118.39996337890625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/employee_icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="59.583017349243164" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="16.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="#8e8787" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="97.98307228088379" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets top="23.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox layoutX="409.0" layoutY="183.0" prefHeight="100.0" prefWidth="200.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.2000732421875" minWidth="10.0" prefWidth="80.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="76.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/doctor-icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="8.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="59.583017349243164" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="16.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="#8e8787" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors" wrappingWidth="74.19820022583008" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets top="23.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox layoutX="409.0" layoutY="369.0" prefHeight="100.0" prefWidth="200.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.199951171875" minWidth="10.0" prefWidth="91.199951171875" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.5999755859375" minWidth="10.0" prefWidth="108.800048828125" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Img/account-icon.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="59.583017349243164" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="16.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text fill="#8e8787" strokeType="OUTSIDE" strokeWidth="0.0" text="Accounts" wrappingWidth="72.52286529541016" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets top="23.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </center>
 </BorderPane>

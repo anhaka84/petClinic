@@ -20,9 +20,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignUpController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignUpController">
     <left>
-        <Pane prefHeight="540.0" prefWidth="459.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="700.0" prefWidth="414.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="83.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -40,10 +40,10 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <GridPane layoutX="213.0" layoutY="136.0" prefHeight="496.0" prefWidth="600.0">
+                <GridPane layoutX="39.0" layoutY="135.0" prefHeight="370.0" prefWidth="587.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.20001220703125" minWidth="10.0" prefWidth="215.8000244140625" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.3999481201172" minWidth="10.0" prefWidth="307.79997558593755" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.20001220703125" minWidth="10.0" prefWidth="199.8" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="466.60003662109375" minWidth="10.0" prefWidth="387.2" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="152.8000061035156" minHeight="10.0" prefHeight="99.79998168945312" vgrow="SOMETIMES" />
@@ -142,15 +142,15 @@
                         <Label fx:id="errorGender" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label fx:id="errorEmail" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <Label fx:id="errorAddress" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-                        <Label fx:id="errorPhoneNumber" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                        <Label fx:id="errorPhoneNumber" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="342.0" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="17" />
                     </children>
                 </GridPane>
-                <Button alignment="CENTER" layoutX="674.0" layoutY="669.0" mnemonicParsing="false" onAction="#signUpEvent" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
+                <Button alignment="CENTER" layoutX="556.0" layoutY="542.0" mnemonicParsing="false" onAction="#signUpEvent" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <HBox alignment="CENTER_LEFT" layoutX="376.0" layoutY="669.0">
+                <HBox alignment="CENTER_LEFT" layoutX="309.0" layoutY="542.0">
                     <children>
                         <Label text="Already have an account?">
                             <font>
@@ -164,7 +164,7 @@
                         </Hyperlink>
                     </children>
                 </HBox>
-                <Label layoutX="448.0" layoutY="52.0" text="Sign Up">
+                <Label layoutX="279.0" layoutY="54.0" text="Sign Up">
                     <font>
                         <Font size="30.0" />
                     </font>

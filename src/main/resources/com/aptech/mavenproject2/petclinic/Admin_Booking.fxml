@@ -14,12 +14,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Hyperlink?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.Admin_HomepageController">
     <left>
         <Pane prefHeight="822.0" prefWidth="274.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="226.0" fitWidth="250.0" layoutX="26.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../Img/logo.png" />
                     </image>
@@ -59,13 +60,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Hyperlink layoutX="95.0" layoutY="664.0" prefHeight="34.0" prefWidth="86.0" text="Log Out">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Hyperlink>
             </children>
         </Pane>
     </left>
     <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="262.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking" wrappingWidth="155.07058715820312">
+            <Text layoutX="350.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking" wrappingWidth="155.07058715820312">
                <font>
                   <Font size="30.0" />
                </font>

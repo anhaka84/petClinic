@@ -19,17 +19,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
     <left>
-        <Pane prefHeight="540.0" prefWidth="459.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="700.0" prefWidth="414.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="89.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="60.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <!--<Image url="@../../../../Img/logo.png" />-->
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Text layoutX="57.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" textAlignment="CENTER" wrappingWidth="358.13670349121094">
+                <Text layoutX="28.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your pet is also our pet" textAlignment="CENTER" wrappingWidth="358.13670349121094">
                     <font>
                         <Font size="28.0" />
                     </font>
@@ -40,10 +40,10 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <GridPane layoutX="219.0" layoutY="243.0" prefHeight="347.0" prefWidth="614.0">
+                <GridPane layoutX="14.0" layoutY="226.0" prefHeight="290.0" prefWidth="552.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="114.1999755859375" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="273.4000244140625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="130.19998779296876" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="399.8000122070313" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
@@ -55,7 +55,7 @@
                         <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="74.40001220703127" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <TextField fx:id="inputTextUsername" prefHeight="38.0" prefWidth="284.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="inputTextUsername" prefHeight="38.0" prefWidth="342.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label alignment="CENTER" prefHeight="39.0" prefWidth="134.0" text="Username:" GridPane.rowIndex="1">
                             <font>
                                 <Font size="24.0" />
@@ -74,8 +74,8 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <PasswordField fx:id="inputTextPassword" prefHeight="38.0" prefWidth="284.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <PasswordField fx:id="inputTextPassword" prefHeight="37.0" prefWidth="320.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                             <children>
                                 <Label text="Don't have account?">
@@ -96,11 +96,8 @@
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
                 </GridPane>
-                <Label alignment="CENTER" layoutX="480.0" layoutY="181.0" text="Sign In">
+                <Label alignment="CENTER" layoutX="233.0" layoutY="204.0" text="Sign In">
                     <font>
                         <Font size="30.0" />
                     </font>

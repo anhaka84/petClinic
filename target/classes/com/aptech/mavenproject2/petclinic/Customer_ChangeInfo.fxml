@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Avatar?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
@@ -23,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -39,9 +36,6 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <graphic>
-                        <FontAwesomeIconView glyphName="USER" size="20" text="" />
-                    </graphic>
                 </Button>
                 <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
@@ -50,9 +44,6 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <graphic>
-                        <FontAwesomeIconView glyphName="HOME" size="20" text="" />
-                    </graphic>
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -64,9 +55,6 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <graphic>
-                        <FontAwesomeIconView glyphName="GEAR" size="20" />
-                    </graphic>
                 </Button>
                 <Button layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
                     <font>
@@ -75,9 +63,6 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <graphic>
-                        <FontAwesomeIconView glyphName="FILE" size="20" />
-                    </graphic>
                 </Button>
             <Button layoutY="434.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
                <font>
@@ -86,9 +71,6 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <FontAwesomeIconView glyphName="PAW" size="20" />
-               </graphic>
             </Button>
             <Button layoutY="517.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
@@ -97,9 +79,6 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <FontAwesomeIconView glyphName="CALENDAR" size="20" />
-               </graphic>
             </Button>
             </children>
         </Pane>
@@ -224,48 +203,4 @@
             </cursor>
         </Pane>
     </center>
-    <right>
-        <Pane prefHeight="822.0" prefWidth="293.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <Text layoutX="68.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doan Hoang Anh" wrappingWidth="156.2978515625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text fill="#5e5959" layoutX="113.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" wrappingWidth="77.23974609375">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-                        <FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />
-                    </graphic>
-                </Hyperlink>
-                <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="78.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
-                    <image>
-                        <Image url="@../../../../Img/avatar.png" />
-                    </image>
-                </Avatar>
-            </children>
-        </Pane>
-    </right>
 </BorderPane>
