@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--<?import com.gluonhq.charm.glisten.control.Avatar?>
-<<<<<<< HEAD
-<?import de.jensd.fx.glyphs.fontawesome.*?>-->
-=======
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
 
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -22,106 +18,84 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<<<<<<< HEAD
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" 
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controller.AdminHomepageController">
-=======
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.Admin_HomepageController">
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
     <left>
-        <Pane prefHeight="822.0" prefWidth="274.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-<<<<<<< HEAD
-                <Button layoutY="277.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage User" textFill="WHITE">
+                <Button layoutY="279.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="USER_MD" size="20" text="" />
-                    </graphic>-->
+                    <graphic>
+                        <FontAwesomeIconView glyphName="USER" size="20" text="" />
+                    </graphic>
                 </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
+                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <!--                    <graphic>
+                    <graphic>
                         <FontAwesomeIconView glyphName="HOME" size="20" text="" />
-                    </graphic>-->
+                    </graphic>
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Button layoutY="364.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicine" textFill="WHITE">
+                <Button layoutY="355.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <!--                    <graphic>
-                        <FontAwesomeIconView glyphName="TINT" size="20" />
-                    </graphic>-->
+                    <graphic>
+                        <FontAwesomeIconView glyphName="GEAR" size="20" />
+                    </graphic>
                 </Button>
-                <Button layoutY="457.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Turnover" textFill="WHITE">
+                <Button layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-                    <!--                    <graphic>
+                    <graphic>
                         <FontAwesomeIconView glyphName="FILE" size="20" />
-                    </graphic>-->
+                    </graphic>
                 </Button>
-=======
-            <Button layoutY="329.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking">
+            <Button layoutY="434.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <graphic>
+                  <FontAwesomeIconView glyphName="PAW" size="20" />
+               </graphic>
             </Button>
-            <Button layoutY="262.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill">
+            <Button layoutY="517.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <graphic>
+                  <FontAwesomeIconView glyphName="CALENDAR" size="20" />
+               </graphic>
             </Button>
-            <Button layoutY="396.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="195.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="463.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="530.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="-1.0" layoutY="597.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Change Info">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
             </children>
         </Pane>
     </left>
@@ -311,51 +285,4 @@
             </cursor>
         </Pane>
     </center>
-<<<<<<< HEAD
-    <right>
-        <Pane prefHeight="822.0" prefWidth="293.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <Text layoutX="68.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doan Hoang Anh" wrappingWidth="156.2978515625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text fill="#5e5959" layoutX="118.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="56.4398193359375">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Text>
-                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <graphic>
-                        <!--<FontAwesomeIconView fill="#48dbfb" glyphName="ARROW_LEFT" text="" wrappingWidth="12.799856185913086" />-->
-                    </graphic>
-                </Hyperlink>
-                <Text layoutX="121.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="51.7366943359375">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="78.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" wrappingWidth="136.5367431640625">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
-                <!--                <Avatar layoutX="66.0" layoutY="8.0" radius="80.0">
-                    <image>
-                        <Image url="@../../../../Img/avatar.png" />
-                    </image>
-                </Avatar>-->
-            </children>
-        </Pane>
-    </right>
-=======
->>>>>>> bfd7a8ae4a45da07153f3947804b56233db658c2
 </BorderPane>
