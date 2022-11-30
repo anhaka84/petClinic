@@ -1,4 +1,4 @@
-package Controller;
+package Controller.SignController;
 
 import Entities.SignEntity;
 import com.aptech.mavenproject2.petclinic.App;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public class LogOutController {
+public class SignOutController {
 
     SignEntity signEntity = new SignEntity();
 

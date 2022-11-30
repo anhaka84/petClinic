@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignUpController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignController.SignUpController">
     <left>
         <Pane prefHeight="700.0" prefWidth="414.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -113,8 +114,8 @@
                         </Label>
                         <TextField fx:id="inputTextFullName" onAction="#inputTextFullNameValidate" prefHeight="32.0" prefWidth="331.0" promptText="Enter your full name" GridPane.columnIndex="1" />
                         <TextField fx:id="inputTextUsername" onAction="#inputTextUsernameValidate" prefHeight="32.0" prefWidth="331.0" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="inputTextPassword" onAction="#inputTextPasswordValidate" prefHeight="32.0" prefWidth="331.0" promptText="Enter pasword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="inputTextConfirmPassword" onAction="#inputTextConfirmPasswordValidate" prefHeight="32.0" prefWidth="331.0" promptText="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <PasswordField fx:id="inputTextPassword" onAction="#inputTextPasswordValidate" prefHeight="32.0" prefWidth="331.0" promptText="Enter pasword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="inputTextConfirmPassword" onAction="#inputTextConfirmPasswordValidate" prefHeight="32.0" prefWidth="331.0" promptText="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <TextField fx:id="inputTextEmail" onAction="#inputTextEmailValidate" prefHeight="32.0" promptText="Enter your email" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <TextField fx:id="inputTextAddress" onAction="#inputTextAddressValidate" prefHeight="32.0" promptText="Enter your address" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <TextField fx:id="inputTextPhoneNumber" prefHeight="32.0" promptText="Enter your phone number" GridPane.columnIndex="1" GridPane.rowIndex="16" />

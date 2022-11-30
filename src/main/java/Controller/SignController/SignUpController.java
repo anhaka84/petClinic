@@ -1,8 +1,8 @@
-package Controller;
+package Controller.SignController;
 
+import Controller.Router;
 import Entities.SignEntity;
 import Entities.UserEntity;
-import Models.UserModel;
 import com.aptech.mavenproject2.petclinic.App;
 import java.io.IOException;
 import java.net.URL;
@@ -18,9 +18,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DialogEvent;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -36,10 +35,10 @@ public class SignUpController implements Initializable {
     private TextField inputTextUsername;
 
     @FXML
-    private TextField inputTextPassword;
+    private PasswordField inputTextPassword;
 
     @FXML
-    private TextField inputTextConfirmPassword;
+    private PasswordField inputTextConfirmPassword;
 
     @FXML
     private TextField inputTextEmail;
@@ -81,7 +80,6 @@ public class SignUpController implements Initializable {
     SignEntity SignEntity = new SignEntity();
 
     @Override
-
     public void initialize(URL url, ResourceBundle rb) {
         String phoneNumber = "";
 
@@ -89,9 +87,8 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    public void goToLogin()
-            throws IOException {
-        App.setRoot("Login");
+    public void goToLogin() {
+        Router.switchToSignInPage();
     }
 
     @FXML
@@ -154,11 +151,7 @@ public class SignUpController implements Initializable {
         final Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == loginNow) {
-            try {
-                goToLogin();
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
-            }
+            goToLogin();
         }
         if (result.get() == noThanks) {
             alert.close();
@@ -180,7 +173,7 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    public void inputTextFullNameValidate()
+    private void inputTextFullNameValidate()
             throws IOException {
         String fullName = inputTextFullName.getText();
         if (fullName.isEmpty()) {
@@ -192,31 +185,31 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    public void inputTextUsernameValidate()
+    private void inputTextUsernameValidate()
             throws IOException {
         isCompleteForm();
     }
 
     @FXML
-    public void inputTextPasswordValidate()
+    private void inputTextPasswordValidate()
             throws IOException {
         isCompleteForm();
     }
 
     @FXML
-    public void inputTextConfirmPasswordValidate()
+    private void inputTextConfirmPasswordValidate()
             throws IOException {
         isCompleteForm();
     }
 
     @FXML
-    public void inputTextEmailValidate()
+    private void inputTextEmailValidate()
             throws IOException {
         isCompleteForm();
     }
 
     @FXML
-    public void inputTextAddressValidate()
+    private void inputTextAddressValidate()
             throws IOException {
         isCompleteForm();
     }
@@ -229,7 +222,8 @@ public class SignUpController implements Initializable {
                     currentLength.bind(Bindings.length(inputTextPhoneNumber.textProperty()));
                     //empty
                     inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
-                        if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 0) {
+                        if (t2.getCode() == KeyCode.ENTER
+                                && inputTextPhoneNumber.getText().isEmpty()) {
                             errorPhoneNumber.setTextFill(Color.RED);
                             errorPhoneNumber.setText("Required.");
                         }
