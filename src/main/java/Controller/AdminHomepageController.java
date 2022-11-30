@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package com.aptech.mavenproject2.petclinic;
+package Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,9 +11,9 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author Hoang Anh
+ * @author DELL
  */
-public class Admin_HomepageController implements Initializable {
+public class AdminHomepageController implements Initializable {
 
     /**
      * Initializes the controller class.

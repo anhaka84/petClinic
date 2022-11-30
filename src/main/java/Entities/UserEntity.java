@@ -101,29 +101,30 @@ public class UserEntity {
     }
 
     public UserModel getSessionUser() {
-        String line0 = sessionWr.getSession().get(0);
-        int id = Integer.parseInt(line0.split("=")[1]);
+        String line = sessionWr.getLineStartWith("userId=");
+        int id = -1;
+        if (line != null) {
+            id = Integer.parseInt(line.substring(0, 6));
+        }
         return getOneUser(id);
     }
 
-    public boolean checkPhoneNumber(String phoneNumber) {
-        if (phoneNumber.matches("\\d{10}")) {
-            return true;
-        }
-        return false;
-    }
-
-    public String changeGender(int gender) {
-        switch (gender) {
-            case 0:
-                return "Male";
-            case 1:
-                return "Female";
-            default:
-                return "Other";
-        }
-    }
-
+//    public boolean checkPhoneNumber(String phoneNumber) {
+//        if (phoneNumber.matches("\\d+")) {
+//            return true;
+//        }
+//        return false;
+//    }
+//    public String changeGender(int gender) {
+//        switch (gender) {
+//            case 0:
+//                return "Male";
+//            case 1:
+//                return "Female";
+//            default:
+//                return "Other";
+//        }
+//    }
     public boolean isOldUser(String email) {
         query = "SELECT * FROM User"
                 + " WHERE email = ? AND status = 0";

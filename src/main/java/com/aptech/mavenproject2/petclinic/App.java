@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
@@ -22,15 +21,14 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("Login"));
         stage.setScene(scene);
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent t) {
-                if (t.getCode() == (KeyCode.F1)) {
-                    stage.setFullScreen(true);
-                }
-                if (t.getCode() == (KeyCode.ESCAPE)) {
-                    stage.setFullScreen(false);
-                }
+//        stage.setWidth(600);
+//        stage.setHeight(600);
+        scene.setOnKeyPressed((KeyEvent t) -> {
+            if (t.getCode() == (KeyCode.F1)) {
+                stage.setFullScreen(true);
+            }
+            if (t.getCode() == (KeyCode.ESCAPE)) {
+                stage.setFullScreen(false);
             }
         });
         stage.setResizable(false);

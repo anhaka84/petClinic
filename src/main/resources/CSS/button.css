@@ -1,11 +1,3 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : Nov 23, 2022, 3:23:32 PM
-    Author     : Hoang Anh
-*/
 .button_deffault
 {
     -fx-effect: unset;
@@ -28,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .button_primary
 {
     -fx-effect: unset;
-    -fx-background-color :  #1c80be;    
+    -fx-background-color :  #1c80be;
     -fx-background-radius : 5px;
     -fx-text-fill : #ffffff;
 }
