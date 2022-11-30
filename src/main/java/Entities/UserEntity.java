@@ -101,10 +101,11 @@ public class UserEntity {
     }
 
     public UserModel getSessionUser() {
-        String line = sessionWr.getLineStartWith("userId=");
+        String startW = "userId=";
+        String line = sessionWr.getLineStartWith(startW);
         int id = -1;
         if (line != null) {
-            id = Integer.parseInt(line.substring(0, 6));
+            id = Integer.parseInt(line.substring(startW.length()));
         }
         return getOneUser(id);
     }

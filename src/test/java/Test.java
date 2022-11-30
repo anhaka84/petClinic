@@ -62,7 +62,8 @@ public class Test {
 //            System.out.println(acc);
 //        }
 //        System.out.println(accountM.checkInputAccount("abc", "abc"));
-        System.out.println(userM.getSessionUser());
+//        System.out.println(userM.getSessionUser());
+//        System.out.println("userId=8".substring("userId=7".length() - 1));
 //        /**
 //         * test doctor
 //         */

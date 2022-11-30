@@ -2,6 +2,7 @@
 
 <!--<?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>-->
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -18,9 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" 
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controller.AdminHomepageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminHomepageController">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -249,7 +248,7 @@
                         <Font size="16.0" />
                     </font>
                 </Text>
-                <Hyperlink layoutX="103.0" layoutY="570.0" prefHeight="33.0" prefWidth="87.0" text="Log Out" textFill="#48dbfb">
+                <Hyperlink layoutX="103.0" layoutY="570.0" onAction="#signOutEvent" text="Log Out" textFill="#48dbfb">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -267,7 +266,7 @@
                         <Font size="20.0" />
                     </font>
                 </Text>
-                <Text layoutX="113.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
+                <Text layoutX="113.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Addess" wrappingWidth="66.936767578125">
                     <font>
                         <Font size="20.0" />
                     </font>

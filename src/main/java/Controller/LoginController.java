@@ -11,9 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DialogEvent;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -41,6 +43,10 @@ public class LoginController implements Initializable {
     UserEntity userEntity = new UserEntity();
     SignEntity signM = new SignEntity();
     SessionWriter sessionWriter = new SessionWriter();
+    @FXML
+    private Button buttonSubmit;
+    @FXML
+    private Hyperlink linkSignUp;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,24 +72,20 @@ public class LoginController implements Initializable {
         App.setRoot("SignUp");
     }
 
-    @FXML
     public void goToHomePage()
             throws IOException {
-//        String username = inputTextUsername.getText();
-//        int id = accM.getAccountId(username);
-//        int role = userEntity.getSessionUser().getRole();
-//        if (role == 1) {
-            App.setRoot("secondary");
-//        }
-//        if (role == 2) {
-//            App.setRoot("SignUp");
-//        }
-//        if (role == 3) {
-//            App.setRoot("Login");
-//        }
+        int role = userEntity.getSessionUser().getRole();
+        if (role == 1) {
+            App.setRoot("Admin_Homepage");
+        }
+        if (role == 2) {
+            App.setRoot("SignUp");
+        }
+        if (role == 3) {
+            App.setRoot("Customer_Homepage");
+        }
     }
 
-    @FXML
     private void inputTextUsernameValidate() {
         inputTextUsername.setOnKeyPressed((KeyEvent t) -> {
             if (t.getCode() == KeyCode.ENTER
@@ -114,7 +116,6 @@ public class LoginController implements Initializable {
         });
     }
 
-    @FXML
     private void inputTextPasswordValidate() {
         inputTextPassword.setOnKeyPressed((KeyEvent t) -> {
             if (t.getCode() == KeyCode.ENTER
@@ -162,7 +163,6 @@ public class LoginController implements Initializable {
         }
     }
 
-    @FXML
     private void errorInput() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setResizable(false);
@@ -172,7 +172,6 @@ public class LoginController implements Initializable {
         alert.show();
     }
 
-    @FXML
     private void errorExitApp() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setResizable(false);
