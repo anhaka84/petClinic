@@ -60,7 +60,7 @@ public class SignInController implements Initializable {
         inputTextPasswordValidate();
 
     }
-
+//link
     @FXML
     public void goToSignUp() {
         Router.switchToSignUpPage();
@@ -79,6 +79,7 @@ public class SignInController implements Initializable {
             Router.switchToClientHomePage();
         }
     }
+//sign in
 
     @FXML
     public void isCompleteForm() {
@@ -107,10 +108,10 @@ public class SignInController implements Initializable {
             if (inputCBoxRemember.isSelected()) {
                 remember = true;
             }
-            if (!signM.signIn(inputUsername, inputPassword, remember)) {
-                errorInput();
-            } else {
+            if (signM.signIn(inputUsername, inputPassword, remember)) {
                 goToHomePage();
+            } else {
+                errorInput();
             }
         } else {
             errorUsername.setText("Error username !!!");
@@ -118,8 +119,20 @@ public class SignInController implements Initializable {
             errorExitApp();
         }
     }
+//validation
 
     private void inputTextUsernameValidate() {
+        inputTextUsername.setOnKeyPressed((KeyEvent t) -> {
+            //empty
+            if (t.getCode() == KeyCode.ENTER
+                    && inputTextUsername.getText().isEmpty()) {
+                errorUsername.setText("Required");
+            }
+            if (t.getCode() == KeyCode.ENTER
+                    && !inputTextUsername.getText().isEmpty()) {
+                isCompleteForm();
+            }
+        });
         inputTextUsername.textProperty().addListener((ov, t, t1) -> {
             IntegerProperty currentLength = new SimpleIntegerProperty();
             currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
@@ -135,17 +148,6 @@ public class SignInController implements Initializable {
                 String str = inputTextUsername.getText().substring(0, spaceIndex);
                 inputTextUsername.setText(str);
                 errorUsername.setText("Space Format");
-            }
-        });
-        inputTextUsername.setOnKeyPressed((KeyEvent t) -> {
-            //empty
-            if (t.getCode() == KeyCode.ENTER
-                    && inputTextUsername.getText().isEmpty()) {
-                errorUsername.setText("Required");
-            }
-            if (t.getCode() == KeyCode.ENTER
-                    && !inputTextUsername.getText().isEmpty()) {
-                isCompleteForm();
             }
         });
     }
@@ -183,6 +185,7 @@ public class SignInController implements Initializable {
             }
         });
     }
+//error
 
     private void errorInput() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
