@@ -43,24 +43,34 @@ public class SignInController implements Initializable {
     SignEntity signM = new SignEntity();
     SessionWriter sessionWriter = new SessionWriter();
 
+    private final String errorEmptyMessage = "Required";
+    private final String errorSpaceMessage = "Space Format";
+    private final String incorrectMessage = "Username or Password is incorrect !!";
+    private final String reEnterMessage = "Please re-enter username and password";
+    private final String SqlInjectionMessage = "SQL Injection detection !!!!";
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //remember
         String sessionUsername = "";
         String sessionPassword = "";
         if (sessionWriter.isLineOfSession("remember=true")) {
-            sessionUsername = sessionWriter.getLineStartWith("username=").substring("username=".length());
-            sessionPassword = sessionWriter.getLineStartWith("password=").substring("password=".length());
+            String startWith;
+            startWith = "username=";
+            sessionUsername = sessionWriter.getLineStartWith(startWith).substring(startWith.length());
+            startWith = "password=";
+            sessionPassword = sessionWriter.getLineStartWith(startWith).substring(startWith.length());
             inputCBoxRemember.setSelected(true);
         }
         inputTextUsername.setText(sessionUsername);
         inputTextPassword.setText(sessionPassword);
-
+        //validation
         inputTextUsernameValidate();
         inputTextPasswordValidate();
 
     }
-//link
+
+    //link
     @FXML
     public void goToSignUp() {
         Router.switchToSignUpPage();
@@ -79,8 +89,8 @@ public class SignInController implements Initializable {
             Router.switchToClientHomePage();
         }
     }
-//sign in
 
+    //sign in
     @FXML
     public void isCompleteForm() {
         if (inputTextPassword.getText() == null
@@ -92,7 +102,7 @@ public class SignInController implements Initializable {
                 || inputTextUsername.getText().isEmpty()) {
 
             inputTextUsername.requestFocus();
-            errorUsername.setText("Required");
+            errorUsername.setText(errorEmptyMessage);
 
         } else {
             SignInEvent();
@@ -114,19 +124,19 @@ public class SignInController implements Initializable {
                 errorInput();
             }
         } else {
-            errorUsername.setText("Error username !!!");
-            errorPassword.setText("Error password !!!");
+            errorUsername.setText(SqlInjectionMessage);
+            errorPassword.setText(SqlInjectionMessage);
             errorExitApp();
         }
     }
-//validation
 
+    //validation
     private void inputTextUsernameValidate() {
         inputTextUsername.setOnKeyPressed((KeyEvent t) -> {
             //empty
             if (t.getCode() == KeyCode.ENTER
                     && inputTextUsername.getText().isEmpty()) {
-                errorUsername.setText("Required");
+                errorUsername.setText(errorEmptyMessage);
             }
             if (t.getCode() == KeyCode.ENTER
                     && !inputTextUsername.getText().isEmpty()) {
@@ -136,18 +146,19 @@ public class SignInController implements Initializable {
         inputTextUsername.textProperty().addListener((ov, t, t1) -> {
             IntegerProperty currentLength = new SimpleIntegerProperty();
             currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
+            String space = " ";
             //empty
             if (currentLength.getValue() == 0) {
-                errorUsername.setText("Required.");
+                errorUsername.setText(errorEmptyMessage);
             } else {
                 errorUsername.setText(null);
             }
             //space
-            if (inputTextUsername.getText().contains(" ")) {
-                int spaceIndex = inputTextUsername.getText().indexOf(" ");
+            if (inputTextUsername.getText().contains(space)) {
+                int spaceIndex = inputTextUsername.getText().indexOf(space);
                 String str = inputTextUsername.getText().substring(0, spaceIndex);
                 inputTextUsername.setText(str);
-                errorUsername.setText("Space Format");
+                errorUsername.setText(errorSpaceMessage);
             }
         });
     }
@@ -157,7 +168,7 @@ public class SignInController implements Initializable {
         inputTextPassword.setOnKeyPressed((KeyEvent t) -> {
             if (t.getCode() == KeyCode.ENTER
                     && inputTextPassword.getText().isEmpty()) {
-                errorPassword.setText("Required");
+                errorPassword.setText(errorEmptyMessage);
             }
             if (!inputTextPassword.getText().isEmpty()) {
                 errorPassword.setText(null);
@@ -170,29 +181,30 @@ public class SignInController implements Initializable {
         inputTextPassword.textProperty().addListener((ov, t, t1) -> {
             IntegerProperty currentLength = new SimpleIntegerProperty();
             currentLength.bind(Bindings.length(inputTextPassword.textProperty()));
+            String space = " ";
             //empty
             if (currentLength.getValue() == 0) {
-                errorPassword.setText("Required.");
+                errorPassword.setText(errorEmptyMessage);
             } else {
                 errorPassword.setText(null);
             }
             //space
-            if (inputTextPassword.getText().contains(" ")) {
-                int spaceIndex = inputTextPassword.getText().indexOf(" ");
+            if (inputTextPassword.getText().contains(space)) {
+                int spaceIndex = inputTextPassword.getText().indexOf(space);
                 String str = inputTextPassword.getText().substring(0, spaceIndex);
                 inputTextPassword.setText(str);
-                errorPassword.setText("Space Format");
+                errorPassword.setText(errorSpaceMessage);
             }
         });
     }
-//error
 
+    //error
     private void errorInput() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setResizable(false);
         alert.setTitle("Login Fail !!");
-        alert.setHeaderText("Username or password incorrect !!");
-        alert.setContentText("Please re-enter username or password");
+        alert.setHeaderText(incorrectMessage);
+        alert.setContentText(reEnterMessage);
         alert.show();
     }
 
@@ -200,7 +212,7 @@ public class SignInController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setResizable(false);
         alert.setTitle("ERROR");
-        alert.setHeaderText("SQL Injection detection !!!!");
+        alert.setHeaderText(SqlInjectionMessage);
         alert.setOnCloseRequest((DialogEvent t) -> {
             Platform.exit();
         });
