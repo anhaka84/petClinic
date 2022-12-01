@@ -11,7 +11,7 @@ public class SignEntity {
     UserEntity userModel = new UserEntity();
     SessionWriter sessionWr = new SessionWriter();
 
-    List<String> lineSession;
+    private List<String> lineSession;
 
     public SignEntity() {
     }

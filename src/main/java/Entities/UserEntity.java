@@ -12,9 +12,9 @@ public class UserEntity {
     DB<UserModel> db = new DB<>();
     SessionWriter sessionWr = new SessionWriter();
 
-    String query;
-    List condition;
-    String columns = "("
+    private String query;
+    private List condition;
+    private final String columns = "("
             + "role_id, "
             + "full_name, "
             + "gender, "

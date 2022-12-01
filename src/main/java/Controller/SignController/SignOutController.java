@@ -1,23 +1,20 @@
 package Controller.SignController;
 
+import Controller.Router;
 import Entities.SignEntity;
-import com.aptech.mavenproject2.petclinic.App;
-import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class SignOutController {
 
     SignEntity signEntity = new SignEntity();
 
-    @FXML
-    private void goToLogIn() throws IOException {
-        App.setRoot("Login");
+    public SignOutController() {
     }
 
-    public void signOutEvent(ActionEvent event) throws IOException {
+    @FXML
+    public void signOutEvent() {
         if (signEntity.signOut()) {
-            goToLogIn();
+            Router.switchToSignInPage();
         }
     }
 }

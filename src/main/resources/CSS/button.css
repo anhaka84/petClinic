@@ -1,6 +1,6 @@
 .button_deffault
 {
-    -fx-effect: unset;
+    /*-fx-effect: unset;*/
     -fx-font-family: "System";
     -fx-background-color :  transparent;
     -fx-background-radius : 0px;
@@ -19,7 +19,7 @@
 
 .button_primary
 {
-    -fx-effect: unset;
+    /*-fx-effect: unset;*/
     -fx-background-color :  #1c80be;
     -fx-background-radius : 5px;
     -fx-text-fill : #ffffff;
@@ -34,7 +34,7 @@
 
 .button_success
 {
-    -fx-effect: unset;
+    /*-fx-effect: unset;*/
     -fx-background-color :  #0dc56f;
     -fx-background-radius : 5px;
     -fx-text-fill : #ffffff;
@@ -49,7 +49,7 @@
 
 .button_danger
 {
-    -fx-effect: unset;
+    /*-fx-effect: unset;*/
     -fx-background-color :  #dc3545;
     -fx-background-radius : 5px;
     -fx-text-fill : #ffffff;

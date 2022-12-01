@@ -3,7 +3,6 @@ package Controller.SignController;
 import Controller.Router;
 import Entities.SignEntity;
 import Entities.UserEntity;
-import com.aptech.mavenproject2.petclinic.App;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -83,6 +82,7 @@ public class SignUpController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String phoneNumber = "";
 
+        inputTextAddressValidate();
         inputTextPhoneNumberValidate();
     }
 
@@ -122,10 +122,7 @@ public class SignUpController implements Initializable {
             inputTextPhoneNumber.requestFocus();
 
         } else {
-            try {
-                signUpEvent();
-            } catch (IOException ex) {
-            }
+            signUpEvent();
         }
     }
 
@@ -159,8 +156,7 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    public void signUpEvent()
-            throws IOException {
+    public void signUpEvent() {
         String fullName = inputTextFullName.getText();
         String username = inputTextUsername.getText();
         String password = inputTextPassword.getText();
@@ -173,8 +169,7 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    private void inputTextFullNameValidate()
-            throws IOException {
+    private void inputTextFullNameValidate() {
         String fullName = inputTextFullName.getText();
         if (fullName.isEmpty()) {
             errorFullName.setText("Required");
@@ -185,85 +180,135 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    private void inputTextUsernameValidate()
-            throws IOException {
+    private void inputTextUsernameValidate() {
         isCompleteForm();
     }
 
     @FXML
-    private void inputTextPasswordValidate()
-            throws IOException {
+    private void inputTextPasswordValidate() {
         isCompleteForm();
     }
 
     @FXML
-    private void inputTextConfirmPasswordValidate()
-            throws IOException {
+    private void inputTextConfirmPasswordValidate() {
         isCompleteForm();
     }
 
     @FXML
-    private void inputTextEmailValidate()
-            throws IOException {
-        isCompleteForm();
+    private void inputTextEmailValidate() {
+        //empty
+        inputTextEmail.setOnKeyPressed((KeyEvent t) -> {
+            if (t.getCode() == KeyCode.ENTER
+                    && inputTextEmail.getText().isEmpty()) {
+                errorEmail.setTextFill(Color.RED);
+                errorEmail.setText("Required.");
+            }
+        });
+        inputTextEmail.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
+            IntegerProperty currentLength = new SimpleIntegerProperty();
+            currentLength.bind(Bindings.length(inputTextEmail.textProperty()));
+            inputTextEmail.setOnKeyPressed((KeyEvent t2) -> {
+                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
+                    isCompleteForm();
+                }
+            });
+            //empty
+            if (currentLength.getValue() == 0) {
+                errorEmail.setTextFill(Color.RED);
+                errorEmail.setText("Required.");
+            } else {
+                errorEmail.setText(null);
+            }
+            //space
+            if (inputTextEmail.getText().contains(" ")) {
+                int spaceIndex = inputTextEmail.getText().indexOf(" ");
+                String str = inputTextEmail.getText().substring(0, spaceIndex);
+                inputTextEmail.setText(str);
+                errorEmail.setTextFill(Color.RED);
+                errorEmail.setText("Space Format");
+            }
+        });
     }
 
     @FXML
-    private void inputTextAddressValidate()
-            throws IOException {
-        isCompleteForm();
+    private void inputTextAddressValidate() {
+        //empty
+        inputTextAddress.setOnKeyPressed((KeyEvent t) -> {
+            if (t.getCode() == KeyCode.ENTER
+                    && inputTextAddress.getText().isEmpty()) {
+                errorAddress.setTextFill(Color.RED);
+                errorAddress.setText("Required.");
+            }
+        });
+        inputTextAddress.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
+            IntegerProperty currentLength = new SimpleIntegerProperty();
+            currentLength.bind(Bindings.length(inputTextAddress.textProperty()));
+            inputTextAddress.setOnKeyPressed((KeyEvent t2) -> {
+                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
+                    isCompleteForm();
+                }
+            });
+            //empty
+            if (currentLength.getValue() == 0) {
+                errorAddress.setTextFill(Color.RED);
+                errorAddress.setText("Required.");
+            } else {
+                errorAddress.setText(null);
+            }
+        });
     }
 
     @FXML
     private void inputTextPhoneNumberValidate() {
-        inputTextPhoneNumber.textProperty()
-                .addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-                    IntegerProperty currentLength = new SimpleIntegerProperty();
-                    currentLength.bind(Bindings.length(inputTextPhoneNumber.textProperty()));
-                    //empty
-                    inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
-                        if (t2.getCode() == KeyCode.ENTER
-                                && inputTextPhoneNumber.getText().isEmpty()) {
-                            errorPhoneNumber.setTextFill(Color.RED);
-                            errorPhoneNumber.setText("Required.");
-                        }
-                        if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
-                            isCompleteForm();
-                        }
-                    });
-                    if (currentLength.getValue() == 0) {
-                        errorPhoneNumber.setTextFill(Color.RED);
-                        errorPhoneNumber.setText("Required.");
-                    } //length
-                    else if (currentLength.getValue() != 10) {
-                        errorPhoneNumber.setTextFill(Color.RED);
-                        errorPhoneNumber.setText("This entry can only contain " + currentLength.getValue() + "/10 numbers.");
-                    } else {
-                        errorPhoneNumber.setTextFill(Color.GREEN);
-                        errorPhoneNumber.setText("This entry can only contain " + currentLength.getValue() + "/10 numbers.");
-                        errorPhoneNumber.setOnMouseClicked((MouseEvent t2) -> {
-                            errorPhoneNumber.setText(null);
-                        });
-                    }
-                    //space
-                    if (inputTextPhoneNumber.getText().contains(" ")) {
-                        int spaceIndex = inputTextPhoneNumber.getText().indexOf(" ");
-                        String str = inputTextPhoneNumber.getText().substring(0, spaceIndex);
-                        inputTextPhoneNumber.setText(str);
-                        errorPhoneNumber.setTextFill(Color.RED);
-                        errorPhoneNumber.setText("Space Format");
-                    }
-                    //letter
-                    if (currentLength.getValue() > 0) {
-                        char lastLetter = inputTextPhoneNumber.getText().charAt((currentLength.getValue() - 1));
-                        if (lastLetter < '0' || lastLetter > '9') {
-                            String newInput = inputTextPhoneNumber.getText().substring(0, (currentLength.getValue() - 1));
-                            inputTextPhoneNumber.setText(newInput);
-                            errorPhoneNumber.setTextFill(Color.RED);
-                            errorPhoneNumber.setText("This entry can only contain numbers.");
-                        }
-                    }
+        //empty
+        inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
+            if (t2.getCode() == KeyCode.ENTER
+                    && inputTextPhoneNumber.getText().isEmpty()) {
+                errorPhoneNumber.setTextFill(Color.RED);
+                errorPhoneNumber.setText("Required.");
+            }
+        });
+        inputTextPhoneNumber.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
+            IntegerProperty currentLength = new SimpleIntegerProperty();
+            currentLength.bind(Bindings.length(inputTextPhoneNumber.textProperty()));
+            inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
+                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
+                    isCompleteForm();
+                }
+            });
+            //empty
+            if (currentLength.getValue() == 0) {
+                errorPhoneNumber.setTextFill(Color.RED);
+                errorPhoneNumber.setText("Required.");
+            } //length
+            else if (currentLength.getValue() != 10) {
+                errorPhoneNumber.setTextFill(Color.RED);
+                errorPhoneNumber.setText("This entry can only contain " + currentLength.getValue() + "/10 numbers.");
+            } else {
+                errorPhoneNumber.setTextFill(Color.GREEN);
+                errorPhoneNumber.setText("This entry can only contain " + currentLength.getValue() + "/10 numbers.");
+                errorPhoneNumber.setOnMouseClicked((MouseEvent t2) -> {
+                    errorPhoneNumber.setText(null);
                 });
+            }
+            //space
+            if (inputTextPhoneNumber.getText().contains(" ")) {
+                int spaceIndex = inputTextPhoneNumber.getText().indexOf(" ");
+                String str = inputTextPhoneNumber.getText().substring(0, spaceIndex);
+                inputTextPhoneNumber.setText(str);
+                errorPhoneNumber.setTextFill(Color.RED);
+                errorPhoneNumber.setText("Space Format");
+            }
+            //letter
+            if (currentLength.getValue() > 0) {
+                char lastLetter = inputTextPhoneNumber.getText().charAt((currentLength.getValue() - 1));
+                if (lastLetter < '0' || lastLetter > '9') {
+                    String newInput = inputTextPhoneNumber.getText().substring(0, (currentLength.getValue() - 1));
+                    inputTextPhoneNumber.setText(newInput);
+                    errorPhoneNumber.setTextFill(Color.RED);
+                    errorPhoneNumber.setText("This entry can only contain numbers.");
+                }
+            }
+        });
     }
-
 }

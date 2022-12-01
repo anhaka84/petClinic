@@ -13,8 +13,8 @@ public class AccountEntity {
     UserEntity userEntity = new UserEntity();
     SessionWriter sessionWr = new SessionWriter();
 
-    String query;
-    List condition;
+    private String query;
+    private List condition;
 
     public AccountEntity() {
     }
