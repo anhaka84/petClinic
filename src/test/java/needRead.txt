@@ -104,5 +104,8 @@ functions
 
 4, homepage
     + admin homepage:
+        - functions?
     + doctor homepage:
+        - functions?
     + client homepage:
+        - functions?
