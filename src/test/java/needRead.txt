@@ -28,49 +28,84 @@ cus: xem thêm sửa xóa thông tin,
 
 functions
 
-sign up = new user / old user change account
-==> check enique columns : email, username 
+1, login / sign in (done)
+- validation:
+    + empty input / input length = 0 (ok)
+    + no space (ok)
+    + sql injection (ok)
+- functions:
+    + remember me (ok)
+    + login / sign in (ok)
+    + link to sign up / regis (ok)
+- use method:
+    + sign in / login:
+        SignInController : isCompleteForm()
+        {
+            SignInController : SignInEvent()
+            {
+                if - AccountEntity : checkInputAccount(str, str)
+                {
+                    if - SignEntity : signIn(str, str, bool)
+                    {
+                        SignInController : goToHomePage()
+                        {
+                            UserEntity : getSessionUser() -> UserModel : getRole()
+                            if - 1
+                            {
+                                Router : switchToAdminHomePage()
+                                {
+                                    App : setRoot(str)
+                                    {
+                                        App : loadFXML(str)
+                                    }
+                                }
+                            }
+                            if - 2
+                            {
+                                Router : switchToDoctorHomePage() {...}
+                            }
+                            if - 3
+                            {
+                                Router : switchToClientHomePage() {...}
+                            }
+                        }
+                    }
+                    else - SignInController : errorInput()
+                }
+                else - SignInController : errorExitApp()
+            }
+        }
+    + validation:
+        SignInController : inputTextUsernameValidate() && inputTextPasswordValidate()
+        {
+            SignInController : isCompleteForm(){...}
+        }
+    + error:
+        SignInController : errorInput()
+        SignInController : errorExitApp()
+    + link:
+        SignInController : goToSignUp()
+        {
+            Router : switchToSignUpPage() {...}
+        }
+        SignInController : goToHomePage(){...}
 
-method : (SignModel) signUp(User user) 
-@return boolean
--> method : (AccountModel) activeAccount (User user) 
-@return boolean
--> method : (UserModel) isOldUser (String email, String username) 
-@return boolean
-    -> ? true 
-        -> method : {
-            -> ? (AccountModel) getAccountId (String username)
-            @return int
-            -> ? (UserModel) getUserId (String email, String username)
-            @return int
-        } -> method : (AccountModel) updateAccount
-                                (String username, String password, int status, int userId)
-        @return boolean
-    -> ? false
-        -> method : (UserModel) addUser(User user)
-        @return boolean
+2, sign up / regis
+    + sign up / regis
+    + validation
+    + error
+    + link
 
-sign in
+3, sign out / log out
+    + sign up / regis
+    + validation
+    + error
+    + link
 
-sign out
-
-session
-
-booking -( choose )-> doctor -( choose )-> schedual date & time 
-==> select  all schedual of one doctor 
-==> check schedual date 
-
-method : (DoctorModel) isExistSchedualDate (Date date) 
-@return boolean 
-    -> ? true 
-        -> method : (DoctorModel) isExistSchedualTime (String time) 
-            @return boolean 
-                -> ? true -> suggest other time
-                -> ? false -> suggest this time
-    -> ? false -> suggest this date -> suggest time
---> suggest date 
--> method : (DoctorModel) suggestDate(Date date)
-@return Date
---> suggest time 
--> method : (DoctorModel) suggestTime(String time)
-@return String
+4, homepage
+    + admin homepage:
+        - functions?
+    + doctor homepage:
+        - functions?
+    + client homepage:
+        - functions?

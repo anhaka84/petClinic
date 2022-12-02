@@ -11,13 +11,11 @@ Models\Role.class
 module-info.class
 DB\dao\JDBCConnect.class
 Entities\RoleEntity.class
-com\aptech\mavenproject2\petclinic\SecondaryController.class
 DB\common\DBCommon.class
 DB\common\ICommon.class
 Entities\AccountEntity.class
 Models\Prescription.class
 Models\DoctorLevelModel.class
-com\aptech\mavenproject2\petclinic\PrimaryController.class
 Models\DoctorSchedualModel.class
 Entities\DoctorEntity.class
 Session\SessionWriter.class

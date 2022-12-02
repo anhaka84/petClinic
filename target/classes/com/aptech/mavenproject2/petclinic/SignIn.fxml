@@ -19,7 +19,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.SignController.SignInController">
     <left>
         <Pane prefHeight="700.0" prefWidth="414.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -66,7 +67,7 @@
                                 <Font size="24.0" />
                             </font>
                         </Label>
-                        <Button fx:id="buttonSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#SignInEvent" prefHeight="36.0" prefWidth="105.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <Button fx:id="buttonSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="36.0" prefWidth="105.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="5">
                             <GridPane.margin>
                                 <Insets left="200.0" />
                             </GridPane.margin>

@@ -6,12 +6,14 @@ import javafx.scene.control.TextField;
 
 public class Controller {
 
-    public static void inputAction(TextField textField) {
+    public static void nextTextField(TextField textField) {
 
     }
 
+//    @FXML
+//    public 
     @FXML
-    public static void sceneAlertError(
+    public static void setAlertError(
             String title, String headerText, String contentText
     ) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
