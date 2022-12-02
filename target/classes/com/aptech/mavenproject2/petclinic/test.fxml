@@ -22,7 +22,7 @@
                            <center>
                               <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                                  <image>
-                                    <Image url="@../../../../../Img/logo.png" />
+                                    <Image url="@../../../../Img/logo.png" />
                                  </image>
                               </ImageView>
                            </center>
@@ -32,14 +32,14 @@
                            <bottom>
                               <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Dashboard" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Booking" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Bill" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Services" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Medicines" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Manage Account" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Your Info" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Log Out" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Log Out" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="-50.0" />
