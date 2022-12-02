@@ -64,11 +64,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Hyperlink layoutX="95.0" layoutY="664.0" prefHeight="34.0" prefWidth="86.0" text="Log Out">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Hyperlink>
+            <Button layoutX="107.0" layoutY="664.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
             </children>
         </Pane>
     </left>
