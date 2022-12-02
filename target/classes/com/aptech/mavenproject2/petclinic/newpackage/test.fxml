@@ -7,10 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -26,7 +22,7 @@
                            <center>
                               <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                                  <image>
-                                    <Image url="@../../../../Img/logo.png" />
+                                    <Image url="@../../../../../Img/logo.png" />
                                  </image>
                               </ImageView>
                            </center>
@@ -36,14 +32,14 @@
                            <bottom>
                               <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Log Out" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Dashboard" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Booking" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Bill" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Services" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Medicines" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Manage Account" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Your Info" />
+                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../../CSS/button.css" text="Log Out" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="-50.0" />
@@ -74,138 +70,7 @@
                               <Insets />
                            </VBox.margin>
                            <children>
-                              <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <center>
-                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <VBox prefWidth="300.0">
-                                             <children>
-                                                <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="220.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                                                         <children>
-                                                            <Label text="24">
-                                                               <font>
-                                                                  <Font size="20.0" />
-                                                               </font>
-                                                            </Label>
-                                                            <Label text="Appointment Today" textFill="#8e8787" />
-                                                         </children>
-                                                      </VBox>
-                                                      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../../../../Img/calendar-icon.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="50.0" right="50.0" />
-                                                   </VBox.margin>
-                                                </GridPane>
-                                                <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="220.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <VBox.margin>
-                                                      <Insets right="50.0" top="50.0" />
-                                                   </VBox.margin>
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                                                         <children>
-                                                            <Label text="24">
-                                                               <font>
-                                                                  <Font size="20.0" />
-                                                               </font>
-                                                            </Label>
-                                                            <Label text="Employees" textFill="#8e8787" />
-                                                         </children>
-                                                      </VBox>
-                                                      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../../../../Img/employee_icon.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                </GridPane>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefWidth="300.0">
-                                             <children>
-                                                <GridPane alignment="CENTER" minWidth="220.0" prefHeight="100.0" prefWidth="220.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                                                         <children>
-                                                            <Label text="24">
-                                                               <font>
-                                                                  <Font size="20.0" />
-                                                               </font>
-                                                            </Label>
-                                                            <Label text="Doctors" textFill="#8e8787" />
-                                                         </children>
-                                                      </VBox>
-                                                      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../../../../Img/doctor-icon.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="50.0" left="50.0" />
-                                                   </VBox.margin>
-                                                </GridPane>
-                                                <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="220.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                                                         <children>
-                                                            <Label text="24">
-                                                               <font>
-                                                                  <Font size="20.0" />
-                                                               </font>
-                                                            </Label>
-                                                            <Label text="Accounts" textFill="#8e8787" />
-                                                         </children>
-                                                      </VBox>
-                                                      <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../../../../Img/account-icon.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets left="50.0" top="50.0" />
-                                                   </VBox.margin>
-                                                </GridPane>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </HBox>
-                                 </center>
-                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
