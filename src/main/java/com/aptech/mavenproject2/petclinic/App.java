@@ -21,8 +21,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("SignIn"));
         stage.setScene(scene);
-//        stage.setWidth(600);
-//        stage.setHeight(600);
+        stage.setWidth(1080);
+        stage.setHeight(800);
         scene.setOnKeyPressed((KeyEvent t) -> {
             if (t.getCode() == (KeyCode.F1)) {
                 stage.setFullScreen(true);
