@@ -6,7 +6,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -55,14 +54,6 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutY="482.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
             <Button layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
                <font>
                   <Font size="24.0" />
@@ -79,7 +70,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="532.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+            <Button layoutY="487.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -87,11 +78,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Hyperlink layoutX="111.0" layoutY="597.0" text="Log Out">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Hyperlink>
+            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
             </children>
         </Pane>
     </left>
@@ -106,7 +93,7 @@
                         <Bloom />
                     </effect>
                 </Text>
-                <HBox layoutX="127.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="137.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -126,10 +113,13 @@
                                         <Insets />
                                     </GridPane.margin>
                                 </Text>
-                        <ImageView fitHeight="104.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Img/calendar-icon.png" />
                            </image>
+                           <GridPane.margin>
+                              <Insets left="17.0" />
+                           </GridPane.margin>
                         </ImageView>
                             </children>
                         </GridPane>
@@ -158,12 +148,12 @@
                                         <Insets />
                                     </GridPane.margin>
                                 </Text>
-                        <ImageView fitHeight="90.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Img/doctor-icon.png" />
                            </image>
                            <GridPane.margin>
-                              <Insets left="14.0" />
+                              <Insets left="23.0" />
                            </GridPane.margin>
                         </ImageView>
                             </children>
@@ -193,7 +183,7 @@
                                         <Insets />
                                     </GridPane.margin>
                                 </Text>
-                        <ImageView fitHeight="68.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Img/account-icon.png" />
                            </image>
@@ -212,8 +202,8 @@
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="86.40003662109375" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.80002441406248" minWidth="10.0" prefWidth="167.19996337890626" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -228,12 +218,12 @@
                                         <Insets />
                                     </GridPane.margin>
                                 </Text>
-                        <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../Img/employee_icon.png" />
                            </image>
                            <GridPane.margin>
-                              <Insets left="19.0" />
+                              <Insets left="18.0" />
                            </GridPane.margin>
                         </ImageView>
                             </children>

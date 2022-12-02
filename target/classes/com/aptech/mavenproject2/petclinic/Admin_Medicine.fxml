@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.Hyperlink?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
@@ -27,17 +26,12 @@
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-            <Button layoutY="329.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking">
+            <Button layoutX="2.0" layoutY="262.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="262.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="396.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services">
+            <Button layoutX="-1.0" layoutY="329.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -47,22 +41,22 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="463.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines">
+            <Button layoutX="1.0" layoutY="396.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="276.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="530.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account">
+            <Button layoutX="-1.0" layoutY="463.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="-1.0" layoutY="597.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Change Info">
+            <Button layoutX="-1.0" layoutY="530.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="277.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Change Info">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="107.0" layoutY="664.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
+            <Button layoutX="107.0" layoutY="597.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
             </children>
         </Pane>
     </left>
@@ -91,29 +85,22 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.8000793457031" minWidth="10.0" prefWidth="407.1999816894531" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints maxHeight="80.80000305175781" minHeight="10.0" prefHeight="80.80000305175781" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="88.79999694824218" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="111.19998779296878" minHeight="10.0" prefHeight="83.4" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label layoutX="10.0" layoutY="232.0" prefHeight="18.0" prefWidth="178.0" text="Medicine Name" GridPane.rowIndex="1">
+                  <Label layoutX="10.0" layoutY="232.0" prefHeight="18.0" prefWidth="178.0" text="Medicine Name">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="186.0" prefHeight="18.0" prefWidth="178.0" text="Price" GridPane.rowIndex="2">
+                  <Label layoutX="10.0" layoutY="186.0" prefHeight="18.0" prefWidth="178.0" text="Price" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="271.0" prefHeight="18.0" prefWidth="178.0" text="Medicine id">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="180.0" layoutY="103.0" promptText="Enter medicine name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField layoutX="180.0" layoutY="188.0" promptText="Enter price" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="396.0" promptText="Enter id" GridPane.columnIndex="1" />
+                  <TextField layoutX="180.0" layoutY="103.0" promptText="Enter medicine name" GridPane.columnIndex="1" />
+                  <TextField layoutX="180.0" layoutY="188.0" promptText="Enter price" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <Button contentDisplay="RIGHT" layoutX="675.0" layoutY="322.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
