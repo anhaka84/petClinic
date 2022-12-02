@@ -6,6 +6,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,7 +28,7 @@
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="279.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
+                <Button layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -35,7 +36,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
+                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -46,7 +47,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Button layoutY="355.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
+                <Button layoutY="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -54,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
+                <Button layoutY="482.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -62,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-            <Button layoutY="434.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
+            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -70,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="517.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
+            <Button layoutY="422.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -78,6 +79,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button layoutY="532.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Hyperlink layoutX="111.0" layoutY="597.0" text="Log Out">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Hyperlink>
             </children>
         </Pane>
     </left>
@@ -96,28 +110,20 @@
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="92.5999755859375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.6000244140625" minWidth="10.0" prefWidth="161.6000244140625" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="83.8" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.39999999999998" minWidth="10.0" prefWidth="169.39999999999998" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="158.93670845031738" GridPane.columnIndex="1">
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font size="18.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
+                                        <Insets />
                                     </GridPane.margin>
                                 </Text>
                         <ImageView fitHeight="104.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
@@ -146,18 +152,10 @@
                                 <!--<FontAwesomeIconView glyphName="USER_PLUS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font size="18.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="30.0" />
+                                        <Insets />
                                     </GridPane.margin>
                                 </Text>
                         <ImageView fitHeight="90.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
@@ -187,20 +185,12 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="USER_CIRCLE" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New account today" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your account" wrappingWidth="157.33673286437988" GridPane.columnIndex="1">
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font size="18.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
+                                        <Insets />
                                     </GridPane.margin>
                                 </Text>
                         <ImageView fitHeight="68.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
@@ -232,18 +222,10 @@
                                 <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font size="18.0" />
                                     </font>
                                     <GridPane.margin>
-                                        <Insets top="26.0" />
-                                    </GridPane.margin>
-                                </Text>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" wrappingWidth="92.53667831420898" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets bottom="20.0" />
+                                        <Insets />
                                     </GridPane.margin>
                                 </Text>
                         <ImageView fitHeight="56.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">

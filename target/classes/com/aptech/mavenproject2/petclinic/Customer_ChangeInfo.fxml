@@ -19,6 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Hyperlink?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <left>
@@ -29,7 +30,7 @@
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="279.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
+                <Button layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -37,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutY="195.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
+                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -48,7 +49,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Button layoutY="355.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
+                <Button layoutY="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -56,7 +57,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
+                <Button layoutY="482.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -64,7 +65,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-            <Button layoutY="434.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
+            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -72,7 +73,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="517.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
+            <Button layoutY="422.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -80,6 +81,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button layoutY="532.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Hyperlink layoutX="111.0" layoutY="597.0" text="Log Out">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Hyperlink>
             </children>
         </Pane>
     </left>
