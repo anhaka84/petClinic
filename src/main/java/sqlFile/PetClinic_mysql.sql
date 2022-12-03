@@ -1,6 +1,6 @@
-CREATE DATABASE `PetClinic`;
+CREATE DATABASE `Pet_Clinic`;
 
-USE `PetClinic`;
+USE `Pet_Clinic`;
 
 -- DROP DATABASE `Pet_Clinic`;
 
