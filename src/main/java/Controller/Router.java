@@ -7,7 +7,7 @@ public class Router {
 
     public static final String SIGNINPAGE = "SignIn";
     public static final String SIGNUPPAGE = "SignUp";
-    public static final String ADMINHOMEPAGE = "Admin_Homepage";
+    public static final String ADMINHOMEPAGE = "test_MainPage";
     public static final String DOCTORHOMEPAGE = "";
     public static final String CLIENTHOMEPAGE = "Customer_Homepage";
 
