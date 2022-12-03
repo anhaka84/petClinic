@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.TestController">
    <children>
       <BorderPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -32,9 +32,9 @@
                            <bottom>
                               <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" />
+                                    <Button mnemonicParsing="false" onAction="#page1Action" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" />
+                                    <Button mnemonicParsing="false" onAction="#page2Action" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
+                                    <Button mnemonicParsing="false" onAction="#page3Action" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" />
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services" />
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines" />
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account" />
@@ -70,7 +70,7 @@
                               <Insets />
                            </VBox.margin>
                            <children>
-                              <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <BorderPane fx:id="mainPage" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
