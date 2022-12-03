@@ -99,6 +99,13 @@ public class BillModel extends DBCommon<BillModel> {
     @Override
     public BillModel setResultSetValue(BillModel object, ResultSet rs)
             throws SQLException {
+        object.setBillId(rs.getInt("bill_id"));
+        object.setBookingId(rs.getInt("booking_id"));
+        object.setUserId(rs.getInt("user_id"));
+        object.setPrescriptionId(rs.getInt("prescription_id"));
+        object.setBillDate(rs.getDate("bill_date"));
+        object.setTitleBill(rs.getString("title_bill"));
+        object.setTotal(rs.getFloat("total"));
         return object;
     }
 

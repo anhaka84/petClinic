@@ -155,13 +155,13 @@ public class UserModel extends DBCommon<UserModel> {
     public UserModel setResultSetValue(UserModel user, ResultSet rs)
             throws SQLException {
         user.setUserId(rs.getInt("user_id"));
+        user.setRole(rs.getInt("role_id"));
         user.setFullName(rs.getString("full_name"));
         user.setGender(rs.getInt("gender"));
         user.setDob(rs.getDate("dob"));
         user.setEmail(rs.getString("email"));
         user.setAddress(rs.getString("address"));
         user.setPhoneNumber(rs.getString("phone_number"));
-        user.setRole(rs.getInt("role_id"));
         user.setAccount(
                 new AccountModel(
                         rs.getString("username"),

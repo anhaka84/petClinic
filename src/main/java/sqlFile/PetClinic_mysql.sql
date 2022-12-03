@@ -13,8 +13,8 @@ USE `Pet_Clinic`;
 -- WHERE u.user_id = 2;
 
 CREATE TABLE `Role` (
-    `roleId` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `roleName` VARCHAR(10) NOT NULL
+    `role_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `role_name` VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE `User` (
@@ -86,19 +86,6 @@ CREATE TABLE `Prescription` (
     `prescription_date` DATE
 );
 
-CREATE TABLE `Bill` (
-    `bill_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `booking_id` INT  NOT NULL, 
-    FOREIGN KEY(`booking_id`) REFERENCES `Booking`(`booking_id`),
-    `user_id` INT  NOT NULL, 
-    FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`),
-    `prescription_id` INT, 
-    FOREIGN KEY(`prescription_id`) REFERENCES `Prescription`(`prescription_id`),
-    `bill_date` DATE,
-    `title_bill` VARCHAR(50),
-    `total` DECIMAL(10, 2)
-);
-
 CREATE TABLE `Medication` (
     `medication_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `medication_name` VARCHAR(50) NOT NULL,
@@ -112,4 +99,17 @@ CREATE TABLE `PrescriptionDetail` (
     FOREIGN KEY(`prescription_id`) REFERENCES `Prescription`(`prescription_id`),
     `medication_id` INT,
     FOREIGN KEY(`medication_id`) REFERENCES `Medication`(`medication_id`)
+);
+
+CREATE TABLE `Bill` (
+    `bill_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `booking_id` INT  NOT NULL, 
+    FOREIGN KEY(`booking_id`) REFERENCES `Booking`(`booking_id`),
+    `user_id` INT  NOT NULL, 
+    FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`),
+    `prescription_id` INT, 
+    FOREIGN KEY(`prescription_id`) REFERENCES `Prescription`(`prescription_id`),
+    `bill_date` DATE,
+    `title_bill` VARCHAR(50),
+    `total` DECIMAL(10, 2)
 );

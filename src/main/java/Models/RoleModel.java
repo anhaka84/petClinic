@@ -4,15 +4,15 @@ import DB.common.DBCommon;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Role extends DBCommon<Role> {
+public class RoleModel extends DBCommon<RoleModel> {
 
     private int roleId;
     private String roleName;
 
-    public Role() {
+    public RoleModel() {
     }
 
-    public Role(int roleId, String roleName) {
+    public RoleModel(int roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;
     }
@@ -35,11 +35,14 @@ public class Role extends DBCommon<Role> {
 
     @Override
     public String toString() {
-        return "Role{" + "roleId=" + roleId + ", roleName=" + roleName + '}';
+        return "Role{"
+                + "roleId=" + roleId
+                + ", roleName=" + roleName
+                + '}';
     }
 
     @Override
-    public Role setResultSetValue(Role object, ResultSet rs)
+    public RoleModel setResultSetValue(RoleModel object, ResultSet rs)
             throws SQLException {
         object.setRoleId(rs.getInt("role_id"));
         object.setRoleName(rs.getString("role_name"));

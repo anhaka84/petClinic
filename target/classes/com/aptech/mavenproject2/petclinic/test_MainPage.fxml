@@ -39,7 +39,7 @@
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines" />
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account" />
                                     <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Log Out" />
+                                    <Button mnemonicParsing="false" onAction="#SignOut" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Log Out" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="-50.0" />

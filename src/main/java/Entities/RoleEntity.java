@@ -1,13 +1,13 @@
 package Entities;
 
 import DB.main.DB;
-import Models.Role;
+import Models.RoleModel;
 import java.util.Arrays;
 import java.util.List;
 
 public class RoleEntity {
 
-    DB<Role> db = new DB<>();
+    DB<RoleModel> db = new DB<>();
 
     String query;
     List condition;
@@ -15,24 +15,24 @@ public class RoleEntity {
     public RoleEntity() {
     }
 
-    public boolean addRole(Role role) {
+    public boolean addRole(RoleModel role) {
         query = "INSERT INTO Role VALUES (?,?)";
         condition = Arrays.asList(role.getRoleId(), role.getRoleName());
         return db.setSqlDataRow(query, condition, role);
     }
 
-    public List<Role> getAllRole() {
+    public List<RoleModel> getAllRole() {
         query = "SELECT * FROM Role";
-        return db.getAll(query, new Role());
+        return db.getAll(query, new RoleModel());
     }
 
-    public Role getOneRole(int roleId) {
+    public RoleModel getOneRole(int roleId) {
         query = "SELECT * FROM Role WHERE role_id = ?";
         condition = Arrays.asList(roleId);
-        return db.getOne(query, condition, new Role());
+        return db.getOne(query, condition, new RoleModel());
     }
 
-    public boolean updateRole(Role role) {
+    public boolean updateRole(RoleModel role) {
         query = "UPDATE Role SET role_name = ? WHERE role_id = ?";
         condition = Arrays.asList(role.getRoleName(), role.getRoleId());
         return db.setSqlDataRow(query, condition, role);
@@ -41,6 +41,6 @@ public class RoleEntity {
     public boolean deleteRole(int roleId) {
         query = "DELETE FROM Role WHERE role_id = ?";
         condition = Arrays.asList(roleId);
-        return db.setSqlDataRow(query, condition, new Role());
+        return db.setSqlDataRow(query, condition, new RoleModel());
     }
 }

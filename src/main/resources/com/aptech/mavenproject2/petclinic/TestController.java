@@ -1,5 +1,6 @@
 package com.aptech.mavenproject2.petclinic;
 
+import Controller.SignController.SignOutController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,8 +28,14 @@ public class TestController implements Initializable {
 
     @FXML
     private void page3Action() throws IOException {
-//        Pane view = App.loadFXMLPane("testFXML2");
+//        Pane view = App.loadFXMLPane("test_MainPage");
 //        mainPage.setCenter(view);
+    }
+    
+    @FXML
+    private void SignOut(){
+        SignOutController signOut = new SignOutController();
+        signOut.signOutEvent();
     }
 
     @Override
