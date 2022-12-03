@@ -6,9 +6,9 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -119,18 +119,18 @@
                         <TextField fx:id="inputTextEmail" onAction="#inputTextEmailValidate" prefHeight="32.0" promptText="Enter your email" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <TextField fx:id="inputTextAddress" onAction="#inputTextAddressValidate" prefHeight="32.0" promptText="Enter your address" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <TextField fx:id="inputTextPhoneNumber" prefHeight="32.0" promptText="Enter your phone number" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-                        <DatePicker prefHeight="32.0" prefWidth="413.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <RadioButton mnemonicParsing="false" prefHeight="42.0" prefWidth="74.0" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="10">
-                            <toggleGroup>
-                                <ToggleGroup fx:id="gender" />
-                            </toggleGroup>
+                        <DatePicker fx:id="inputDob" onAction="#inputDobValidate" prefHeight="32.0" prefWidth="413.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <RadioButton fx:id="male" mnemonicParsing="false" onAction="#inputGenderValidate" prefHeight="42.0" prefWidth="74.0" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" prefHeight="44.0" prefWidth="85.0" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <RadioButton fx:id="female" mnemonicParsing="false" onAction="#inputGenderValidate" prefHeight="44.0" prefWidth="85.0" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="10">
                             <GridPane.margin>
                                 <Insets left="73.0" />
                             </GridPane.margin>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" prefHeight="42.0" prefWidth="77.0" text="Other" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <RadioButton fx:id="other" mnemonicParsing="false" onAction="#inputGenderValidate" prefHeight="42.0" prefWidth="77.0" text="Other" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="10">
                             <GridPane.margin>
                                 <Insets left="158.0" />
                             </GridPane.margin>
@@ -140,13 +140,13 @@
                         <Label fx:id="errorPassword" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label fx:id="errorConfirmPassword" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                         <Label fx:id="errorDob" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Label fx:id="errorGender" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label fx:id="errorGender" maxWidth="1.7976931348623157E308" styleClass="label_warning" stylesheets="@../../../../CSS/Label.css" textFill="YELLOW" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label fx:id="errorEmail" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <Label fx:id="errorAddress" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="15" />
                         <Label fx:id="errorPhoneNumber" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="342.0" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="17" />
                     </children>
                 </GridPane>
-                <Button alignment="CENTER" layoutX="556.0" layoutY="542.0" mnemonicParsing="false" onAction="#signUpEvent" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
+                <Button alignment="CENTER" layoutX="556.0" layoutY="542.0" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>

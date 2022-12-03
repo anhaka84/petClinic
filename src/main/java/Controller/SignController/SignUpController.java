@@ -1,12 +1,13 @@
 package Controller.SignController;
 
 import Controller.Router;
-import Entities.SignEntity;
-import Entities.UserEntity;
-import Models.AccountModel;
-import Models.UserModel;
+import Entities.*;
+import Models.*;
+import Session.SessionWriter;
 import java.net.URL;
 import java.sql.Date;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
@@ -21,8 +22,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -42,6 +45,12 @@ public class SignUpController implements Initializable {
 
     @FXML
     private PasswordField inputTextConfirmPassword;
+
+    @FXML
+    private DatePicker inputDob;
+
+    @FXML
+    private RadioButton male, female, other;
 
     @FXML
     private TextField inputTextEmail;
@@ -81,13 +90,18 @@ public class SignUpController implements Initializable {
 
     UserEntity userEntity = new UserEntity();
     SignEntity signEntity = new SignEntity();
+    AccountEntity accountEntity = new AccountEntity();
+    SessionWriter sessionWr = new SessionWriter();
+    SignInController signIn = new SignInController();
 
     private final String errorEmptyMessage = "Required";
     private final String errorEmailMessage = "Email Format";
     private final String errorSpaceMessage = "Space Format";
     private final String errorLengthMessage = "This entry can only contain numbers.";
     private final String errorLetterMessage = "This entry can only contain numbers.";
+    private final String errorExistAccountMessage = "exist account";
     private final String errorConfirmPasswordMessage = "not match password";
+    private final String errorDefaultGenderMessage = "You're selecting other";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -96,6 +110,8 @@ public class SignUpController implements Initializable {
         inputTextUsernameValidate();
         inputTextPasswordValidate();
         inputTextConfirmPasswordValidate();
+        inputDobValidate();
+        inputGenderValidate();
         inputTextEmailValidate();
         inputTextAddressValidate();
         inputTextPhoneNumberValidate();
@@ -118,6 +134,8 @@ public class SignUpController implements Initializable {
             inputTextPassword.requestFocus();
         } else if (inputTextConfirmPassword.getText().isEmpty()) {
             inputTextConfirmPassword.requestFocus();
+        } else if (inputDob.getValue() == null) {
+            inputDob.requestFocus();
         } else if (inputTextEmail.getText().isEmpty()) {
             inputTextEmail.requestFocus();
         } else if (inputTextAddress.getText().isEmpty()) {
@@ -134,13 +152,15 @@ public class SignUpController implements Initializable {
         String fullName = inputTextFullName.getText();
         String username = inputTextUsername.getText();
         String password = inputTextPassword.getText();
-        Date dob = null;
+        Date dob = Date.valueOf(inputDob.getValue());
+        int gender = inputGenderValidate();
         String email = inputTextEmail.getText();
         String address = inputTextAddress.getText();
         String phoneNumber = inputTextPhoneNumber.getText();
-        signEntity.signUp(new UserModel(fullName, 0, dob, email, address, phoneNumber,
-                new AccountModel(username, password)));
-        sceneAlertSuccess();
+        if (signEntity.signUp(new UserModel(fullName, gender, dob, email, address, phoneNumber,
+                new AccountModel(username, password)))) {
+            sceneAlertSuccess();
+        }
     }
 
     //alert
@@ -166,6 +186,12 @@ public class SignUpController implements Initializable {
         final Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == loginNow) {
+            List listLine = Arrays.asList(
+                    "remember=" + true,
+                    "username=" + inputTextUsername.getText(),
+                    "password=" + inputTextPassword.getText()
+            );
+            sessionWr.setSession(listLine);
             goToLogin();
         }
         if (result.get() == noThanks) {
@@ -240,6 +266,9 @@ public class SignUpController implements Initializable {
                 errorUsername.setTextFill(Color.RED);
                 errorUsername.setText(errorSpaceMessage);
             }
+            if (accountEntity.isExistAccount(inputTextUsername.getText())) {
+                errorUsername.setText(errorExistAccountMessage);
+            }
 //            //complete
 //            inputTextUsername.setOnKeyPressed((KeyEvent t2) -> {
 //                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() > 0) {
@@ -295,6 +324,8 @@ public class SignUpController implements Initializable {
     private void inputTextConfirmPasswordValidate() {
         //empty
         inputTextConfirmPassword.setOnKeyPressed((KeyEvent t) -> {
+            String getPassword = inputTextPassword.getText();
+            String getConfirmPassword = inputTextConfirmPassword.getText();
             if (t.getCode() == KeyCode.ENTER
                     && inputTextConfirmPassword.getText().isEmpty()) {
                 errorConfirmPassword.setTextFill(Color.RED);
@@ -308,7 +339,7 @@ public class SignUpController implements Initializable {
                 errorPassword.setText(errorEmptyMessage);
             }
             //complete
-            if (t.getCode() == KeyCode.ENTER && !inputTextConfirmPassword.getText().isEmpty()) {
+            if (t.getCode() == KeyCode.ENTER && getConfirmPassword.equals(getPassword)) {
                 isCompleteForm();
             }
         });
@@ -335,19 +366,22 @@ public class SignUpController implements Initializable {
             if (!inputTextPassword.getText().isEmpty()) {
                 String getPassword = inputTextPassword.getText();
                 String getConfirmPassword = inputTextConfirmPassword.getText();
-                if (!getConfirmPassword.equals(getPassword)) {
+                if (currentLength.getValue() == 0 && !getConfirmPassword.equals(getPassword)) {
+                    errorConfirmPassword.setTextFill(Color.RED);
+                    errorConfirmPassword.setText(errorEmptyMessage);
+                } else if (currentLength.getValue() > 0 && !getConfirmPassword.equals(getPassword)) {
                     errorConfirmPassword.setTextFill(Color.RED);
                     errorConfirmPassword.setText(errorConfirmPasswordMessage);
                 } else {
                     errorConfirmPassword.setText(null);
                 }
             }//empty password
-            else {
-                inputTextPassword.requestFocus();
-                errorPassword.setTextFill(Color.RED);
-                errorPassword.setText(errorEmptyMessage);
-                inputTextConfirmPassword.setText("");
-            }
+//            else {
+//                inputTextPassword.requestFocus();
+//                errorPassword.setTextFill(Color.RED);
+//                errorPassword.setText(errorEmptyMessage);
+//                inputTextConfirmPassword.setText("");
+//            }
 //            //complete
 //            inputTextConfirmPassword.setOnKeyPressed((KeyEvent t2) -> {
 //                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() != 0) {
@@ -358,16 +392,51 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
+    private void inputDobValidate() {
+        inputDob.setOnKeyPressed((KeyEvent t) -> {
+            if (inputDob.getValue() == null) {
+                errorDob.setText(errorEmptyMessage);
+            } else {
+                errorDob.setText(null);
+                isCompleteForm();
+            }
+        });
+    }
+
+    @FXML
+    private int inputGenderValidate() {
+        int gender = 2;
+        if (male.isSelected()) {
+            errorGender.setText(null);
+            gender = 0;
+        } else if (female.isSelected()) {
+            errorGender.setText(null);
+            gender = 1;
+        } else {
+            errorGender.setText(errorDefaultGenderMessage);
+            other.setSelected(true);
+        }
+        return gender;
+    }
+
+    @FXML
     private void inputTextEmailValidate() {
         //empty
         inputTextEmail.setOnKeyPressed((KeyEvent t) -> {
+            Pattern emailRegex = Pattern.compile(
+                    "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
+                    + "@"//@
+                    + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
+                    ,
+                     Pattern.CASE_INSENSITIVE);
+            Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
             if (t.getCode() == KeyCode.ENTER
                     && inputTextEmail.getText().isEmpty()) {
                 errorEmail.setTextFill(Color.RED);
                 errorEmail.setText(errorEmptyMessage);
             }
             //complete
-            if (t.getCode() == KeyCode.ENTER && !inputTextEmail.getText().isEmpty()) {
+            if (t.getCode() == KeyCode.ENTER && emailCheck.find()) {
                 isCompleteForm();
             }
         });
@@ -382,13 +451,14 @@ public class SignUpController implements Initializable {
                     ,
                      Pattern.CASE_INSENSITIVE);
             Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorEmail.setTextFill(Color.RED);
-                errorEmail.setText(errorEmptyMessage);
-            } else {
-                errorEmail.setText(null);
-            }
+//            //empty
+//            if (currentLength.getValue() == 0) {
+//                errorEmail.setTextFill(Color.RED);
+//                errorEmail.setText(errorEmptyMessage);
+//            }
+//            else {
+//                errorEmail.setText(null);
+//            }
             //space
             if (inputTextEmail.getText().contains(space)) {
                 int spaceIndex = inputTextEmail.getText().indexOf(space);
@@ -398,12 +468,16 @@ public class SignUpController implements Initializable {
                 errorEmail.setText(errorSpaceMessage);
             }
             //email check
-            if (!emailCheck.find()) {
+            if (currentLength.getValue() > 0 && !emailCheck.find()) {
                 errorEmail.setText(errorEmailMessage);
+            } else if (currentLength.getValue() == 0 && !emailCheck.find()) {
+                errorEmail.setText(errorEmptyMessage);
+            } else {
+                errorEmail.setText(null);
             }
 //            //complete
 //            inputTextEmail.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() != 0) {
+//                if (t2.getCode() == KeyCode.ENTER && emailCheck.find()) {
 //                    isCompleteForm();
 //                }
 //            });

@@ -3,18 +3,6 @@ Tính năng:
 admin: xem thêm sửa xóa người dùng,
             xem thêm sửa xóa thuốc,
             xem thêm sửa xóa booking.
-==>class : AdminEntity
---user
--> get one method : getOneUser, getOneDoctor, getOneEmployee
--> get all method : getAllUser, getAllDoctor, getAllEmployee
--> update method : updateUser, updateDoctor, updateEmployee
--> delete method : deleteUser, deleteDoctor, deleteEmployee
---medication
--> get one method : getOneMedication
--> get all method : getAllMedication
--> update method : updateMedication
--> delete method : deleteMedication
-
 
 bsi: xem thêm sửa xóa thông tin,
        xem thêm sửa xóa lịch lm vc,
@@ -38,59 +26,11 @@ functions
     + login / sign in (ok)
     + link to sign up / regis (ok)
 - use method:
-    + sign in / login:
-        SignInController : isCompleteForm()
-        {
-            SignInController : SignInEvent()
-            {
-                if - AccountEntity : checkInputAccount(str, str)
-                {
-                    if - SignEntity : signIn(str, str, bool)
-                    {
-                        SignInController : goToHomePage()
-                        {
-                            UserEntity : getSessionUser() -> UserModel : getRole()
-                            if - 1
-                            {
-                                Router : switchToAdminHomePage()
-                                {
-                                    App : setRoot(str)
-                                    {
-                                        App : loadFXML(str)
-                                    }
-                                }
-                            }
-                            if - 2
-                            {
-                                Router : switchToDoctorHomePage() {...}
-                            }
-                            if - 3
-                            {
-                                Router : switchToClientHomePage() {...}
-                            }
-                        }
-                    }
-                    else - SignInController : errorInput()
-                }
-                else - SignInController : errorExitApp()
-            }
-        }
     + validation:
-        SignInController : inputTextUsernameValidate() && inputTextPasswordValidate()
-        {
-            SignInController : isCompleteForm(){...}
-        }
     + error:
-        SignInController : errorInput()
-        SignInController : errorExitApp()
     + link:
-        SignInController : goToSignUp()
-        {
-            Router : switchToSignUpPage() {...}
-        }
-        SignInController : goToHomePage(){...}
 
-2, sign up / regis
+2, sign up / regis (done)
     + sign up / regis
     + validation
     + error
