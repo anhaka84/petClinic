@@ -69,7 +69,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Hyperlink fx:id="linkSignUp" alignment="CENTER" onAction="#goToSignUp" text="Sign up now" underline="true">
+                        <Hyperlink fx:id="linkSignUp" focusTraversable="false" onAction="#goToSignUp" text="Sign Up Now" underline="true">
                            <font>
                               <Font size="14.0" />
                            </font>

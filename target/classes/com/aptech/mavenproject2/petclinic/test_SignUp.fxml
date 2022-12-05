@@ -138,7 +138,7 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <Hyperlink onAction="#goToLogin" prefHeight="40.0" text="Login now">
+                                <Hyperlink focusTraversable="false" onAction="#goToLogin" prefHeight="40.0" text="Login now" underline="true">
                                     <font>
                                         <Font size="14.0" />
                                     </font>

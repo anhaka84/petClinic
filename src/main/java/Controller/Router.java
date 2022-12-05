@@ -14,6 +14,11 @@ public class Router {
     private static final String ADMIN_PAGE = "test_Admin_MainPage";
     private static final String ADMIN_HOMEPAGE = "test_Admin_HomePage";
     private static final String ADMIN_BOOKING = "test_Admin_Booking";
+    private static final String ADMIN_BILL = "test_Admin_Booking";
+    private static final String ADMIN_SERVICES = "test_Admin_Services";
+    private static final String ADMIN_MEDICINES = "test_Admin_Medicines";
+    private static final String ADMIN_MANAGE_ACCOUNT = "test_Admin_Manage_Account";
+    private static final String ADMIN_YOUR_INFO = "test_Admin_Your_Info";
     //doctor
     private static final String DOCTOR_PAGE = "";
     private static final String DOCTOR_HOMEPAGE = "";
@@ -45,6 +50,26 @@ public class Router {
 
     public static String getAdminBooking() {
         return ADMIN_BOOKING;
+    }
+
+    public static String getAdminBill() {
+        return ADMIN_BILL;
+    }
+
+    public static String getAdminServices() {
+        return ADMIN_SERVICES;
+    }
+
+    public static String getAdminMedicines() {
+        return ADMIN_MEDICINES;
+    }
+
+    public static String getAdminManageAccount() {
+        return ADMIN_MANAGE_ACCOUNT;
+    }
+
+    public static String getAdminYourInfo() {
+        return ADMIN_YOUR_INFO;
     }
 
     //get doctor page
