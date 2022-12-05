@@ -83,7 +83,7 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" styleClass="customer_homepage" stylesheets="@../../../../CSS/Customer.css" BorderPane.alignment="CENTER">
             <children>
                 <Text layoutX="196.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" underline="true" wrappingWidth="412.5365982055664">
                     <font>
@@ -105,7 +105,7 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="158.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment " wrappingWidth="158.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -210,7 +210,7 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Pet" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -220,7 +220,7 @@
                                 </Text>
                         <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Img/employee_icon.png" />
+                              <Image url="@../../../../Img/pet-icon.png" />
                            </image>
                            <GridPane.margin>
                               <Insets left="18.0" />
@@ -235,7 +235,7 @@
                 </HBox>
             </children>
             <cursor>
-                <Cursor fx:constant="HAND" />
+                <Cursor fx:constant="DEFAULT" />
             </cursor>
         </Pane>
     </center>

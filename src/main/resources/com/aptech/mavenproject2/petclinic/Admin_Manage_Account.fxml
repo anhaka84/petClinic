@@ -127,7 +127,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="387.0" prefHeight="38.0" prefWidth="224.0" text="Phone number" GridPane.rowIndex="6">
+                        <Label layoutX="10.0" layoutY="387.0" prefHeight="35.0" prefWidth="158.0" text="Phone number" GridPane.rowIndex="6">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -205,15 +205,6 @@
                            </font>
                         </Label>
                         <TextField layoutX="176.0" layoutY="54.0" prefHeight="32.0" prefWidth="331.0" GridPane.columnIndex="1" />
-                        <Label layoutX="414.0" layoutY="147.0" prefHeight="38.0" prefWidth="224.0" text="Update_date" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets left="50.0" />
-                           </GridPane.margin>
-                        </Label>
-                        <DatePicker layoutX="532.0" layoutY="48.0" prefHeight="26.0" prefWidth="221.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                </items>

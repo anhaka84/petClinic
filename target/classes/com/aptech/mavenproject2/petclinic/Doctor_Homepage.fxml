@@ -27,14 +27,6 @@
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
                 <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
@@ -46,15 +38,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Button layoutY="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
+            <Button layoutY="248.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -62,15 +46,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="422.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="487.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -83,16 +59,8 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" styleClass="customer_homepage" stylesheets="@../../../../CSS/Customer.css" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" styleClass="doctor_homepage" stylesheets="@../../../../CSS/Doctor.css" BorderPane.alignment="CENTER">
             <children>
-                <Text layoutX="196.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" underline="true" wrappingWidth="412.5365982055664">
-                    <font>
-                        <Font size="41.0" />
-                    </font>
-                    <effect>
-                        <Bloom />
-                    </effect>
-                </Text>
                 <HBox layoutX="137.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
@@ -105,7 +73,7 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="CALENDAR" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment " wrappingWidth="158.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Today" wrappingWidth="158.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -210,7 +178,7 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Pet" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -220,7 +188,7 @@
                                 </Text>
                         <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Img/pet-icon.png" />
+                              <Image url="@../../../../Img/employee_icon.png" />
                            </image>
                            <GridPane.margin>
                               <Insets left="18.0" />
@@ -233,6 +201,21 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
+            <HBox alignment="CENTER" layoutX="218.0" layoutY="87.0" prefHeight="66.0" prefWidth="402.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" textAlignment="CENTER" wrappingWidth="412.5365982055664">
+                          <font>
+                              <Font size="41.0" />
+                          </font>
+                          <effect>
+                              <Bloom />
+                          </effect>
+                      </Text>
+               </children>
+            </HBox>
             </children>
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
