@@ -38,10 +38,10 @@ public class SignInController implements Initializable {
     @FXML
     private Label errorPassword;
 
-    AccountEntity accM = new AccountEntity();
-    UserEntity userEntity = new UserEntity();
-    SignEntity signM = new SignEntity();
-    SessionWriter sessionWriter = new SessionWriter();
+    private final AccountEntity accM = new AccountEntity();
+    private final UserEntity userEntity = new UserEntity();
+    private final SignEntity signM = new SignEntity();
+    private final SessionWriter sessionWriter = new SessionWriter();
 
     private final String errorEmptyMessage = "Required";
     private final String errorSpaceMessage = "Space Format";

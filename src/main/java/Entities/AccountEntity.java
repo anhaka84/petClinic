@@ -2,22 +2,17 @@ package Entities;
 
 import DB.main.DB;
 import Models.*;
-import Session.SessionWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class AccountEntity {
 
-    DB<UserModel> db = new DB<>();
-    UserEntity userEntity = new UserEntity();
-    SessionWriter sessionWr = new SessionWriter();
+    private final DB<UserModel> db = new DB<>();
+    private final UserEntity userEntity = new UserEntity();
 
     private String query;
     private List condition;
-
-    public AccountEntity() {
-    }
 
     public AccountModel getOneAccount(String username) {
         query = "SELECT username, password, status"

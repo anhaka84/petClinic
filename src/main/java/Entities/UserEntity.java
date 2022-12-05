@@ -9,8 +9,8 @@ import java.util.List;
 
 public class UserEntity {
 
-    DB<UserModel> db = new DB<>();
-    SessionWriter sessionWr = new SessionWriter();
+    private final DB<UserModel> db = new DB<>();
+    private final SessionWriter sessionWr = new SessionWriter();
 
     private String query;
     private List condition;
@@ -26,9 +26,6 @@ public class UserEntity {
             + "password, "
             + "status"
             + ")";
-
-    public UserEntity() {
-    }
 
     public boolean addUser(UserModel user) {
         query = "INSERT INTO User " + columns
@@ -110,22 +107,6 @@ public class UserEntity {
         return getOneUser(id);
     }
 
-//    public boolean checkPhoneNumber(String phoneNumber) {
-//        if (phoneNumber.matches("\\d+")) {
-//            return true;
-//        }
-//        return false;
-//    }
-//    public String changeGender(int gender) {
-//        switch (gender) {
-//            case 0:
-//                return "Male";
-//            case 1:
-//                return "Female";
-//            default:
-//                return "Other";
-//        }
-//    }
     public boolean isOldUser(String email) {
         query = "SELECT * FROM User"
                 + " WHERE email = ? AND status = 0";

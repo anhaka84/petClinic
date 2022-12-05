@@ -12,7 +12,6 @@
 //        RoleEntity roleM = new RoleEntity();
 //        UserEntity userM = new UserEntity();
 //        DoctorEntity doctorM = new DoctorEntity();
-//
 //        List list;
 //        UserModel user;
 //        /**
@@ -41,7 +40,7 @@
 //        list = Arrays.asList(
 //                new DoctorLevelModel(
 //                        new UserModel(
-//                                "Nguyen Thu Minh", 1, Date.valueOf("2003-01-01"),
+//                                "Nguyen Thu Minh", 1, Date.valueOf("2003-11-25"),
 //                                "minh.nt.1891@aptechlearning.edu.vn", "Ha Noi", "0368553888",
 //                                new AccountModel("leaderThuMinh", "123456")
 //                        ),
@@ -49,7 +48,7 @@
 //                ),
 //                new DoctorLevelModel(
 //                        new UserModel(
-//                                "Doan Hoang Anh", 0, Date.valueOf("2003-01-01"),
+//                                "Doan Hoang Anh", 0, Date.valueOf("2003-04-08"),
 //                                "anh.dh.1876@aptechlearning.edu.vn", "Ha Noi", "0911922941",
 //                                new AccountModel("memberHoangAnh", "123456")
 //                        ),
@@ -71,7 +70,7 @@
 //         * data client
 //         */
 //        user = new UserModel(//no user id, no role id
-//                "Vuong Quang Huy", 0, Date.valueOf("2003-01-01"),
+//                "Vuong Quang Huy", 0, Date.valueOf("2003-08-31"),
 //                "huy.vq.@aptechlearning.edu.vn", "Ha Noi", "0385897664",
 //                new AccountModel("memberQuangHuy", "123456")
 //        );
