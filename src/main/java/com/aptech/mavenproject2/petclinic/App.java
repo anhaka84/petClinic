@@ -1,5 +1,6 @@
 package com.aptech.mavenproject2.petclinic;
 
+import Controller.Router;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,13 +21,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-//        scene = new Scene(loadFXML("SignIn"));
-        scene = new Scene(loadFXML("test_MainPage"));
+        scene = new Scene(loadFXML(Router.getSignPage()));
         stage.setScene(scene);
         stage.setWidth(1080);
         stage.setHeight(800);
         scene.setOnKeyPressed((KeyEvent t) -> {
-            if (t.getCode() == (KeyCode.F)) {
+            if (t.getCode() == (KeyCode.F1)) {
                 stage.setFullScreen(true);
             }
             if (t.getCode() == (KeyCode.ESCAPE)) {
@@ -46,7 +46,7 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static Pane loadFXMLPane(String fxml) throws IOException {
+    public static Pane getPane(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
