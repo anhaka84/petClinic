@@ -15,8 +15,7 @@ public class AdminHomepageController implements Initializable {
 
     @FXML
     public void signOutEvent() {
-        SignOutController signOut = new SignOutController();
-        signOut.signOutEvent();
+        SignOutController.signOutEvent();
     }
 
 }

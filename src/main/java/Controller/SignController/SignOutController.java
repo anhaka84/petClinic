@@ -6,13 +6,10 @@ import javafx.fxml.FXML;
 
 public class SignOutController {
 
-    SignEntity signEntity = new SignEntity();
-
-    public SignOutController() {
-    }
+    private static final SignEntity signEntity = new SignEntity();
 
     @FXML
-    public void signOutEvent() {
+    public static void signOutEvent() {
         if (signEntity.signOut()) {
             Router.switchToSignInPage();
         }

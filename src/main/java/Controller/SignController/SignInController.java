@@ -80,13 +80,13 @@ public class SignInController implements Initializable {
     private void goToHomePage() {
         int role = userEntity.getSessionUser().getRole();
         if (role == 1) {
-            Router.switchToAdminHomePage();
+            Router.switchToAdminPage();
         }
         if (role == 2) {
-            Router.switchToDoctorHomePage();
+            Router.switchToDoctorPage();
         }
         if (role == 3) {
-            Router.switchToClientHomePage();
+            Router.switchToClientPage();
         }
     }
 
