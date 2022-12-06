@@ -7,14 +7,11 @@ import java.util.List;
 
 public class SignEntity {
 
-    AccountEntity accModel = new AccountEntity();
-    UserEntity userModel = new UserEntity();
-    SessionWriter sessionWr = new SessionWriter();
+    private final AccountEntity accModel = new AccountEntity();
+    private final UserEntity userModel = new UserEntity();
+    private final SessionWriter sessionWr = new SessionWriter();
 
     private List<String> lineSession;
-
-    public SignEntity() {
-    }
 
     public boolean signUp(UserModel user) {
         return accModel.activeAccount(user);

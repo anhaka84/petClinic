@@ -7,13 +7,10 @@ import java.util.List;
 
 public class RoleEntity {
 
-    DB<RoleModel> db = new DB<>();
+    private final DB<RoleModel> db = new DB<>();
 
-    String query;
-    List condition;
-
-    public RoleEntity() {
-    }
+    private String query;
+    private List condition;
 
     public boolean addRole(RoleModel role) {
         query = "INSERT INTO Role VALUES (?,?)";

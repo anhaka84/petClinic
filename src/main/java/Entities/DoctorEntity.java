@@ -8,24 +8,21 @@ import java.util.List;
 
 public class DoctorEntity {
 
-    DB<DoctorLevelModel> db = new DB<>();
-    UserEntity userEntity = new UserEntity();
+    private final DB<DoctorLevelModel> db = new DB<>();
+    private final UserEntity userEntity = new UserEntity();
 
-    String query;
-    List condition;
-    String columns = "("
+    private String query;
+    private List condition;
+    private final String columns = "("
             + "user_id, "
             + "title, "
             + "degree, "
             + "update_date"
             + ")";
-    String dsColumns = "(user_id, "
+    private final String dsColumns = "(user_id, "
             + "doctor_schedual_date, "
             + "doctor_schedual_time"
             + ")";
-
-    public DoctorEntity() {
-    }
 
     public UserModel getOneDoctorUid(int userId) {
         query = "SELECT u.*, dl.*"

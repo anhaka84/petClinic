@@ -18,4 +18,7 @@ module com.aptech.mavenproject2.petclinic {
     
     opens Controller.SignController to javafx.fxml;
     exports Controller.SignController;
+    
+    opens Validation to javafx.fxml;
+    exports Validation;
 }

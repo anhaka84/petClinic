@@ -14,7 +14,7 @@ public class Router {
     private static final String ADMIN_PAGE = "test_Admin_MainPage";
     private static final String ADMIN_HOMEPAGE = "test_Admin_HomePage";
     private static final String ADMIN_BOOKING = "test_Admin_Booking";
-    private static final String ADMIN_BILL = "test_Admin_Booking";
+    private static final String ADMIN_BILL = "test_Admin_Bill";
     private static final String ADMIN_SERVICES = "test_Admin_Services";
     private static final String ADMIN_MEDICINES = "test_Admin_Medicines";
     private static final String ADMIN_MANAGE_ACCOUNT = "test_Admin_Manage_Account";
@@ -114,7 +114,6 @@ public class Router {
         try {
             App.setRoot(getAdminPage());
         } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
         }
     }

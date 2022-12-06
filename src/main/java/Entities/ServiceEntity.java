@@ -8,8 +8,7 @@ import java.util.List;
 
 public class ServiceEntity {
 
-    DB<ServiceModel> db = new DB<>();
-//    ServiceModel serviceModel = new ServiceModel();
+    private final DB<ServiceModel> db = new DB<>();
 
     private String query;
     private List condition;
@@ -43,6 +42,25 @@ public class ServiceEntity {
         query = "SELECT * FROM Service";
         return db.getAll(query, new ServiceModel());
     }
-    
-//    public 
+
+    public boolean updateService(ServiceModel service) {
+        query = "UPDATE Service SET "
+                + "service_name = ?,"
+                + "service_type = ?,"
+                + "service_price = ?"
+                + " WHERE service_id = ?";
+        condition = Arrays.asList(
+                service.getServiceName(),
+                service.getServiceType(),
+                service.getServicePrice(),
+                service.getServiceId()
+        );
+        return db.setSqlDataRow(query, condition, service);
+    }
+
+    public boolean deleteServices(int serviceId) {
+        query = "DELETE FROM Service WHERE service_id = ?";
+        condition = Arrays.asList(serviceId);
+        return db.setSqlDataRow(query, condition, new ServiceModel());
+    }
 }

@@ -47,8 +47,7 @@ public class App extends Application {
     }
 
     public static Pane getPane(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+        return (Pane) loadFXML(fxml);
     }
 
     public static void main(String[] args) {

@@ -35,16 +35,11 @@ import javafx.scene.paint.Color;
 public class SignUpController implements Initializable {
 
     @FXML
-    private TextField inputTextFullName;
+    private TextField inputTextFullName, inputTextUsername, inputTextEmail,
+            inputTextAddress, inputTextPhoneNumber;
 
     @FXML
-    private TextField inputTextUsername;
-
-    @FXML
-    private PasswordField inputTextPassword;
-
-    @FXML
-    private PasswordField inputTextConfirmPassword;
+    private PasswordField inputTextPassword, inputTextConfirmPassword;
 
     @FXML
     private DatePicker inputDob;
@@ -53,46 +48,12 @@ public class SignUpController implements Initializable {
     private RadioButton male, female, other;
 
     @FXML
-    private TextField inputTextEmail;
+    private Label errorFullName, errorUsername, errorPassword, errorConfirmPassword,
+            errorDob, errorGender, errorEmail, errorAddress, errorPhoneNumber;
 
-    @FXML
-    private TextField inputTextAddress;
-
-    @FXML
-    private TextField inputTextPhoneNumber;
-
-    @FXML
-    private Label errorFullName;
-
-    @FXML
-    private Label errorUsername;
-
-    @FXML
-    private Label errorPassword;
-
-    @FXML
-    private Label errorConfirmPassword;
-
-    @FXML
-    private Label errorDob;
-
-    @FXML
-    private Label errorGender;
-
-    @FXML
-    private Label errorEmail;
-
-    @FXML
-    private Label errorAddress;
-
-    @FXML
-    private Label errorPhoneNumber;
-
-    UserEntity userEntity = new UserEntity();
-    SignEntity signEntity = new SignEntity();
-    AccountEntity accountEntity = new AccountEntity();
-    SessionWriter sessionWr = new SessionWriter();
-    SignInController signIn = new SignInController();
+    private final SignEntity signEntity = new SignEntity();
+    private final AccountEntity accountEntity = new AccountEntity();
+    private final SessionWriter sessionWr = new SessionWriter();
 
     private final String errorEmptyMessage = "Required";
     private final String errorEmailMessage = "Email Format";
@@ -105,7 +66,6 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         inputTextFullNameValidate();
         inputTextUsernameValidate();
         inputTextPasswordValidate();
@@ -157,8 +117,10 @@ public class SignUpController implements Initializable {
         String email = inputTextEmail.getText();
         String address = inputTextAddress.getText();
         String phoneNumber = inputTextPhoneNumber.getText();
-        if (signEntity.signUp(new UserModel(fullName, gender, dob, email, address, phoneNumber,
-                new AccountModel(username, password)))) {
+        if (signEntity.signUp(
+                new UserModel(fullName, gender, dob, email, address, phoneNumber,
+                        new AccountModel(username, password))
+        )) {
             sceneAlertSuccess();
         }
     }
@@ -214,23 +176,18 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextFullName.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextFullName.textProperty()));
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorFullName.setTextFill(Color.RED);
-                errorFullName.setText(errorEmptyMessage);
-            } else {
-                errorFullName.setText(null);
-            }
-//            //complete
-//            inputTextFullName.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && !inputTextFullName.getText().isEmpty()) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextFullName.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextFullName.textProperty()));
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorFullName.setTextFill(Color.RED);
+                        errorFullName.setText(errorEmptyMessage);
+                    } else {
+                        errorFullName.setText(null);
+                    }
+                });
     }
 
     @FXML
@@ -247,35 +204,30 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextUsername.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
-            final String space = " ";
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorUsername.setTextFill(Color.RED);
-                errorUsername.setText(errorEmptyMessage);
-            } else {
-                errorUsername.setText(null);
-            }
-            //space
-            if (inputTextUsername.getText().contains(space)) {
-                int spaceIndex = inputTextUsername.getText().indexOf(space);
-                String str = inputTextUsername.getText().substring(0, spaceIndex);
-                inputTextUsername.setText(str);
-                errorUsername.setTextFill(Color.RED);
-                errorUsername.setText(errorSpaceMessage);
-            }
-            if (accountEntity.isExistAccount(inputTextUsername.getText())) {
-                errorUsername.setText(errorExistAccountMessage);
-            }
-//            //complete
-//            inputTextUsername.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() > 0) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextUsername.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
+                    final String space = " ";
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorUsername.setTextFill(Color.RED);
+                        errorUsername.setText(errorEmptyMessage);
+                    } else {
+                        errorUsername.setText(null);
+                    }
+                    //space
+                    if (inputTextUsername.getText().contains(space)) {
+                        int spaceIndex = inputTextUsername.getText().indexOf(space);
+                        String str = inputTextUsername.getText().substring(0, spaceIndex);
+                        inputTextUsername.setText(str);
+                        errorUsername.setTextFill(Color.RED);
+                        errorUsername.setText(errorSpaceMessage);
+                    }
+                    if (accountEntity.isExistAccount(inputTextUsername.getText())) {
+                        errorUsername.setText(errorExistAccountMessage);
+                    }
+                });
     }
 
     @FXML
@@ -292,32 +244,27 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextPassword.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextPassword.textProperty()));
-            String space = " ";
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorPassword.setTextFill(Color.RED);
-                errorPassword.setText(errorEmptyMessage);
-            } else {
-                errorPassword.setText(null);
-            }
-            //space
-            if (inputTextPassword.getText().contains(space)) {
-                int spaceIndex = inputTextPassword.getText().indexOf(space);
-                String str = inputTextPassword.getText().substring(0, spaceIndex);
-                inputTextPassword.setText(str);
-                errorPassword.setTextFill(Color.RED);
-                errorPassword.setText(errorSpaceMessage);
-            }
-//            //complete
-//            inputTextPassword.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() != 0) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextPassword.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextPassword.textProperty()));
+                    String space = " ";
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorPassword.setTextFill(Color.RED);
+                        errorPassword.setText(errorEmptyMessage);
+                    } else {
+                        errorPassword.setText(null);
+                    }
+                    //space
+                    if (inputTextPassword.getText().contains(space)) {
+                        int spaceIndex = inputTextPassword.getText().indexOf(space);
+                        String str = inputTextPassword.getText().substring(0, spaceIndex);
+                        inputTextPassword.setText(str);
+                        errorPassword.setTextFill(Color.RED);
+                        errorPassword.setText(errorSpaceMessage);
+                    }
+                });
     }
 
     @FXML
@@ -343,52 +290,41 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextConfirmPassword.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextConfirmPassword.textProperty()));
-            final String space = " ";
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorConfirmPassword.setTextFill(Color.RED);
-                errorConfirmPassword.setText(errorEmptyMessage);
-            } else {
-                errorConfirmPassword.setText(null);
-            }
-            //space
-            if (inputTextConfirmPassword.getText().contains(space)) {
-                int spaceIndex = inputTextConfirmPassword.getText().indexOf(space);
-                String str = inputTextConfirmPassword.getText().substring(0, spaceIndex);
-                inputTextConfirmPassword.setText(str);
-                errorConfirmPassword.setTextFill(Color.RED);
-                errorConfirmPassword.setText(errorSpaceMessage);
-            }
-            //confirm password
-            if (!inputTextPassword.getText().isEmpty()) {
-                String getPassword = inputTextPassword.getText();
-                String getConfirmPassword = inputTextConfirmPassword.getText();
-                if (currentLength.getValue() == 0 && !getConfirmPassword.equals(getPassword)) {
-                    errorConfirmPassword.setTextFill(Color.RED);
-                    errorConfirmPassword.setText(errorEmptyMessage);
-                } else if (currentLength.getValue() > 0 && !getConfirmPassword.equals(getPassword)) {
-                    errorConfirmPassword.setTextFill(Color.RED);
-                    errorConfirmPassword.setText(errorConfirmPasswordMessage);
-                } else {
-                    errorConfirmPassword.setText(null);
-                }
-            }//empty password
-//            else {
-//                inputTextPassword.requestFocus();
-//                errorPassword.setTextFill(Color.RED);
-//                errorPassword.setText(errorEmptyMessage);
-//                inputTextConfirmPassword.setText("");
-//            }
-//            //complete
-//            inputTextConfirmPassword.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() != 0) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextConfirmPassword.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextConfirmPassword.textProperty()));
+                    final String space = " ";
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorConfirmPassword.setTextFill(Color.RED);
+                        errorConfirmPassword.setText(errorEmptyMessage);
+                    } else {
+                        errorConfirmPassword.setText(null);
+                    }
+                    //space
+                    if (inputTextConfirmPassword.getText().contains(space)) {
+                        int spaceIndex = inputTextConfirmPassword.getText().indexOf(space);
+                        String str = inputTextConfirmPassword.getText().substring(0, spaceIndex);
+                        inputTextConfirmPassword.setText(str);
+                        errorConfirmPassword.setTextFill(Color.RED);
+                        errorConfirmPassword.setText(errorSpaceMessage);
+                    }
+                    //confirm password
+                    if (!inputTextPassword.getText().isEmpty()) {
+                        String getPassword = inputTextPassword.getText();
+                        String getConfirmPassword = inputTextConfirmPassword.getText();
+                        if (currentLength.getValue() == 0 && !getConfirmPassword.equals(getPassword)) {
+                            errorConfirmPassword.setTextFill(Color.RED);
+                            errorConfirmPassword.setText(errorEmptyMessage);
+                        } else if (currentLength.getValue() > 0 && !getConfirmPassword.equals(getPassword)) {
+                            errorConfirmPassword.setTextFill(Color.RED);
+                            errorConfirmPassword.setText(errorConfirmPasswordMessage);
+                        } else {
+                            errorConfirmPassword.setText(null);
+                        }
+                    }
+                });
     }
 
     @FXML
@@ -440,48 +376,35 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextEmail.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextEmail.textProperty()));
-            final String space = " ";
-            Pattern emailRegex = Pattern.compile(
-                    "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
-                    + "@"//@
-                    + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
-                    ,
-                     Pattern.CASE_INSENSITIVE);
-            Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
-//            //empty
-//            if (currentLength.getValue() == 0) {
-//                errorEmail.setTextFill(Color.RED);
-//                errorEmail.setText(errorEmptyMessage);
-//            }
-//            else {
-//                errorEmail.setText(null);
-//            }
-            //space
-            if (inputTextEmail.getText().contains(space)) {
-                int spaceIndex = inputTextEmail.getText().indexOf(space);
-                String str = inputTextEmail.getText().substring(0, spaceIndex);
-                inputTextEmail.setText(str);
-                errorEmail.setTextFill(Color.RED);
-                errorEmail.setText(errorSpaceMessage);
-            }
-            //email check
-            if (currentLength.getValue() > 0 && !emailCheck.find()) {
-                errorEmail.setText(errorEmailMessage);
-            } else if (currentLength.getValue() == 0 && !emailCheck.find()) {
-                errorEmail.setText(errorEmptyMessage);
-            } else {
-                errorEmail.setText(null);
-            }
-//            //complete
-//            inputTextEmail.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && emailCheck.find()) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextEmail.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextEmail.textProperty()));
+                    final String space = " ";
+                    Pattern emailRegex = Pattern.compile(
+                            "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
+                            + "@"//@
+                            + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
+                            ,
+                             Pattern.CASE_INSENSITIVE);
+                    Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
+                    //space
+                    if (inputTextEmail.getText().contains(space)) {
+                        int spaceIndex = inputTextEmail.getText().indexOf(space);
+                        String str = inputTextEmail.getText().substring(0, spaceIndex);
+                        inputTextEmail.setText(str);
+                        errorEmail.setTextFill(Color.RED);
+                        errorEmail.setText(errorSpaceMessage);
+                    }
+                    //email check
+                    if (currentLength.getValue() > 0 && !emailCheck.find()) {
+                        errorEmail.setText(errorEmailMessage);
+                    } else if (currentLength.getValue() == 0 && !emailCheck.find()) {
+                        errorEmail.setText(errorEmptyMessage);
+                    } else {
+                        errorEmail.setText(null);
+                    }
+                });
     }
 
     @FXML
@@ -498,23 +421,18 @@ public class SignUpController implements Initializable {
                 isCompleteForm();
             }
         });
-        inputTextAddress.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextAddress.textProperty()));
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorAddress.setTextFill(Color.RED);
-                errorAddress.setText(errorEmptyMessage);
-            } else {
-                errorAddress.setText(null);
-            }
-//            //complete
-//            inputTextAddress.setOnKeyPressed((KeyEvent t2) -> {
-//                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() != 0) {
-//                    isCompleteForm();
-//                }
-//            });
-        });
+        inputTextAddress.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextAddress.textProperty()));
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorAddress.setTextFill(Color.RED);
+                        errorAddress.setText(errorEmptyMessage);
+                    } else {
+                        errorAddress.setText(null);
+                    }
+                });
     }
 
     @FXML
@@ -527,49 +445,50 @@ public class SignUpController implements Initializable {
                 errorPhoneNumber.setText(errorEmptyMessage);
             }
         });
-        inputTextPhoneNumber.textProperty().addListener((ObservableValue<? extends String> ov, String t, String t1) -> {
-            IntegerProperty currentLength = new SimpleIntegerProperty();
-            currentLength.bind(Bindings.length(inputTextPhoneNumber.textProperty()));
-            final String space = " ";
-            //empty
-            if (currentLength.getValue() == 0) {
-                errorPhoneNumber.setTextFill(Color.RED);
-                errorPhoneNumber.setText(errorEmptyMessage);
-            } //length
-            else if (currentLength.getValue() != 10) {
-                errorPhoneNumber.setTextFill(Color.RED);
-                errorPhoneNumber.setText(errorLengthMessage + " (" + currentLength.getValue() + "/10)");
-            } else {
-                errorPhoneNumber.setTextFill(Color.GREEN);
-                errorPhoneNumber.setText(errorLengthMessage + " (" + currentLength.getValue() + "/10)");
-                errorPhoneNumber.setOnMouseClicked((MouseEvent t2) -> {
-                    errorPhoneNumber.setText(null);
+        inputTextPhoneNumber.textProperty().addListener(
+                (ObservableValue<? extends String> ov, String t, String t1) -> {
+                    IntegerProperty currentLength = new SimpleIntegerProperty();
+                    currentLength.bind(Bindings.length(inputTextPhoneNumber.textProperty()));
+                    final String space = " ";
+                    //empty
+                    if (currentLength.getValue() == 0) {
+                        errorPhoneNumber.setTextFill(Color.RED);
+                        errorPhoneNumber.setText(errorEmptyMessage);
+                    } //length
+                    else if (currentLength.getValue() != 10) {
+                        errorPhoneNumber.setTextFill(Color.RED);
+                        errorPhoneNumber.setText(errorLengthMessage + " (" + currentLength.getValue() + "/10)");
+                    } else {
+                        errorPhoneNumber.setTextFill(Color.GREEN);
+                        errorPhoneNumber.setText(errorLengthMessage + " (" + currentLength.getValue() + "/10)");
+                        errorPhoneNumber.setOnMouseClicked((MouseEvent t2) -> {
+                            errorPhoneNumber.setText(null);
+                        });
+                    }
+                    //space
+                    if (inputTextPhoneNumber.getText().contains(space)) {
+                        int spaceIndex = inputTextPhoneNumber.getText().indexOf(space);
+                        String str = inputTextPhoneNumber.getText().substring(0, spaceIndex);
+                        inputTextPhoneNumber.setText(str);
+                        errorPhoneNumber.setTextFill(Color.RED);
+                        errorPhoneNumber.setText(errorSpaceMessage);
+                    }
+                    //letter
+                    if (currentLength.getValue() > 0) {
+                        char lastLetter = inputTextPhoneNumber.getText().charAt((currentLength.getValue() - 1));
+                        if (lastLetter < '0' || lastLetter > '9') {
+                            String newInput = inputTextPhoneNumber.getText().substring(0, (currentLength.getValue() - 1));
+                            inputTextPhoneNumber.setText(newInput);
+                            errorPhoneNumber.setTextFill(Color.RED);
+                            errorPhoneNumber.setText(errorLetterMessage);
+                        }
+                    }
+                    //complete
+                    inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
+                        if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
+                            isCompleteForm();
+                        }
+                    });
                 });
-            }
-            //space
-            if (inputTextPhoneNumber.getText().contains(space)) {
-                int spaceIndex = inputTextPhoneNumber.getText().indexOf(space);
-                String str = inputTextPhoneNumber.getText().substring(0, spaceIndex);
-                inputTextPhoneNumber.setText(str);
-                errorPhoneNumber.setTextFill(Color.RED);
-                errorPhoneNumber.setText(errorSpaceMessage);
-            }
-            //letter
-            if (currentLength.getValue() > 0) {
-                char lastLetter = inputTextPhoneNumber.getText().charAt((currentLength.getValue() - 1));
-                if (lastLetter < '0' || lastLetter > '9') {
-                    String newInput = inputTextPhoneNumber.getText().substring(0, (currentLength.getValue() - 1));
-                    inputTextPhoneNumber.setText(newInput);
-                    errorPhoneNumber.setTextFill(Color.RED);
-                    errorPhoneNumber.setText(errorLetterMessage);
-                }
-            }
-            //complete
-            inputTextPhoneNumber.setOnKeyPressed((KeyEvent t2) -> {
-                if (t2.getCode() == KeyCode.ENTER && currentLength.getValue() == 10) {
-                    isCompleteForm();
-                }
-            });
-        });
     }
 }

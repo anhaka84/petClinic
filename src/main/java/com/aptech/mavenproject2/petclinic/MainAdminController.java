@@ -5,8 +5,6 @@ import Controller.SignController.SignOutController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -66,7 +64,6 @@ public class MainAdminController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(BILL_TITLE);
         } catch (IOException ex) {
-            Logger.getLogger(MainAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -77,7 +74,6 @@ public class MainAdminController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(SERVICES_TITLE);
         } catch (IOException ex) {
-            Logger.getLogger(MainAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -88,7 +84,6 @@ public class MainAdminController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(MEDICINES_TITLE);
         } catch (IOException ex) {
-            Logger.getLogger(MainAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -99,7 +94,6 @@ public class MainAdminController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(MANAGE_ACCOUNT_TITLE);
         } catch (IOException ex) {
-            Logger.getLogger(MainAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -110,7 +104,6 @@ public class MainAdminController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(YOUR_INFO_TITLE);
         } catch (IOException ex) {
-            Logger.getLogger(MainAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -118,5 +111,4 @@ public class MainAdminController implements Initializable {
     private void SignOut() {
         SignOutController.signOutEvent();
     }
-
 }
