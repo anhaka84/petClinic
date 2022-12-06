@@ -19,8 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controller.SignController.SignInController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignController.SignInController">
     <left>
         <Pane prefHeight="700.0" prefWidth="414.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -39,12 +38,12 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="login_background" stylesheets="@../../../../CSS/Login.css" BorderPane.alignment="CENTER">
             <children>
-                <GridPane layoutX="14.0" layoutY="226.0" prefHeight="290.0" prefWidth="552.0">
+                <GridPane layoutX="58.0" layoutY="104.0" prefHeight="333.0" prefWidth="506.0" styleClass="grid_pane" stylesheets="@../../../../CSS/Login.css">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="130.19998779296876" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="399.8000122070313" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="150.2" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="520.8" minWidth="10.0" prefWidth="356.6" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
@@ -75,7 +74,10 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></CheckBox>
                         <PasswordField fx:id="inputTextPassword" prefHeight="37.0" prefWidth="320.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                             <children>
@@ -93,16 +95,16 @@
                         </HBox>
                         <Label fx:id="errorUsername" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="errorPassword" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                      <Label alignment="CENTER" text="Sign In" GridPane.columnIndex="1">
+                          <font>
+                              <Font size="40.0" />
+                          </font>
+                      </Label>
                     </children>
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
                 </GridPane>
-                <Label alignment="CENTER" layoutX="233.0" layoutY="204.0" text="Sign In">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                </Label>
             </children>
         </Pane>
     </center>

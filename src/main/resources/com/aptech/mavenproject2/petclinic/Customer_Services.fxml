@@ -87,12 +87,14 @@
             </Text>
             <TableView layoutX="28.0" layoutY="137.0" prefHeight="503.0" prefWidth="703.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="131.99997520446777" text="Service ID" />
+                <TableColumn prefWidth="167.99996948242188" text="Service Type" />
+                  <TableColumn prefWidth="197.59994506835938" text="Service Name" />
+                  <TableColumn prefWidth="207.2000732421875" text="Service Price" />
               </columns>
             </TableView>
-            <TextField layoutX="84.0" layoutY="97.0" prefHeight="26.0" prefWidth="646.0" />
-            <Button layoutX="29.0" layoutY="95.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField layoutX="80.0" layoutY="98.0" prefHeight="26.0" prefWidth="646.0" />
+            <Button layoutX="32.0" layoutY="98.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
          </children>
       </Pane>
    </center>

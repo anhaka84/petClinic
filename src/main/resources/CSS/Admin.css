@@ -3,9 +3,3 @@
     -fx-background-color: #fff;
     -fx-background-radius: 10px;
 }
-
-.avartar{
-    -fx-background-image:url(../Img/avatar.png);
-    -fx-background-size: cover;
-    -fx-background-radius: 10px;
-}

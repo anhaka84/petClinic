@@ -39,9 +39,9 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="login_background" stylesheets="@../../../../CSS/Login.css" BorderPane.alignment="CENTER">
             <children>
-                <GridPane layoutX="39.0" layoutY="135.0" prefHeight="370.0" prefWidth="587.0">
+                <GridPane layoutX="39.0" layoutY="110.0" prefHeight="303.0" prefWidth="600.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.20001220703125" minWidth="10.0" prefWidth="199.8" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="466.60003662109375" minWidth="10.0" prefWidth="387.2" />
@@ -119,7 +119,7 @@
                         <TextField fx:id="inputTextEmail" onAction="#inputTextEmailValidate" prefHeight="32.0" promptText="Enter your email" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <TextField fx:id="inputTextAddress" onAction="#inputTextAddressValidate" prefHeight="32.0" promptText="Enter your address" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <TextField fx:id="inputTextPhoneNumber" prefHeight="32.0" promptText="Enter your phone number" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-                        <DatePicker fx:id="inputDob" onAction="#inputDobValidate" prefHeight="32.0" prefWidth="413.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <DatePicker fx:id="inputDob" onAction="#inputDobValidate" prefHeight="32.0" prefWidth="394.0" promptText="Pick your birthday" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <RadioButton fx:id="male" mnemonicParsing="false" onAction="#inputGenderValidate" prefHeight="42.0" prefWidth="74.0" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="10">
                      <toggleGroup>
                         <ToggleGroup fx:id="gender" />
@@ -146,30 +146,27 @@
                         <Label fx:id="errorPhoneNumber" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="342.0" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="17" />
                     </children>
                 </GridPane>
-                <Button alignment="CENTER" layoutX="556.0" layoutY="542.0" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
+                <Button alignment="CENTER" layoutX="569.0" layoutY="415.0" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign Up">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <HBox alignment="CENTER_LEFT" layoutX="309.0" layoutY="542.0">
-                    <children>
-                        <Label text="Already have an account?">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Hyperlink onAction="#goToLogin" prefHeight="35.0" text="Login now">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Hyperlink>
-                    </children>
-                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="309.0" layoutY="542.0" />
                 <Label layoutX="279.0" layoutY="54.0" text="Sign Up">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
+                  <Label layoutX="304.0" layoutY="422.0" text="Already have an account?">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+                  </Label>
+                  <Hyperlink layoutX="462.0" layoutY="415.0" onAction="#goToLogin" prefHeight="35.0" text="Login now">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+                  </Hyperlink>
             </children>
         </Pane>
     </center>

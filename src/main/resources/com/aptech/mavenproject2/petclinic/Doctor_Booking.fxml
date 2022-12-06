@@ -71,8 +71,11 @@
             </Text>
             <TableView layoutX="28.0" layoutY="350.0" prefHeight="339.0" prefWidth="724.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="136.00003623962402" text="Booking ID" />
+                <TableColumn prefWidth="156.79995727539062" text="Customer Name" />
+                  <TableColumn prefWidth="139.20001220703125" text="Service Name" />
+                  <TableColumn prefWidth="134.39993286132812" text="Booking Date" />
+                  <TableColumn prefWidth="158.4000244140625" text="Booking Time" />
               </columns>
             </TableView>
             <TextField layoutX="79.0" layoutY="320.0" prefHeight="26.0" prefWidth="673.0" />
