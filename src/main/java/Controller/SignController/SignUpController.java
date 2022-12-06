@@ -4,6 +4,7 @@ import Controller.Router;
 import Entities.*;
 import Models.*;
 import Session.SessionWriter;
+import Validation.Validate;
 import java.net.URL;
 import java.sql.Date;
 import java.util.Arrays;
@@ -194,9 +195,12 @@ public class SignUpController implements Initializable {
     private void inputTextUsernameValidate() {
         //empty
         inputTextUsername.setOnKeyPressed((KeyEvent t) -> {
-            if (t.getCode() == KeyCode.ENTER
-                    && inputTextUsername.getText().isEmpty()) {
-                errorUsername.setTextFill(Color.RED);
+//            if (t.getCode() == KeyCode.ENTER
+//                    && inputTextUsername.getText().isEmpty()) {
+//                errorUsername.setTextFill(Color.RED);
+//                errorUsername.setText(errorEmptyMessage);
+//            }
+            if (Validate.isEmptyTextField(t, inputTextUsername)) {
                 errorUsername.setText(errorEmptyMessage);
             }
             //complete
@@ -206,26 +210,37 @@ public class SignUpController implements Initializable {
         });
         inputTextUsername.textProperty().addListener(
                 (ObservableValue<? extends String> ov, String t, String t1) -> {
-                    IntegerProperty currentLength = new SimpleIntegerProperty();
-                    currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
-                    final String space = " ";
+//                    IntegerProperty currentLength = new SimpleIntegerProperty();
+//                    currentLength.bind(Bindings.length(inputTextUsername.textProperty()));
+//                    final String space = " ";
                     //empty
-                    if (currentLength.getValue() == 0) {
-                        errorUsername.setTextFill(Color.RED);
+                    if (Validate.isEmptyTextField(inputTextUsername)) {
                         errorUsername.setText(errorEmptyMessage);
+                    } //                    else {
+                    //                        errorUsername.setText(null);
+                    //                    }
+                    //                    if (currentLength.getValue() == 0) {
+                    //                        errorUsername.setTextFill(Color.RED);
+                    //                        errorUsername.setText(errorEmptyMessage);
+                    //                    } else {
+                    //                        errorUsername.setText(null);
+                    //                    }
+                    //space
+                    else if (Validate.findWhiteSpace(inputTextUsername)) {
+//                        Validate.removeWhiteSpace(inputTextUsername);
+                        errorUsername.setText(errorSpaceMessage);
+                        Validate.removeWhiteSpace(inputTextUsername);
+                    } //                    if (inputTextUsername.getText().contains(space)) {
+                    //                        int spaceIndex = inputTextUsername.getText().indexOf(space);
+                    //                        String str = inputTextUsername.getText().substring(0, spaceIndex);
+                    //                        inputTextUsername.setText(str);
+                    //                        errorUsername.setTextFill(Color.RED);
+                    //                        errorUsername.setText(errorSpaceMessage);
+                    //                    }
+                    else if (accountEntity.isExistAccount(inputTextUsername.getText())) {
+                        errorUsername.setText(errorExistAccountMessage);
                     } else {
                         errorUsername.setText(null);
-                    }
-                    //space
-                    if (inputTextUsername.getText().contains(space)) {
-                        int spaceIndex = inputTextUsername.getText().indexOf(space);
-                        String str = inputTextUsername.getText().substring(0, spaceIndex);
-                        inputTextUsername.setText(str);
-                        errorUsername.setTextFill(Color.RED);
-                        errorUsername.setText(errorSpaceMessage);
-                    }
-                    if (accountEntity.isExistAccount(inputTextUsername.getText())) {
-                        errorUsername.setText(errorExistAccountMessage);
                     }
                 });
     }
