@@ -85,7 +85,14 @@ public class PetModel extends DBCommon<PetModel> {
 
     @Override
     public String toString() {
-        return "Pet{" + "petId=" + petId + ", userId=" + userId + ", petName=" + petName + ", petType=" + petType + ", petGender=" + petGender + ", petWeight=" + petWeight + ", petAge=" + petAge + '}';
+        return "Pet{" + "petId=" + petId
+                + ", userId=" + userId
+                + ", petName=" + petName
+                + ", petType=" + petType
+                + ", petGender=" + petGender
+                + ", petWeight=" + petWeight
+                + ", petAge=" + petAge
+                + '}';
     }
 
     @Override
@@ -100,5 +107,4 @@ public class PetModel extends DBCommon<PetModel> {
         object.setPetAge(rs.getInt("pet_age"));
         return object;
     }
-
 }

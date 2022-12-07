@@ -167,9 +167,7 @@ public class SignUpController implements Initializable {
     private void inputTextFullNameValidate() {
         //empty
         inputTextFullName.setOnKeyPressed((KeyEvent t) -> {
-            if (t.getCode() == KeyCode.ENTER
-                    && inputTextFullName.getText().isEmpty()) {
-                errorFullName.setTextFill(Color.RED);
+            if (Validate.isEmptyTextField(t, inputTextFullName)) {
                 errorFullName.setText(errorEmptyMessage);
             }
             //complete
@@ -374,51 +372,67 @@ public class SignUpController implements Initializable {
     private void inputTextEmailValidate() {
         //empty
         inputTextEmail.setOnKeyPressed((KeyEvent t) -> {
-            Pattern emailRegex = Pattern.compile(
-                    "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
-                    + "@"//@
-                    + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
-                    ,
-                     Pattern.CASE_INSENSITIVE);
-            Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
-            if (t.getCode() == KeyCode.ENTER
-                    && inputTextEmail.getText().isEmpty()) {
-                errorEmail.setTextFill(Color.RED);
+//            Pattern emailRegex = Pattern.compile(
+//                    "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
+//                    + "@"//@
+//                    + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
+//                    ,
+//                     Pattern.CASE_INSENSITIVE);
+//            Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
+            if (Validate.isEmptyTextField(t, inputTextEmail)) {
                 errorEmail.setText(errorEmptyMessage);
             }
             //complete
-            if (t.getCode() == KeyCode.ENTER && emailCheck.find()) {
+            if (t.getCode() == KeyCode.ENTER
+                    && Validate.checkEmailFormat(inputTextEmail) == 0) {
                 isCompleteForm();
             }
         });
         inputTextEmail.textProperty().addListener(
                 (ObservableValue<? extends String> ov, String t, String t1) -> {
-                    IntegerProperty currentLength = new SimpleIntegerProperty();
-                    currentLength.bind(Bindings.length(inputTextEmail.textProperty()));
-                    final String space = " ";
-                    Pattern emailRegex = Pattern.compile(
-                            "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*"//local part
-                            + "@"//@
-                            + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"//domain
-                            ,
-                             Pattern.CASE_INSENSITIVE);
-                    Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
-                    //space
-                    if (inputTextEmail.getText().contains(space)) {
-                        int spaceIndex = inputTextEmail.getText().indexOf(space);
-                        String str = inputTextEmail.getText().substring(0, spaceIndex);
-                        inputTextEmail.setText(str);
-                        errorEmail.setTextFill(Color.RED);
-                        errorEmail.setText(errorSpaceMessage);
-                    }
-                    //email check
-                    if (currentLength.getValue() > 0 && !emailCheck.find()) {
-                        errorEmail.setText(errorEmailMessage);
-                    } else if (currentLength.getValue() == 0 && !emailCheck.find()) {
+//                    IntegerProperty currentLength = new SimpleIntegerProperty();
+//                    currentLength.bind(Bindings.length(inputTextEmail.textProperty()));
+//                    final String space = " ";
+//                    Pattern emailRegex = Pattern.compile(
+//                            //local part @ domain
+//                            "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*" + "@"
+//                            + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$", Pattern.CASE_INSENSITIVE);
+//
+//                    Matcher emailCheck = emailRegex.matcher(inputTextEmail.getText());
+                    if (Validate.isEmptyTextField(inputTextEmail)) {
                         errorEmail.setText(errorEmptyMessage);
-                    } else {
-                        errorEmail.setText(null);
                     }
+                    //space
+                    if (Validate.findWhiteSpace(inputTextEmail)) {
+                        errorEmail.setText(errorSpaceMessage);
+                        Validate.removeWhiteSpace(inputTextEmail);
+                    }
+//                    if (inputTextEmail.getText().contains(space)) {
+//                        int spaceIndex = inputTextEmail.getText().indexOf(space);
+//                        String str = inputTextEmail.getText().substring(0, spaceIndex);
+//                        inputTextEmail.setText(str);
+//                        errorEmail.setTextFill(Color.RED);
+//                        errorEmail.setText(errorSpaceMessage);
+//                    }
+                    //email check
+                    switch (Validate.checkEmailFormat(inputTextEmail)) {
+                        case 2:
+                            errorEmail.setText(errorEmptyMessage);
+                            break;
+                        case 1:
+                            errorEmail.setText(errorEmailMessage);
+                            break;
+                        default:
+                            errorEmail.setText(null);
+                            break;
+                    }
+//                    if (currentLength.getValue() > 0 && !emailCheck.find()) {
+//                        errorEmail.setText(errorEmailMessage);
+//                    } else if (currentLength.getValue() == 0 && !emailCheck.find()) {
+//                        errorEmail.setText(errorEmptyMessage);
+//                    } else {
+//                        errorEmail.setText(null);
+//                    }
                 });
     }
 
