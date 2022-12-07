@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../Img/logo.png" />
+                    </image>
+                </ImageView>
+                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+            <Button layoutY="248.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
+            <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            </children>
+        </Pane>
+    </left>
+    <center>
+        <Pane prefHeight="702.0" prefWidth="774.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
+            <children>
+                <Text layoutX="194.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Your Schedule" underline="true" wrappingWidth="384.53662872314453">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Text>
+                <GridPane layoutX="194.0" layoutY="103.0" prefHeight="185.0" prefWidth="345.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="80.79997100830079" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.40001983642577" minWidth="10.0" prefWidth="213.2000289916992" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="205.60000610351562" minHeight="10.0" prefHeight="101.80001220703124" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.39998779296874" minHeight="0.0" prefHeight="86.19998168945312" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="96.0" minHeight="0.0" prefHeight="72.60001831054686" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label layoutX="10.0" layoutY="206.0" prefHeight="18.0" prefWidth="178.0" text="Time" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <RadioButton mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="gender" />
+                            </toggleGroup>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                        </RadioButton>
+                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="120.0" />
+                            </GridPane.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                        </RadioButton>
+                        <Button contentDisplay="RIGHT" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="183.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Button contentDisplay="RIGHT" layoutX="524.0" layoutY="321.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="93.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Label layoutX="10.0" layoutY="86.0" prefHeight="30.0" prefWidth="216.0" text="Date">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Button contentDisplay="RIGHT" layoutX="455.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Refresh" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </Button>
+                  <DatePicker prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="1" />
+                    </children>
+                </GridPane>
+            <TableView layoutX="26.0" layoutY="331.0" prefHeight="347.0" prefWidth="722.0">
+              <columns>
+                <TableColumn prefWidth="191.1999568939209" text="ID" />
+                <TableColumn minWidth="0.0" prefWidth="266.39990234375" text="Date" />
+                  <TableColumn minWidth="0.0" prefWidth="263.6000061035156" text="Time" />
+              </columns>
+            </TableView>
+            <Button contentDisplay="RIGHT" layoutX="31.0" layoutY="303.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="666.0" />
+            </children>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Pane>
+    </center>
+</BorderPane>
