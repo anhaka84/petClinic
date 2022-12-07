@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.AdminMainController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aptech.mavenproject2.petclinic.CustomerMainController">
     <children>
         <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <left>
@@ -33,15 +33,14 @@
                                         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                                             <children>
                                                 <Button mnemonicParsing="false" onAction="#getHome" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" />
+                                                <Button mnemonicParsing="false" onAction="#getDoctor" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" />
+                                                <Button mnemonicParsing="false" onAction="#getServices" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" />
+                                                <Button mnemonicParsing="false" onAction="#getPet" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" />
                                                 <Button mnemonicParsing="false" onAction="#getBooking" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
-                                                <Button mnemonicParsing="false" onAction="#getBill" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Bill" />
-                                                <Button mnemonicParsing="false" onAction="#getServices" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Services" />
-                                                <Button mnemonicParsing="false" onAction="#getMedicines" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Medicines" />
-                                                <Button mnemonicParsing="false" onAction="#getManageAccount" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Manage Account" />
                                                 <Button mnemonicParsing="false" onAction="#getUserInfo" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
                                                 <Button mnemonicParsing="false" onAction="#SignOut" prefHeight="30.0" prefWidth="60.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out">
                                                     <VBox.margin>
-                                                        <Insets top="30.0" />
+                                                        <Insets top="100.0" />
                                                     </VBox.margin>
                                                 </Button>
                                             </children>

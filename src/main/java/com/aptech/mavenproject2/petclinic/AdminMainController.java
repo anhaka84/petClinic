@@ -11,15 +11,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-public class MainAdminController implements Initializable {
+public class AdminMainController implements Initializable {
 
     @FXML
     private BorderPane mainPage;
 
     @FXML
-    private Label headerTitle;
+    private Label labelTitlePage;
 
-    private static final String DASHBOARD_TITLE = "Welcome to Pet Clinic";
+    private static final String HOME_TITLE = "Welcome to Pet Clinic";
     private static final String BOOKING_TITLE = "Booking";
     private static final String BILL_TITLE = "Bill";
     private static final String SERVICES_TITLE = "Services";
@@ -29,20 +29,19 @@ public class MainAdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        getDashboard();
+        getHome();
     }
 
-    @FXML
     private void setPageTitle(String title) {
-        headerTitle.setText(title);
+        labelTitlePage.setText(title);
     }
 
     @FXML
-    private void getDashboard() {
+    private void getHome() {
         try {
             Pane view = App.getPane(Router.getAdminHomepage());
             mainPage.setCenter(view);
-            setPageTitle(DASHBOARD_TITLE);
+            setPageTitle(HOME_TITLE);
         } catch (IOException ex) {
         }
     }
@@ -100,7 +99,7 @@ public class MainAdminController implements Initializable {
     @FXML
     private void getUserInfo() {
         try {
-            Pane view = App.getPane(Router.getAdminYourInfo());
+            Pane view = App.getPane(Router.getAdminInfo());
             mainPage.setCenter(view);
             setPageTitle(YOUR_INFO_TITLE);
         } catch (IOException ex) {

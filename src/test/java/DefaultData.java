@@ -1,4 +1,5 @@
 //
+//import Session.SessionWriter;
 //import Entities.*;
 //import Models.*;
 //import java.sql.Date;
@@ -8,6 +9,32 @@
 //public class DefaultData {
 //
 //    public static void main(String[] args) {
+//        SessionWriter session = new SessionWriter();
+//        SignEntity sign = new SignEntity();
+//        System.out.println(session.getSession());
+//        System.out.println(session.getLineStartWith("remember="));
+//        System.out.println(session.getLineStartWith("username="));
+//        System.out.println(session.getLineStartWith("password="));
+//
+//        System.out.println(sign.signIn("admin", "123456", true));
+//
+//        System.out.println(sign.signOut());
+//        
+//        System.out.println(session.getSession());
+//        System.out.println(session.getLineStartWith("remember="));
+//        System.out.println(session.getLineStartWith("username="));
+//        System.out.println(session.getLineStartWith("password="));
+//
+//        System.out.println(sign.signIn("abc", "123", true));
+//
+//        System.out.println(session.getSession());
+//
+//        System.out.println(sign.signOut());
+//
+//        System.out.println(session.getSession());
+//        System.out.println(session.getLineStartWith("remember="));
+//        System.out.println(session.getLineStartWith("username="));
+//        System.out.println(session.getLineStartWith("password="));
 //
 //        RoleEntity roleM = new RoleEntity();
 //        UserEntity userM = new UserEntity();

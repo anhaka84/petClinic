@@ -54,7 +54,7 @@
                   <PasswordField fx:id="inputTextPassword" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="340.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label fx:id="errorPassword" maxWidth="1.7976931348623157E308" styleClass="label_error" stylesheets="@../../../../CSS/Label.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <CheckBox fx:id="inputCBoxRemember" mnemonicParsing="false" text="Remember Me" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Button fx:id="buttonSubmit" alignment="CENTER" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="40.0" prefWidth="100.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#isCompleteForm" prefHeight="40.0" prefWidth="100.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Sign In" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="200.0" />
                      </GridPane.margin>

@@ -6,6 +6,7 @@ module com.aptech.mavenproject2.petclinic {
     requires java.desktop;
 //    requires pdfbox;
     requires java.base;
+    requires javafx.graphics;
     
     opens com.aptech.mavenproject2.petclinic to javafx.fxml;
     exports com.aptech.mavenproject2.petclinic;

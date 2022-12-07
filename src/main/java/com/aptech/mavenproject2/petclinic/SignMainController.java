@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-public class MainSignController implements Initializable {
+public class SignMainController implements Initializable {
 
     @FXML
     private BorderPane mainPage;
@@ -17,7 +17,7 @@ public class MainSignController implements Initializable {
     private static boolean isSwitchSignUpPage = false;
 
     public static void setIsSwitchSignUpPage(boolean isSwitchSignUpPage) {
-        MainSignController.isSwitchSignUpPage = isSwitchSignUpPage;
+        SignMainController.isSwitchSignUpPage = isSwitchSignUpPage;
     }
 
     private boolean isSwitchPage() {
