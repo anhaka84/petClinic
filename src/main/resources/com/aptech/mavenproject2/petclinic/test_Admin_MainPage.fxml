@@ -59,7 +59,7 @@
             <center>
                 <AnchorPane BorderPane.alignment="CENTER">
                     <children>
-                        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox alignment="TOP_CENTER" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <Label fx:id="labelTitlePage" alignment="CENTER" layoutX="245.0" prefHeight="50.0" text="Welcome to Pet Clinic">
                                     <font>
