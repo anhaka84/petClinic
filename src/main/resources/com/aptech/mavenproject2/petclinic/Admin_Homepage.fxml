@@ -58,16 +58,16 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
             <children>
                 <Text layoutX="212.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" wrappingWidth="329.33673095703125">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </Text>
-                <HBox layoutX="112.0" layoutY="183.0" prefHeight="100.0" prefWidth="200.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox layoutX="112.0" layoutY="183.0" prefHeight="100.0" prefWidth="210.0" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
-                        <GridPane prefHeight="97.0" prefWidth="213.0">
+                        <GridPane prefHeight="100.0" prefWidth="206.0">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="80.8" />
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.5999755859375" minWidth="10.0" prefWidth="119.2" />
