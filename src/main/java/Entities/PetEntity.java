@@ -51,7 +51,11 @@ public class PetEntity {
                 + "pet_weight = ?,"
                 + "pet_age = ?"
                 + " WHERE pet_id = ?";
-        condition = Arrays.asList(pet);
+        condition = Arrays.asList(
+                pet.getPetName(),
+                pet.getPetWeight(),
+                pet.getPetAge()
+        );
         return db.setSqlDataRow(query, condition, pet);
     }
 
