@@ -3,3 +3,9 @@
     -fx-background-color: #fff;
     -fx-background-radius: 10px;
 }
+
+.admin_background{
+    -fx-background-image:url(../Img/admin-background.jpg);
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
