@@ -33,4 +33,30 @@ public class MedicationEntity {
         condition = Arrays.asList(medicationId);
         return db.getOne(query, condition, new MedicationModel());
     }
+
+    public List<MedicationModel> getAllMedication() {
+        query = "SELECT * FROM Medication";
+        return db.getAll(query, new MedicationModel());
+    }
+
+    public boolean updateMedication(MedicationModel medication) {
+        query = "UPDATE Medication SET "
+                + "medication_name = ?,"
+                + "description = ?,"
+                + "price = ?,"
+                + " WHERE medication_id = ?";
+        condition = Arrays.asList(
+                medication.getMedicationName(),
+                medication.getDescription(),
+                medication.getPrice(),
+                medication.getMedicationId()
+        );
+        return db.setSqlDataRow(query, condition, medication);
+    }
+
+    public boolean deleteMedication(int medicationId) {
+        query = "DELETE FROM Medication WHERE medication_id = ?";
+        condition = Arrays.asList(medicationId);
+        return db.setSqlDataRow(query, condition, new MedicationModel());
+    }
 }
