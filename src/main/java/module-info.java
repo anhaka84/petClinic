@@ -17,6 +17,15 @@ module com.aptech.mavenproject2.petclinic {
     opens Controller to javafx.fxml;
     exports Controller;
     
+    opens Controller.Admin to javafx.fxml;
+    exports Controller.Admin;
+    
+    opens Controller.Customer to javafx.fxml;
+    exports Controller.Customer;
+    
+    opens Controller.Doctor to javafx.fxml;
+    exports Controller.Doctor;
+    
     opens Controller.SignController to javafx.fxml;
     exports Controller.SignController;
     

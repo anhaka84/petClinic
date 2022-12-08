@@ -136,7 +136,7 @@ public class Router {
             SignMainController.setIsSwitchSignUpPage(false);
             App.setRoot(getSignPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -145,7 +145,7 @@ public class Router {
             SignMainController.setIsSwitchSignUpPage(true);
             App.setRoot(getSignPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -154,7 +154,7 @@ public class Router {
         try {
             App.setRoot(getAdminPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -163,7 +163,7 @@ public class Router {
         try {
             App.setRoot(getDoctorPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -172,7 +172,7 @@ public class Router {
         try {
             App.setRoot(getClientPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

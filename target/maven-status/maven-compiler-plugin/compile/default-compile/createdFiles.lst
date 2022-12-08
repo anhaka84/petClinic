@@ -1,4 +1,6 @@
+com\aptech\mavenproject2\petclinic\CustomerMainController.class
 Entities\UserEntity.class
+com\aptech\mavenproject2\petclinic\DoctorMainController.class
 Models\BillModel.class
 DB\config\IDBConfig.class
 Validation\Validate.class
@@ -8,16 +10,20 @@ Entities\SignEntity.class
 Models\MedicationModel.class
 Models\PrescriptionDetailModel.class
 Models\PrescriptionModel.class
+Controller\Doctor\DoctorHomepageController.class
+com\aptech\mavenproject2\petclinic\AdminMainController.class
+Controller\Customer\CustomerHomepageController.class
 Models\RoleModel.class
 Entities\ServiceEntity.class
 com\aptech\mavenproject2\petclinic\App.class
 Entities\PetEntity.class
 Models\BookingModel.class
 Models\UserModel.class
+Controller\Admin\AdminBookingController.class
+Controller\Admin\AdminHomepageController.class
 Controller\SignController\SignOutController.class
 Controller\Router.class
 Controller\SignController\SignUpController.class
-Controller\AdminHomepageController.class
 Entities\MedicationEntity.class
 Controller\Controller.class
 Models\PetModel.class
@@ -25,6 +31,7 @@ module-info.class
 Models\ServiceModel.class
 Controller\SignController\SignInController.class
 DB\dao\JDBCConnect.class
+com\aptech\mavenproject2\petclinic\SignMainController.class
 Entities\BillEntity.class
 Entities\RoleEntity.class
 DB\common\DBCommon.class
