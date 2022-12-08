@@ -74,8 +74,8 @@ public class AdminBookingController implements Initializable {
         tableBooking.setItems(bookingList);
     }
 
-    public void signOutEvent() {
-        SignOutController.signOutEvent();
-    }
+//    public void signOutEvent() {
+//        SignOutController.signOutEvent();
+//    }
 
 }

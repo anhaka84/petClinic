@@ -2,6 +2,8 @@ package com.aptech.mavenproject2.petclinic;
 
 import Controller.Router;
 import Controller.SignController.SignOutController;
+import Entities.UserEntity;
+import Session.SessionWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +28,12 @@ public class AdminMainController implements Initializable {
     private static final String MEDICINES_TITLE = "Medicines";
     private static final String MANAGE_ACCOUNT_TITLE = "Account";
     private static final String YOUR_INFO_TITLE = "Your Info";
+
+    private final UserEntity userEntity = new UserEntity();
+    private final SessionWriter session = new SessionWriter();
+    private final int id = userEntity.getSessionUser().getUserId();
+    private final String bool = session.getLineStartWith("remember=").substring("remember=".length());
+    private final boolean remember = Boolean.parseBoolean(bool);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -108,6 +116,6 @@ public class AdminMainController implements Initializable {
 
     @FXML
     private void SignOut() {
-        SignOutController.signOutEvent();
+        SignOutController.signOutEvent(id, remember);
     }
 }

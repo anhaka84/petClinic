@@ -13,9 +13,9 @@ public class DoctorHomepageController implements Initializable {
 
     }
 
-    @FXML
-    public void signOutEvent() {
-        SignOutController.signOutEvent();
-    }
+//    @FXML
+//    public void signOutEvent() {
+//        SignOutController.signOutEvent();
+//    }
 
 }
