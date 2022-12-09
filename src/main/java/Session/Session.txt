@@ -1,1 +1,4 @@
-remember=false
+userId=1
+remember=true
+username=admin
+password=123456

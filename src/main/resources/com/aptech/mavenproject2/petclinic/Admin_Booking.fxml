@@ -66,7 +66,7 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <TableView layoutX="28.0" layoutY="137.0" prefHeight="559.0" prefWidth="750.0">
+            <TableView layoutX="28.0" layoutY="137.0" prefHeight="605.0" prefWidth="772.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css">
               <columns>
                 <TableColumn prefWidth="85.60003471374512" text="Booking ID" />
                 <TableColumn prefWidth="82.40003204345703" text="User ID" />
@@ -78,8 +78,8 @@
                   <TableColumn prefWidth="152.79998779296875" text="Update Date" />
               </columns>
             </TableView>
-            <TextField layoutX="84.0" layoutY="97.0" prefHeight="26.0" prefWidth="688.0" />
-            <Button layoutX="29.0" layoutY="95.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField layoutX="79.0" layoutY="111.0" prefHeight="26.0" prefWidth="718.0" />
+            <Button layoutX="28.0" layoutY="111.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
          </children>
       </Pane>
    </center>

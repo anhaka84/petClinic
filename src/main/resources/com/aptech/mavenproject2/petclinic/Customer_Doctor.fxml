@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -82,20 +82,20 @@
         </Pane>
     </left>
     <center>
-      <Pane prefHeight="700.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="700.0" prefWidth="744.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="304.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Doctor" wrappingWidth="197.4705810546875">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <TableView layoutX="28.0" layoutY="388.0" prefHeight="286.0" prefWidth="703.0">
+            <TableView layoutX="28.0" layoutY="388.0" prefHeight="355.0" prefWidth="744.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <TextField layoutX="80.0" layoutY="363.0" prefHeight="26.0" prefWidth="650.0" />
+            <TextField layoutX="80.0" layoutY="363.0" prefHeight="26.0" prefWidth="692.0" />
             <Button layoutX="28.0" layoutY="363.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <GridPane layoutX="31.0" layoutY="90.0" prefHeight="239.0" prefWidth="698.0">
               <columnConstraints>

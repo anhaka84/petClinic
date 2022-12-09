@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -70,7 +70,7 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="702.0" prefWidth="774.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="702.0" prefWidth="774.0" style="-fx-background-color: #f1f2f6;" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
             <children>
                 <Text layoutX="194.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Your Schedule" underline="true" wrappingWidth="384.53662872314453">
                     <font>
@@ -127,18 +127,18 @@
                   </RadioButton>
                     </children>
                 </GridPane>
-            <TableView layoutX="26.0" layoutY="331.0" prefHeight="347.0" prefWidth="722.0">
+            <TableView layoutX="26.0" layoutY="331.0" prefHeight="410.0" prefWidth="748.0">
               <columns>
                 <TableColumn prefWidth="191.1999568939209" text="ID" />
                 <TableColumn minWidth="0.0" prefWidth="266.39990234375" text="Date" />
                   <TableColumn minWidth="0.0" prefWidth="263.6000061035156" text="Time" />
               </columns>
             </TableView>
-            <Button contentDisplay="RIGHT" layoutX="31.0" layoutY="303.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
-            <TextField layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="666.0" />
-                  <Button contentDisplay="RIGHT" layoutX="538.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button contentDisplay="RIGHT" layoutX="461.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button contentDisplay="RIGHT" layoutX="375.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+            <Button contentDisplay="RIGHT" layoutX="27.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="690.0" />
+                  <Button contentDisplay="RIGHT" layoutX="538.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button contentDisplay="RIGHT" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button contentDisplay="RIGHT" layoutX="399.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />

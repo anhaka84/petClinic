@@ -68,20 +68,20 @@
         </Pane>
     </left>
     <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="351.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" wrappingWidth="177.07049560546875">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <TableView layoutX="25.0" layoutY="439.0" prefHeight="302.0" prefWidth="760.0">
+            <TableView layoutX="29.0" layoutY="438.0" prefHeight="312.0" prefWidth="776.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <TextField layoutX="78.0" layoutY="412.0" prefHeight="26.0" prefWidth="709.0" />
+            <TextField layoutX="78.0" layoutY="412.0" prefHeight="26.0" prefWidth="727.0" />
             <Button layoutX="27.0" layoutY="412.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <SplitPane layoutX="27.0" layoutY="66.0" prefHeight="262.0" prefWidth="764.0">
                <items>

@@ -9,3 +9,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .customer_homepage{
     -fx-background-image:url(../Img/customer-background.jpg);
 }
+
+.customer_homepage_center{
+    -fx-background-image:url(../Img/customer-background.jpg);
+    -fx-background-size: cover;
+}

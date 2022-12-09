@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -70,14 +70,14 @@
         </Pane>
     </left>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="350.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking" wrappingWidth="155.07058715820312">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <TableView layoutX="28.0" layoutY="350.0" prefHeight="339.0" prefWidth="724.0">
+            <TableView layoutX="28.0" layoutY="350.0" prefHeight="393.0" prefWidth="746.0">
               <columns>
                 <TableColumn prefWidth="136.00003623962402" text="Booking ID" />
                 <TableColumn prefWidth="156.79995727539062" text="Customer Name" />
@@ -86,7 +86,7 @@
                   <TableColumn prefWidth="158.4000244140625" text="Booking Time" />
               </columns>
             </TableView>
-            <TextField layoutX="79.0" layoutY="320.0" prefHeight="26.0" prefWidth="673.0" />
+            <TextField layoutX="79.0" layoutY="320.0" prefHeight="26.0" prefWidth="694.0" />
             <Button layoutX="28.0" layoutY="321.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <GridPane layoutX="28.0" layoutY="97.0" prefHeight="210.0" prefWidth="724.0">
               <columnConstraints>

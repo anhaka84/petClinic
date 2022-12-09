@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
         <Pane prefHeight="822.0" prefWidth="274.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
@@ -62,9 +62,9 @@
         </Pane>
     </left>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane layoutX="107.0" layoutY="145.0" prefHeight="410.0" prefWidth="557.0">
+            <GridPane layoutX="134.0" layoutY="87.0" prefHeight="400.0" prefWidth="537.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.20001220703125" minWidth="10.0" prefWidth="178.5999755859375" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.3999481201172" minWidth="10.0" prefWidth="363.4000244140625" />
@@ -151,7 +151,7 @@
                   </RadioButton>
                </children>
             </GridPane>
-            <Button layoutX="594.0" layoutY="580.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" textFill="WHITE">
+            <Button layoutX="601.0" layoutY="510.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -161,12 +161,12 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <Button layoutX="502.0" layoutY="580.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" textFill="WHITE">
+            <Button layoutX="509.0" layoutY="510.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="403.0" layoutY="580.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" textFill="WHITE">
+            <Button layoutX="415.0" layoutY="510.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

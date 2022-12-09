@@ -65,7 +65,7 @@
         </Pane>
     </left>
     <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
          <children>
             <Text layoutX="356.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service" wrappingWidth="105.07049560546875">
                <font>
@@ -75,13 +75,13 @@
             <Button layoutX="713.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
             <Button layoutX="641.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
             <Button layoutX="555.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
-            <TableView layoutX="25.0" layoutY="439.0" prefHeight="302.0" prefWidth="760.0">
+            <TableView layoutX="25.0" layoutY="439.0" prefHeight="312.0" prefWidth="780.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <TextField layoutX="78.0" layoutY="412.0" prefHeight="26.0" prefWidth="709.0" />
+            <TextField layoutX="78.0" layoutY="412.0" prefHeight="26.0" prefWidth="727.0" />
             <Button layoutX="27.0" layoutY="412.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <SplitPane layoutX="64.0" layoutY="71.0" prefHeight="256.0" prefWidth="690.0">
                <items>
