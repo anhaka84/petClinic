@@ -1,18 +1,18 @@
 package Controller;
 
 import com.aptech.mavenproject2.petclinic.App;
-import com.aptech.mavenproject2.petclinic.MainSignController;
+import com.aptech.mavenproject2.petclinic.SignMainController;
 import java.io.IOException;
 
 public class Router {
 
     //sign page
     private static final String SIGN_PAGE = "test_Sign_MainPage";
-    private static final String SIGN_IN_PAGE = "test_SignIn";
-    private static final String SIGN_UP_PAGE = "test_SignUp";
+    private static final String SIGN_IN = "test_SignIn";
+    private static final String SIGN_UP = "test_SignUp";
     //admin
     private static final String ADMIN_PAGE = "test_Admin_MainPage";
-    private static final String ADMIN_HOMEPAGE = "test_Admin_HomePage";
+    private static final String ADMIN_HOME = "test_Admin_HomePage";
     private static final String ADMIN_BOOKING = "test_Admin_Booking";
     private static final String ADMIN_BILL = "test_Admin_Bill";
     private static final String ADMIN_SERVICES = "test_Admin_Services";
@@ -20,11 +20,19 @@ public class Router {
     private static final String ADMIN_MANAGE_ACCOUNT = "test_Admin_Manage_Account";
     private static final String ADMIN_YOUR_INFO = "test_Admin_Your_Info";
     //doctor
-    private static final String DOCTOR_PAGE = "";
-    private static final String DOCTOR_HOMEPAGE = "";
+    private static final String DOCTOR_PAGE = "test_Doctor_MainPage";
+    private static final String DOCTOR_HOME = "test_Admin_HomePage";
+    private static final String DOCTOR_BOOKING = "test_Admin_Booking";
+    private static final String DOCTOR_SCHEDULE = "test_Admin_HomePage";
+    private static final String DOCTOR_YOUR_INFO = "test_Admin_Your_Info";
     //client
-    private static final String CLIENT_PAGE = "Customer_Homepage";
-    private static final String CLIENT_HOMEPAGE = "";
+    private static final String CLIENT_PAGE = "test_Customer_MainPage";
+    private static final String CLIENT_HOME = "test_Admin_HomePage";
+    private static final String CLIENT_OUR_DOCTOR = "test_Admin_HomePage";
+    private static final String CLIENT_OUR_SERVICES = "test_Admin_Services";
+    private static final String CLIENT_YOUR_PET = "test_Admin_HomePage";
+    private static final String CLIENT_BOOKING = "test_Admin_Booking";
+    private static final String CLIENT_YOUR_INFO = "test_Admin_Your_Info";
 
     //get sign page
     public static String getSignPage() {
@@ -32,11 +40,11 @@ public class Router {
     }
 
     public static String getSignInPage() {
-        return SIGN_IN_PAGE;
+        return SIGN_IN;
     }
 
     public static String getSignUpPage() {
-        return SIGN_UP_PAGE;
+        return SIGN_UP;
     }
 
     //get admin page
@@ -45,7 +53,7 @@ public class Router {
     }
 
     public static String getAdminHomepage() {
-        return ADMIN_HOMEPAGE;
+        return ADMIN_HOME;
     }
 
     public static String getAdminBooking() {
@@ -68,7 +76,7 @@ public class Router {
         return ADMIN_MANAGE_ACCOUNT;
     }
 
-    public static String getAdminYourInfo() {
+    public static String getAdminInfo() {
         return ADMIN_YOUR_INFO;
     }
 
@@ -78,7 +86,19 @@ public class Router {
     }
 
     public static String getDoctorHomepage() {
-        return DOCTOR_HOMEPAGE;
+        return DOCTOR_HOME;
+    }
+
+    public static String getDoctorBooking() {
+        return DOCTOR_BOOKING;
+    }
+
+    public static String getDoctorSchedule() {
+        return DOCTOR_SCHEDULE;
+    }
+
+    public static String getDoctorInfo() {
+        return DOCTOR_YOUR_INFO;
     }
 
     //get client page
@@ -87,25 +107,45 @@ public class Router {
     }
 
     public static String getClientHomepage() {
-        return CLIENT_HOMEPAGE;
+        return CLIENT_HOME;
+    }
+
+    public static String getClientDoctorPage() {
+        return CLIENT_OUR_DOCTOR;
+    }
+
+    public static String getClientServices() {
+        return CLIENT_OUR_SERVICES;
+    }
+
+    public static String getClientPet() {
+        return CLIENT_YOUR_PET;
+    }
+
+    public static String getClientBooking() {
+        return CLIENT_BOOKING;
+    }
+
+    public static String getClientInfo() {
+        return CLIENT_YOUR_INFO;
     }
 
     //switch sign page
     public static void switchToSignInPage() {
         try {
-            MainSignController.setIsSwitchSignUpPage(false);
+            SignMainController.setIsSwitchSignUpPage(false);
             App.setRoot(getSignPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public static void switchToSignUpPage() {
         try {
-            MainSignController.setIsSwitchSignUpPage(true);
+            SignMainController.setIsSwitchSignUpPage(true);
             App.setRoot(getSignPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -114,7 +154,7 @@ public class Router {
         try {
             App.setRoot(getAdminPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -123,7 +163,7 @@ public class Router {
         try {
             App.setRoot(getDoctorPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -132,7 +172,7 @@ public class Router {
         try {
             App.setRoot(getClientPage());
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

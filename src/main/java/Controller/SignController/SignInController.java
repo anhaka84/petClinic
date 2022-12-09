@@ -55,11 +55,10 @@ public class SignInController implements Initializable {
         String sessionUsername = "";
         String sessionPassword = "";
         if (sessionWriter.isLineOfSession("remember=true")) {
-            String startWith;
-            startWith = "username=";
-            sessionUsername = sessionWriter.getLineStartWith(startWith).substring(startWith.length());
-            startWith = "password=";
-            sessionPassword = sessionWriter.getLineStartWith(startWith).substring(startWith.length());
+            String username = "username=";
+            sessionUsername = sessionWriter.getLineStartWith(username).substring(username.length());
+            String password = "password=";
+            sessionPassword = sessionWriter.getLineStartWith(password).substring(password.length());
             inputCBoxRemember.setSelected(true);
         }
         inputTextUsername.setText(sessionUsername);
@@ -67,7 +66,6 @@ public class SignInController implements Initializable {
         //validation
         inputTextUsernameValidate();
         inputTextPasswordValidate();
-
     }
 
     //link

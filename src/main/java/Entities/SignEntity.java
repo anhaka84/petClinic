@@ -2,7 +2,7 @@ package Entities;
 
 import Models.UserModel;
 import Session.SessionWriter;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SignEntity {
@@ -11,8 +11,6 @@ public class SignEntity {
     private final UserEntity userModel = new UserEntity();
     private final SessionWriter sessionWr = new SessionWriter();
 
-    private List<String> lineSession;
-
     public boolean signUp(UserModel user) {
         return accModel.activeAccount(user);
     }
@@ -20,41 +18,32 @@ public class SignEntity {
     public boolean signIn(String username, String password, boolean remember) {
         if (checkSignIn(username, password)) {
             int userId = accModel.getAccountId(username);
-            UserModel user = userModel.getOneUser(userId);
+            List<String> listLineSignIn = new ArrayList<>();
+            listLineSignIn.add("userId=" + userId);
+            listLineSignIn.add("remember=" + remember);
+            if (remember == true) {
+                listLineSignIn.add("username=" + username);
+                listLineSignIn.add("password=" + password);
+            }
             if (accModel.getOneAccount(username).getStatus() == 0) {
                 return false;
             }
-            if (remember == true) {
-                lineSession = Arrays.asList(
-                        "userId=" + user.getUserId(),
-                        "remember=" + remember,
-                        "username=" + username,
-                        "password=" + password
-                );
-            } else {
-                lineSession = Arrays.asList("userId=" + user.getUserId());
-            }
-            if (sessionWr.setSession(lineSession)) {
+            if (sessionWr.setSession(listLineSignIn)) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean signOut() {
-        boolean remember = false;
-        lineSession = Arrays.asList("remember=false");
-        if (sessionWr.getLineStartWith("remember=") != null) {
-            remember = true;
-        }
+    public boolean signOut(int userId, boolean remember) {
+        UserModel user = userModel.getOneUser(userId);
+        List<String> listLineSignOut = new ArrayList<>();
+        listLineSignOut.add("remember=" + remember);
         if (remember == true) {
-            lineSession = Arrays.asList(
-                    sessionWr.getLineStartWith("remember="),
-                    sessionWr.getLineStartWith("username="),
-                    sessionWr.getLineStartWith("password=")
-            );
+            listLineSignOut.add("username=" + user.getAccount().getUsername());
+            listLineSignOut.add("password=" + user.getAccount().getPassword());
         }
-        return sessionWr.setSession(lineSession);
+        return sessionWr.setSession(listLineSignOut);
     }
 
     private boolean checkSignIn(String username, String password) {
@@ -64,5 +53,4 @@ public class SignEntity {
         }
         return password.equals(checkPass);
     }
-
 }

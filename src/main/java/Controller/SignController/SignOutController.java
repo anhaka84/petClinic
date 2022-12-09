@@ -9,8 +9,8 @@ public class SignOutController {
     private static final SignEntity signEntity = new SignEntity();
 
     @FXML
-    public static void signOutEvent() {
-        if (signEntity.signOut()) {
+    public static void signOutEvent(int id, boolean remember) {
+        if (signEntity.signOut(id, remember)) {
             Router.switchToSignInPage();
         }
     }
