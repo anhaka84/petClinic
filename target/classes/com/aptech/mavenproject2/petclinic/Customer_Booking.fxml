@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -84,9 +85,9 @@
         </Pane>
     </left>
     <center>
-        <Pane prefHeight="822.0" prefWidth="644.0" style="-fx-background-color: #f1f2f6;" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="644.0" style="-fx-background-color: #f1f2f6;" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
             <children>
-                <Text layoutX="265.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking" underline="true" wrappingWidth="125.3366470336914">
+                <Text layoutX="324.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking" underline="true" wrappingWidth="125.3366470336914">
                     <font>
                         <Font size="30.0" />
                     </font>
@@ -94,10 +95,10 @@
                         <Bloom />
                     </effect>
                 </Text>
-                <GridPane layoutX="144.0" layoutY="214.0" prefHeight="256.0" prefWidth="437.0">
+                <GridPane layoutX="126.0" layoutY="141.0" prefHeight="256.0" prefWidth="521.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="159.59998779296876" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="555.8000076293946" minWidth="10.0" prefWidth="277.20001220703125" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="155.60003662109375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="555.8000076293946" minWidth="10.0" prefWidth="365.9999633789063" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="73.00000610351563" minHeight="10.0" prefHeight="73.00000610351563" vgrow="SOMETIMES" />
@@ -112,13 +113,13 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                  <ChoiceBox prefHeight="26.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label layoutX="10.0" layoutY="32.0" prefHeight="30.0" prefWidth="171.0" text="Booking Date">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <DatePicker prefHeight="26.0" prefWidth="263.0" GridPane.columnIndex="1" />
+                  <DatePicker prefHeight="26.0" prefWidth="330.0" GridPane.columnIndex="1" />
                   <Label layoutX="10.0" layoutY="105.0" prefHeight="30.0" prefWidth="171.0" text="Booking Time" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
@@ -145,18 +146,33 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="170.0" layoutY="155.0" prefHeight="26.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox layoutX="170.0" layoutY="155.0" prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label layoutX="10.0" layoutY="172.0" prefHeight="30.0" prefWidth="171.0" text="Service Name" GridPane.rowIndex="4">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="170.0" layoutY="175.0" prefHeight="26.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox layoutX="170.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="87.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox layoutX="257.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="171.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox layoutX="336.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="253.0" />
+                     </padding>
+                  </CheckBox>
                     </children>
                 </GridPane>
-                  <Button contentDisplay="RIGHT" layoutX="520.0" layoutY="485.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button contentDisplay="RIGHT" layoutX="448.0" layoutY="485.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button contentDisplay="RIGHT" layoutX="362.0" layoutY="485.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+                  <Button contentDisplay="RIGHT" layoutX="561.0" layoutY="397.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button contentDisplay="RIGHT" layoutX="476.0" layoutY="397.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button contentDisplay="RIGHT" layoutX="387.0" layoutY="397.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />

@@ -80,15 +80,14 @@
                         <Bloom />
                     </effect>
                 </Text>
-                <GridPane layoutX="194.0" layoutY="103.0" prefHeight="185.0" prefWidth="345.0">
+                <GridPane layoutX="194.0" layoutY="103.0" prefHeight="113.0" prefWidth="534.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="80.79997100830079" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.40001983642577" minWidth="10.0" prefWidth="213.2000289916992" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="81.59998779296876" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.40001983642577" minWidth="10.0" prefWidth="452.80001220703133" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="205.60000610351562" minHeight="10.0" prefHeight="101.80001220703124" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="126.39998779296874" minHeight="0.0" prefHeight="86.19998168945312" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="96.0" minHeight="0.0" prefHeight="72.60001831054686" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
                         <Label layoutX="10.0" layoutY="206.0" prefHeight="18.0" prefWidth="178.0" text="Time" GridPane.rowIndex="1">
@@ -97,14 +96,14 @@
                             </font>
                         </Label>
                         <RadioButton mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <toggleGroup>
-                                <ToggleGroup fx:id="gender" />
-                            </toggleGroup>
                      <font>
                         <Font size="17.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="time" />
+                     </toggleGroup>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="120.0" />
                             </GridPane.margin>
@@ -112,27 +111,20 @@
                         <Font size="17.0" />
                      </font>
                         </RadioButton>
-                        <Button contentDisplay="RIGHT" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <GridPane.margin>
-                                <Insets left="183.0" />
-                            </GridPane.margin>
-                        </Button>
-                        <Button contentDisplay="RIGHT" layoutX="524.0" layoutY="321.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <GridPane.margin>
-                                <Insets left="93.0" />
-                            </GridPane.margin>
-                        </Button>
                         <Label layoutX="10.0" layoutY="86.0" prefHeight="30.0" prefWidth="216.0" text="Date">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <Button contentDisplay="RIGHT" layoutX="455.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Refresh" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                            <GridPane.margin>
-                                <Insets />
-                            </GridPane.margin>
-                        </Button>
-                  <DatePicker prefHeight="26.0" prefWidth="228.0" GridPane.columnIndex="1" />
+                  <DatePicker prefHeight="26.0" prefWidth="306.0" GridPane.columnIndex="1" />
+                  <RadioButton layoutX="211.0" layoutY="105.0" mnemonicParsing="false" text="All" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="253.0" />
+                     </GridPane.margin>
+                  </RadioButton>
                     </children>
                 </GridPane>
             <TableView layoutX="26.0" layoutY="331.0" prefHeight="347.0" prefWidth="722.0">
@@ -144,6 +136,9 @@
             </TableView>
             <Button contentDisplay="RIGHT" layoutX="31.0" layoutY="303.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <TextField layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="666.0" />
+                  <Button contentDisplay="RIGHT" layoutX="538.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button contentDisplay="RIGHT" layoutX="461.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button contentDisplay="RIGHT" layoutX="375.0" layoutY="249.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Refresh" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />
