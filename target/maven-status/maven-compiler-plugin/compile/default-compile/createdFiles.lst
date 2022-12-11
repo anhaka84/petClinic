@@ -3,15 +3,18 @@ Models\BillModel.class
 Validation\Validate.class
 Models\AccountModel.class
 Entities\SignEntity.class
+Controller\Admin\AdminServiceController.class
 Models\MedicationModel.class
 Models\PrescriptionModel.class
 Controller\Customer\CustomerHomepageController.class
 Models\RoleModel.class
 com\aptech\mavenproject2\petclinic\App.class
+Controller\Admin\AdminChangeInfoController.class
 Entities\PetEntity.class
 Models\BookingModel.class
 Models\UserModel.class
 Controller\Admin\AdminBookingController.class
+Controller\Admin\AdminManageAccountController.class
 Controller\SignController\SignOutController.class
 Controller\Router.class
 Entities\MedicationEntity.class
@@ -21,6 +24,7 @@ Models\ServiceModel.class
 Controller\SignController\SignInController.class
 DB\dao\JDBCConnect.class
 com\aptech\mavenproject2\petclinic\SignMainController.class
+Controller\Admin\AdminMedicineController.class
 Entities\BillEntity.class
 DB\common\DBCommon.class
 Entities\PrescriptionEntity.class
