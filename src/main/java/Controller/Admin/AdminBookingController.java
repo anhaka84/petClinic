@@ -1,8 +1,9 @@
 package Controller.Admin;
 
-import Controller.SignController.SignOutController;
+import Controller.Router;
 import Entities.BookingEntity;
 import Models.BookingModel;
+import com.aptech.mavenproject2.petclinic.AdminMainController;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
@@ -74,8 +75,41 @@ public class AdminBookingController implements Initializable {
         tableBooking.setItems(bookingList);
     }
 
-//    public void signOutEvent() {
-//        SignOutController.signOutEvent();
-//    }
+@FXML
+    private void switchToHome() {
+        Router.switchToAdminPage();
+    }
+
+    @FXML
+    private void switchToBooking() {
+        Router.switchPage(Router.getAdminBooking());
+    }
+
+    @FXML
+    private void switchToServices() {
+        Router.switchPage(Router.getAdminServices());
+    }
+
+    @FXML
+    private void switchToMedicine() {
+        Router.switchPage(Router.getAdminMedicines());
+    }
+
+    @FXML
+    private void switchToManageAccount() {
+        Router.switchPage(Router.getAdminManageAccount());
+    }
+
+    @FXML
+    private void switchToChangeInfo() {
+        Router.switchPage(Router.getAdminInfo());
+    }
+
+    @FXML
+    private void SignOut() {
+//        SignOutController.signOutEvent(id, remember);
+        AdminMainController amc = new AdminMainController();
+        amc.SignOut();
+    }
 
 }

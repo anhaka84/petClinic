@@ -3,36 +3,38 @@ package Controller;
 import com.aptech.mavenproject2.petclinic.App;
 import com.aptech.mavenproject2.petclinic.SignMainController;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Router {
 
     //sign page
-    private static final String SIGN_PAGE = "test_Sign_MainPage";
-    private static final String SIGN_IN = "test_SignIn";
-    private static final String SIGN_UP = "test_SignUp";
+    private static final String SIGN_PAGE = "SPA_Sign_Main";
+    private static final String SIGN_IN = "SPA_SignIn";
+    private static final String SIGN_UP = "SPA_SignUp";
     //admin
-    private static final String ADMIN_PAGE = "test_Admin_MainPage";
-    private static final String ADMIN_HOME = "test_Admin_HomePage";
-    private static final String ADMIN_BOOKING = "test_Admin_Booking";
-    private static final String ADMIN_BILL = "test_Admin_Bill";
-    private static final String ADMIN_SERVICES = "test_Admin_Services";
-    private static final String ADMIN_MEDICINES = "test_Admin_Medicines";
-    private static final String ADMIN_MANAGE_ACCOUNT = "test_Admin_Manage_Account";
-    private static final String ADMIN_YOUR_INFO = "test_Admin_Your_Info";
+    private static final String ADMIN_PAGE = "SPA_Admin_Main";
+    private static final String ADMIN_HOME = "Admin_Homepage";
+    private static final String ADMIN_BOOKING = "Admin_Booking";
+    private static final String ADMIN_BILL = "SPA_Admin_Bill";
+    private static final String ADMIN_SERVICES = "Admin_Services";
+    private static final String ADMIN_MEDICINES = "Admin_Medicine";
+    private static final String ADMIN_MANAGE_ACCOUNT = "Admin_Manage_Account";
+    private static final String ADMIN_YOUR_INFO = "Admin_Change_Info";
     //doctor
-    private static final String DOCTOR_PAGE = "test_Doctor_MainPage";
-    private static final String DOCTOR_HOME = "test_Admin_HomePage";
-    private static final String DOCTOR_BOOKING = "test_Admin_Booking";
-    private static final String DOCTOR_SCHEDULE = "test_Admin_HomePage";
-    private static final String DOCTOR_YOUR_INFO = "test_Admin_Your_Info";
+    private static final String DOCTOR_PAGE = "SPA_Doctor_Main";
+    private static final String DOCTOR_HOME = "SPA_Admin_HomePage";
+    private static final String DOCTOR_BOOKING = "SPA_Admin_Booking";
+    private static final String DOCTOR_SCHEDULE = "SPA_Admin_HomePage";
+    private static final String DOCTOR_YOUR_INFO = "SPA_Admin_Your_Info";
     //client
-    private static final String CLIENT_PAGE = "test_Customer_MainPage";
-    private static final String CLIENT_HOME = "test_Admin_HomePage";
-    private static final String CLIENT_OUR_DOCTOR = "test_Admin_HomePage";
-    private static final String CLIENT_OUR_SERVICES = "test_Admin_Services";
-    private static final String CLIENT_YOUR_PET = "test_Admin_HomePage";
-    private static final String CLIENT_BOOKING = "test_Admin_Booking";
-    private static final String CLIENT_YOUR_INFO = "test_Admin_Your_Info";
+    private static final String CLIENT_PAGE = "SPA_Customer_Main";
+    private static final String CLIENT_HOME = "SPA_Admin_HomePage";
+    private static final String CLIENT_OUR_DOCTOR = "SPA_Admin_HomePage";
+    private static final String CLIENT_OUR_SERVICES = "SPA_Admin_Services";
+    private static final String CLIENT_YOUR_PET = "SPA_Admin_HomePage";
+    private static final String CLIENT_BOOKING = "SPA_Admin_Booking";
+    private static final String CLIENT_YOUR_INFO = "SPA_Admin_Your_Info";
 
     //get sign page
     public static String getSignPage() {
@@ -132,47 +134,35 @@ public class Router {
 
     //switch sign page
     public static void switchToSignInPage() {
-        try {
-            SignMainController.setIsSwitchSignUpPage(false);
-            App.setRoot(getSignPage());
-        } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        SignMainController.setIsSwitchSignUpPage(false);
+        switchPage(getSignPage());
     }
 
     public static void switchToSignUpPage() {
-        try {
-            SignMainController.setIsSwitchSignUpPage(true);
-            App.setRoot(getSignPage());
-        } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        SignMainController.setIsSwitchSignUpPage(true);
+        switchPage(getSignPage());
     }
 
     //switch admin page
     public static void switchToAdminPage() {
-        try {
-            App.setRoot(getAdminPage());
-        } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        switchPage(getAdminHomepage());
     }
 
     //switch doctor page
     public static void switchToDoctorPage() {
-        try {
-            App.setRoot(getDoctorPage());
-        } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        switchPage(getDoctorPage());
     }
 
     //switch client page
     public static void switchToClientPage() {
+        switchPage(getClientPage());
+    }
+
+    public static void switchPage(String page) {
         try {
-            App.setRoot(getClientPage());
+            App.setRoot(page);
         } catch (IOException ex) {
-//            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Router.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

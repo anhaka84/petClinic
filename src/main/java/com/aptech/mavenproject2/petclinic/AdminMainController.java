@@ -115,7 +115,7 @@ public class AdminMainController implements Initializable {
     }
 
     @FXML
-    private void SignOut() {
+    public void SignOut() {
         SignOutController.signOutEvent(id, remember);
     }
 }
