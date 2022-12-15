@@ -9,12 +9,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AdminServiceController implements Initializable {
+
+    @FXML
+    private TextField tfSearch;
+
+    @FXML
+    private ComboBox<String> comboBoxType;
 
     @FXML
     private TextField tfServiceId;
@@ -46,9 +53,12 @@ public class AdminServiceController implements Initializable {
     private final ServiceEntity serviceEntity = new ServiceEntity();
 
     private ObservableList<ServiceModel> listService;
+    private ObservableList<String> listType;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        setComboBoxValue();
+        comboBoxType.getSelectionModel().selectFirst();
         refreshTable();
     }
 
@@ -59,6 +69,36 @@ public class AdminServiceController implements Initializable {
         ColSType.setCellValueFactory(new PropertyValueFactory<>("serviceType"));
         ColSPrice.setCellValueFactory(new PropertyValueFactory<>("servicePrice"));
         tableService.setItems(listService);
+    }
+
+    private void setComboBoxValue() {
+        listType = FXCollections.observableArrayList("All", "Spa", "Health Check");
+        comboBoxType.setItems(listType);
+    }
+
+    @FXML
+    private void searchEvent() {
+        String input = tfSearch.getText();
+        String cType = comboBoxType.getValue().toLowerCase();
+        String name = "", type = "";
+        if (!input.isEmpty()) {
+            name = input;
+        }
+        if (!cType.equals("all")) {
+            type = cType;
+        }
+        setTableData(serviceEntity.getAllService(name, type));
+    }
+
+    @FXML
+    private void showService() {
+        ServiceModel service = getRowData();
+        if (service != null) {
+            tfServiceId.setText(String.valueOf(service.getServiceId()));
+            tfServiceName.setText(service.getServiceName());
+            tfServiceType.setText(service.getServiceType());
+            tfServicePrice.setText(String.valueOf(service.getServicePrice()));
+        }
     }
 
     @FXML
@@ -72,27 +112,16 @@ public class AdminServiceController implements Initializable {
         if (id.isEmpty()) {
             if (!name.isEmpty() && !type.isEmpty() && !price.isEmpty()) {
                 service = new ServiceModel(name, type, Float.valueOf(price));
+                serviceEntity.addService(service);
             }
-            serviceEntity.addService(service);
         } else {
             if (!name.isEmpty() && !type.isEmpty() && !price.isEmpty()) {
                 service = new ServiceModel(Integer.valueOf(id), name, type, Float.valueOf(price));
+                serviceEntity.updateService(service);
             }
-            serviceEntity.updateService(service);
         }
         refreshTable();
         resetData();
-    }
-
-    @FXML
-    private void showService() {
-        ServiceModel service = getRowData();
-        if (service != null) {
-            tfServiceId.setText(String.valueOf(service.getServiceId()));
-            tfServiceName.setText(service.getServiceName());
-            tfServiceType.setText(service.getServiceType());
-            tfServicePrice.setText(String.valueOf(service.getServicePrice()));
-        }
     }
 
     @FXML
