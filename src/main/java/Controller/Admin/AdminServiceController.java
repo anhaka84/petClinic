@@ -49,7 +49,7 @@ public class AdminServiceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setTableData(serviceEntity.getAllService());
+        refreshTable();
     }
 
     private void setTableData(ArrayList<ServiceModel> list) {
@@ -62,12 +62,61 @@ public class AdminServiceController implements Initializable {
     }
 
     @FXML
+    private void addService() {
+        String id = tfServiceId.getText();
+        String name = tfServiceName.getText();
+        String type = tfServiceType.getText();
+        String price = tfServicePrice.getText();
+        ServiceModel service = null;
+
+        if (id.isEmpty()) {
+            if (!name.isEmpty() && !type.isEmpty() && !price.isEmpty()) {
+                service = new ServiceModel(name, type, Float.valueOf(price));
+            }
+            serviceEntity.addService(service);
+        } else {
+            if (!name.isEmpty() && !type.isEmpty() && !price.isEmpty()) {
+                service = new ServiceModel(Integer.valueOf(id), name, type, Float.valueOf(price));
+            }
+            serviceEntity.updateService(service);
+        }
+        refreshTable();
+        resetData();
+    }
+
+    @FXML
     private void showService() {
         ServiceModel service = getRowData();
-        tfServiceId.setText(String.valueOf(service.getServiceId()));
-        tfServiceName.setText(service.getServiceName());
-        tfServiceType.setText(service.getServiceType());
-        tfServicePrice.setText(String.valueOf(service.getServicePrice()));
+        if (service != null) {
+            tfServiceId.setText(String.valueOf(service.getServiceId()));
+            tfServiceName.setText(service.getServiceName());
+            tfServiceType.setText(service.getServiceType());
+            tfServicePrice.setText(String.valueOf(service.getServicePrice()));
+        }
+    }
+
+    @FXML
+    private void deleteService() {
+        ServiceModel service = getRowData();
+        if (service != null) {
+            int idSelect = service.getServiceId();
+            serviceEntity.deleteServices(idSelect);
+        }
+        resetData();
+        refreshTable();
+    }
+
+    @FXML
+    private void resetData() {
+        tfServiceId.setText("");
+        tfServiceName.setText("");
+        tfServiceType.setText("");
+        tfServicePrice.setText("");
+    }
+
+    @FXML
+    private void refreshTable() {
+        setTableData(serviceEntity.getAllService());
     }
 
     @FXML

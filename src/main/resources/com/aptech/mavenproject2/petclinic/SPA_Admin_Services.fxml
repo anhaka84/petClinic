@@ -90,17 +90,22 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh">
+                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" onAction="#refreshTable" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset">
+                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" onAction="#deleteService" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Delete">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save">
+                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" onAction="#resetData" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" onAction="#addService" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -127,7 +132,7 @@
                <children>
                   <HBox maxWidth="1.7976931348623157E308">
                      <children>
-                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+                        <Button fx:id="btnSearch" minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
                         <TextField fx:id="tfSearch" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="610.0" />
                      </children>
                      <GridPane.margin>

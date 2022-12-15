@@ -1,8 +1,6 @@
 package Controller.Admin;
 
-import Controller.Router;
 import Entities.*;
-import com.aptech.mavenproject2.petclinic.AdminMainController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -38,6 +36,5 @@ public class AdminHomepageController implements Initializable {
         countClient.setText(client.toString());
         Integer accounts = accountEntity.getAllAccount().size();
         countAccount.setText(accounts.toString());
-
     }
 }
