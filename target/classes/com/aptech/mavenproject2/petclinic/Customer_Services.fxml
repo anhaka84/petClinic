@@ -87,10 +87,10 @@
             </Text>
             <TableView fx:id="servicesTable" layoutX="28.0" layoutY="137.0" prefHeight="536.0" prefWidth="703.0">
               <columns>
-                <TableColumn fx:id="service_id" prefWidth="131.99997520446777" text="Service ID" />
-                <TableColumn fx:id="service_type" prefWidth="125.59994506835938" text="Service Type" />
-                  <TableColumn fx:id="service_name" prefWidth="278.3999328613281" text="Service Name" />
-                  <TableColumn fx:id="service_price" prefWidth="170.4000244140625" text="Service Price" />
+                <TableColumn fx:id="serviceId" prefWidth="131.99997520446777" text="Service ID" />
+                <TableColumn fx:id="serviceType" prefWidth="125.59994506835938" text="Service Type" />
+                  <TableColumn fx:id="serviceName" prefWidth="278.3999328613281" text="Service Name" />
+                  <TableColumn fx:id="servicePrice" prefWidth="170.4000244140625" text="Service Price" />
               </columns>
             </TableView>
             <TextField fx:id="inputSearch" layoutX="80.0" layoutY="98.0" prefHeight="26.0" prefWidth="646.0" />

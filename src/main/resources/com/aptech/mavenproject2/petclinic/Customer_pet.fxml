@@ -121,7 +121,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="pet_name" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet name" GridPane.columnIndex="1" />
+                        <TextField fx:id="petName" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet name" GridPane.columnIndex="1" />
                         <RadioButton fx:id="male" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <toggleGroup>
                                 <ToggleGroup fx:id="gender" />
@@ -146,13 +146,13 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pet_weight" layoutX="155.0" layoutY="34.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="petWeight" layoutX="155.0" layoutY="34.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label prefHeight="18.0" prefWidth="178.0" text="Pet Age (Month)" GridPane.rowIndex="4">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pet_age" layoutX="164.0" layoutY="211.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet age (month)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="petAge" layoutX="164.0" layoutY="211.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet age (month)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
                   <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="671.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
