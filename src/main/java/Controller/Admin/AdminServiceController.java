@@ -61,6 +61,7 @@ public class AdminServiceController implements Initializable {
         tableService.setItems(listService);
     }
 
+    @FXML
     private void showService() {
         ServiceModel service = getRowData();
         tfServiceId.setText(String.valueOf(service.getServiceId()));
@@ -69,6 +70,7 @@ public class AdminServiceController implements Initializable {
         tfServicePrice.setText(String.valueOf(service.getServicePrice()));
     }
 
+    @FXML
     private ServiceModel getRowData() {
         ServiceModel service = tableService.getSelectionModel().getSelectedItem();
         return service;

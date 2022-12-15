@@ -85,7 +85,7 @@
                   </TextField>
                   <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <children>
-                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Detail">
+                        <Button minHeight="30.0" minWidth="70.0" mnemonicParsing="false" onAction="#showService" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Detail">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
