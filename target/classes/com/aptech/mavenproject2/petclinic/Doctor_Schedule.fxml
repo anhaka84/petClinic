@@ -95,7 +95,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <RadioButton mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton fx:id="morning" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -103,7 +103,7 @@
                         <ToggleGroup fx:id="time" />
                      </toggleGroup>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton fx:id="afernoon" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="120.0" />
                             </GridPane.margin>
@@ -116,8 +116,8 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                  <DatePicker prefHeight="26.0" prefWidth="306.0" GridPane.columnIndex="1" />
-                  <RadioButton layoutX="211.0" layoutY="105.0" mnemonicParsing="false" text="All" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <DatePicker fx:id="doctor_schedule_date" prefHeight="26.0" prefWidth="306.0" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="all" layoutX="211.0" layoutY="105.0" mnemonicParsing="false" text="All" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -136,9 +136,9 @@
             </TableView>
             <Button contentDisplay="RIGHT" layoutX="27.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
             <TextField layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="690.0" />
-                  <Button contentDisplay="RIGHT" layoutX="538.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button contentDisplay="RIGHT" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button contentDisplay="RIGHT" layoutX="399.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="538.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="399.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />

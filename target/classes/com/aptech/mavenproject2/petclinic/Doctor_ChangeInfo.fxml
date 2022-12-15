@@ -138,45 +138,45 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="20.0" prefWidth="372.0" promptText="Enter full name" GridPane.columnIndex="1" />
-                        <TextField layoutX="180.0" layoutY="18.0" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField layoutX="180.0" layoutY="103.0" promptText="Enter email" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <TextField layoutX="180.0" layoutY="188.0" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <TextField layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="396.0" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <RadioButton mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <TextField fx:id="full_name" prefHeight="20.0" prefWidth="372.0" promptText="Enter full name" GridPane.columnIndex="1" />
+                        <TextField fx:id="username" layoutX="180.0" layoutY="18.0" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="email" layoutX="180.0" layoutY="103.0" promptText="Enter email" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="address" layoutX="180.0" layoutY="188.0" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="phone_number" layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="396.0" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <RadioButton fx:id="male" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="5">
                             <toggleGroup>
                                 <ToggleGroup fx:id="gender" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <RadioButton fx:id="female" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="5">
                             <GridPane.margin>
                                 <Insets left="120.0" />
                             </GridPane.margin>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Other" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <RadioButton fx:id="other" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Other" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="5">
                             <GridPane.margin>
                                 <Insets left="240.0" />
                             </GridPane.margin>
                         </RadioButton>
-                        <Button contentDisplay="RIGHT" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <Button fx:id="btnSave" contentDisplay="RIGHT" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="10">
                             <GridPane.margin>
                                 <Insets left="345.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button contentDisplay="RIGHT" layoutX="524.0" layoutY="321.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="524.0" layoutY="321.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="10">
                             <GridPane.margin>
                                 <Insets left="270.0" />
                             </GridPane.margin>
                         </Button>
-                        <DatePicker prefHeight="18.0" prefWidth="435.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <PasswordField promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="dob" prefHeight="18.0" prefWidth="435.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <PasswordField fx:id="password" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label layoutX="10.0" layoutY="86.0" prefHeight="30.0" prefWidth="216.0" text="Confirm password" GridPane.rowIndex="4">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <PasswordField layoutX="184.0" layoutY="88.0" promptText="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Button contentDisplay="RIGHT" layoutX="455.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <PasswordField fx:id="confirmPassword" layoutX="184.0" layoutY="88.0" promptText="Confirm password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="455.0" layoutY="345.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" GridPane.columnIndex="1" GridPane.rowIndex="10">
                             <GridPane.margin>
                                 <Insets left="190.0" />
                             </GridPane.margin>
@@ -186,7 +186,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="184.0" layoutY="18.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="title" layoutX="184.0" layoutY="18.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
             </children>

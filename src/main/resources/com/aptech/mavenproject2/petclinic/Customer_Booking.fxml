@@ -113,19 +113,19 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                  <ChoiceBox prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="chooseDoctor" prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label layoutX="10.0" layoutY="32.0" prefHeight="30.0" prefWidth="171.0" text="Booking Date">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <DatePicker prefHeight="26.0" prefWidth="330.0" GridPane.columnIndex="1" />
+                  <DatePicker fx:id="booking_date" prefHeight="26.0" prefWidth="330.0" GridPane.columnIndex="1" />
                   <Label layoutX="10.0" layoutY="105.0" prefHeight="30.0" prefWidth="171.0" text="Booking Time" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <RadioButton mnemonicParsing="false" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <RadioButton fx:id="morning" mnemonicParsing="false" text="Morning" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -133,7 +133,7 @@
                         <ToggleGroup fx:id="time" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <RadioButton fx:id="afternoon" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="150.0" />
                      </GridPane.margin>
@@ -146,19 +146,19 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="170.0" layoutY="155.0" prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="chooseStype" layoutX="170.0" layoutY="155.0" prefHeight="26.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label layoutX="10.0" layoutY="172.0" prefHeight="30.0" prefWidth="171.0" text="Service Name" GridPane.rowIndex="4">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <CheckBox layoutX="170.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <CheckBox fx:id="s1" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="s2" layoutX="170.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="87.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <CheckBox layoutX="257.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <CheckBox fx:id="s" layoutX="257.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="171.0" />
                      </GridPane.margin>

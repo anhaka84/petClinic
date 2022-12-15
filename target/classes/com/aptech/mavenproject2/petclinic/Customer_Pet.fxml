@@ -121,27 +121,22 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="20.0" prefWidth="372.0" promptText="Enter pet name" GridPane.columnIndex="1" />
-                        <RadioButton mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="pet_name" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet name" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="male" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <toggleGroup>
                                 <ToggleGroup fx:id="gender" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton fx:id="female" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="120.0" />
                             </GridPane.margin>
                         </RadioButton>
-                        <RadioButton layoutX="180.0" layoutY="144.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Other" toggleGroup="$gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <GridPane.margin>
-                                <Insets left="240.0" />
-                            </GridPane.margin>
-                        </RadioButton>
-                  <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="68.0" text="Dog" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton fx:id="dog" mnemonicParsing="false" prefHeight="30.0" prefWidth="68.0" text="Dog" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <toggleGroup>
                         <ToggleGroup fx:id="type" />
                      </toggleGroup></RadioButton>
-                  <RadioButton layoutX="196.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Cat" toggleGroup="$type" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton fx:id="cat" layoutX="196.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Cat" toggleGroup="$type" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="120.0" />
                      </GridPane.margin>
@@ -151,18 +146,18 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="155.0" layoutY="34.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="pet_weight" layoutX="155.0" layoutY="34.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label prefHeight="18.0" prefWidth="178.0" text="Pet Age (Month)" GridPane.rowIndex="4">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="164.0" layoutY="211.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet age (month)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="pet_age" layoutX="164.0" layoutY="211.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet age (month)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
-                  <Button contentDisplay="RIGHT" layoutX="671.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button contentDisplay="RIGHT" layoutX="591.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button contentDisplay="RIGHT" layoutX="500.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="671.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="591.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="500.0" layoutY="514.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />
