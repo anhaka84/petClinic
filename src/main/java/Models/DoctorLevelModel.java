@@ -8,27 +8,24 @@ public class DoctorLevelModel extends UserModel {
 
     private int doctorLevelId;
     private String title;
-    private String degree;
     private Date updateDate;
 
     public DoctorLevelModel() {
     }
 
     public DoctorLevelModel(int doctorLevelId,
-            String title, String degree, Date updateDate) {
+            String title, Date updateDate) {
         this.doctorLevelId = doctorLevelId;
         this.title = title;
-        this.degree = degree;
         this.updateDate = updateDate;
     }
 
-    public DoctorLevelModel(String title, String degree, Date updateDate) {
+    public DoctorLevelModel(String title, Date updateDate) {
         this.title = title;
-        this.degree = degree;
         this.updateDate = updateDate;
     }
 
-    public DoctorLevelModel(UserModel user, String title, String degree, Date updateDate) {
+    public DoctorLevelModel(UserModel user, String title, Date updateDate) {
         super(user.getFullName(),
                 user.getGender(),
                 user.getDob(),
@@ -37,7 +34,6 @@ public class DoctorLevelModel extends UserModel {
                 user.getAddress(),
                 user.getAccount());
         this.title = title;
-        this.degree = degree;
         this.updateDate = updateDate;
     }
 
@@ -57,14 +53,6 @@ public class DoctorLevelModel extends UserModel {
         this.title = title;
     }
 
-    public String getDegree() {
-        return degree;
-    }
-
-    public void setDegree(String degree) {
-        this.degree = degree;
-    }
-
     public Date getUpdateDate() {
         return updateDate;
     }
@@ -79,7 +67,6 @@ public class DoctorLevelModel extends UserModel {
                 + "doctorLevelId=" + doctorLevelId
                 + ", " + super.toString()
                 + ", title=" + title
-                + ", degree=" + degree
                 + ", updateDate=" + updateDate
                 + '}';
     }
@@ -90,7 +77,6 @@ public class DoctorLevelModel extends UserModel {
         super.setResultSetValue(user, rs);
         this.setDoctorLevelId(rs.getInt("doctor_level_id"));
         this.setTitle(rs.getString("title"));
-        this.setDegree(rs.getString("degree"));
         this.setUpdateDate(rs.getDate("update_date"));
         return user;
     }

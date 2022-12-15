@@ -14,13 +14,13 @@ public class Router {
     private static final String SIGN_UP = "SPA_SignUp";
     //admin
     private static final String ADMIN_PAGE = "SPA_Admin_Main";
-    private static final String ADMIN_HOME = "Admin_Homepage";
-    private static final String ADMIN_BOOKING = "Admin_Booking";
-    private static final String ADMIN_BILL = "SPA_Admin_Bill";
-    private static final String ADMIN_SERVICES = "Admin_Services";
-    private static final String ADMIN_MEDICINES = "Admin_Medicine";
-    private static final String ADMIN_MANAGE_ACCOUNT = "Admin_Manage_Account";
-    private static final String ADMIN_YOUR_INFO = "Admin_Change_Info";
+    private static final String ADMIN_HOME = "SPA_Admin_Homepage";
+    private static final String ADMIN_BOOKING = "SPA_Admin_Booking";
+    private static final String ADMIN_BILL = "";
+    private static final String ADMIN_SERVICES = "SPA_Admin_Services";
+    private static final String ADMIN_MEDICINES = "SPA_Admin_Medicine";
+    private static final String ADMIN_MANAGE_ACCOUNT = "SPA_Admin_Manage_Account";
+    private static final String ADMIN_YOUR_INFO = "SPA_Admin_Change_Info";
     //doctor
     private static final String DOCTOR_PAGE = "SPA_Doctor_Main";
     private static final String DOCTOR_HOME = "SPA_Admin_HomePage";
@@ -34,7 +34,7 @@ public class Router {
     private static final String CLIENT_OUR_SERVICES = "SPA_Admin_Services";
     private static final String CLIENT_YOUR_PET = "SPA_Admin_HomePage";
     private static final String CLIENT_BOOKING = "SPA_Admin_Booking";
-    private static final String CLIENT_YOUR_INFO = "SPA_Admin_Your_Info";
+    private static final String CLIENT_YOUR_INFO = "SPA_Admin_Change_Info";
 
     //get sign page
     public static String getSignPage() {
@@ -145,7 +145,7 @@ public class Router {
 
     //switch admin page
     public static void switchToAdminPage() {
-        switchPage(getAdminHomepage());
+        switchPage(getAdminPage());
     }
 
     //switch doctor page

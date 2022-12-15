@@ -18,38 +18,29 @@
                     <children>
                         <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <BorderPane prefWidth="300.0">
-                                    <center>
-                                        <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                                            <image>
-                                                <Image url="@../../../../Img/logo.png" />
-                                            </image>
-                                        </ImageView>
-                                    </center>
-                                    <VBox.margin>
-                                        <Insets />
-                                    </VBox.margin>
-                                    <bottom>
-                                        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-                                            <children>
-                                                <Button mnemonicParsing="false" onAction="#getHome" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" />
-                                                <Button mnemonicParsing="false" onAction="#getDoctor" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" />
-                                                <Button mnemonicParsing="false" onAction="#getServices" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" />
-                                                <Button mnemonicParsing="false" onAction="#getPet" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" />
-                                                <Button mnemonicParsing="false" onAction="#getBooking" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
-                                                <Button mnemonicParsing="false" onAction="#getUserInfo" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
-                                                <Button mnemonicParsing="false" onAction="#SignOut" prefHeight="30.0" prefWidth="60.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out">
-                                                    <VBox.margin>
-                                                        <Insets top="100.0" />
-                                                    </VBox.margin>
-                                                </Button>
-                                            </children>
-                                            <BorderPane.margin>
-                                                <Insets top="-50.0" />
-                                            </BorderPane.margin>
-                                        </VBox>
-                                    </bottom>
-                                </BorderPane>
+                                  <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../../../../Img/logo.png" />
+                                      </image>
+                                  </ImageView>
+                                  <VBox alignment="CENTER">
+                                      <children>
+                                          <Button mnemonicParsing="false" onAction="#getHome" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Dashboard" />
+                                          <Button mnemonicParsing="false" onAction="#getDoctor" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" />
+                                          <Button mnemonicParsing="false" onAction="#getServices" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" />
+                                          <Button mnemonicParsing="false" onAction="#getPet" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" />
+                                          <Button mnemonicParsing="false" onAction="#getBooking" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
+                                          <Button mnemonicParsing="false" onAction="#getUserInfo" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
+                                          <Button mnemonicParsing="false" onAction="#SignOut" prefHeight="30.0" prefWidth="60.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out">
+                                              <VBox.margin>
+                                                  <Insets top="100.0" />
+                                              </VBox.margin>
+                                          </Button>
+                                      </children>
+                           <VBox.margin>
+                              <Insets top="-50.0" />
+                           </VBox.margin>
+                                  </VBox>
                             </children>
                         </VBox>
                     </children>
@@ -60,12 +51,12 @@
                     <children>
                         <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Label fx:id="labelTitlePage" alignment="CENTER" layoutX="245.0" prefHeight="50.0" text="Welcome to Pet Clinic">
+                                <Label fx:id="labelTitlePage" alignment="CENTER" layoutX="245.0" prefHeight="50.0" text="Title">
                                     <font>
                                         <Font name="System Bold" size="30.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets top="150.0" />
+                                        <Insets top="100.0" />
                                     </VBox.margin>
                                 </Label>
                                 <AnchorPane minHeight="400.0" minWidth="600.0">

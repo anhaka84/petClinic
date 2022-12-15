@@ -63,6 +63,14 @@ public class AccountEntity {
         return db.getOne(query, condition, new UserModel()).getUserId();
     }
 
+    public String starPassword(int length) {
+        String s = "";
+        for (int i = 0; i < length; i++) {
+            s += "*";
+        }
+        return s;
+    }
+
     public boolean isExistAccount(String username) {
         return getOneAccount(username) != null;
     }

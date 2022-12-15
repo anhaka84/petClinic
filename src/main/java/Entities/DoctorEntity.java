@@ -16,7 +16,6 @@ public class DoctorEntity {
     private final String columns = "("
             + "user_id, "
             + "title, "
-            + "degree, "
             + "update_date"
             + ")";
     private final String dsColumns = "(user_id, "
@@ -63,11 +62,10 @@ public class DoctorEntity {
     }
 
     private boolean addDoctorLevel(DoctorLevelModel doctor) {
-        query = "INSERT INTO DoctorLevel " + columns + " VALUES (?,?,?,?)";
+        query = "INSERT INTO DoctorLevel " + columns + " VALUES (?,?,?)";
         condition = Arrays.asList(
                 doctor.getUserId(),
                 doctor.getTitle(),
-                doctor.getDegree(),
                 doctor.getUpdateDate()
         );
         return db.setSqlDataRow(query, condition, doctor);

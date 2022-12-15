@@ -1,5 +1,4 @@
 Entities\UserEntity.class
-Models\BillModel.class
 Validation\Validate.class
 Models\AccountModel.class
 Entities\SignEntity.class
@@ -18,14 +17,12 @@ Controller\Admin\AdminManageAccountController.class
 Controller\SignController\SignOutController.class
 Controller\Router.class
 Entities\MedicationEntity.class
-Controller\Controller.class
 module-info.class
 Models\ServiceModel.class
 Controller\SignController\SignInController.class
 DB\dao\JDBCConnect.class
 com\aptech\mavenproject2\petclinic\SignMainController.class
 Controller\Admin\AdminMedicineController.class
-Entities\BillEntity.class
 DB\common\DBCommon.class
 Entities\PrescriptionEntity.class
 Entities\BookingEntity.class

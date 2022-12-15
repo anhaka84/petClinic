@@ -1,53 +1,43 @@
 package Controller.Admin;
 
 import Controller.Router;
+import Entities.*;
 import com.aptech.mavenproject2.petclinic.AdminMainController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
 
 public class AdminHomepageController implements Initializable {
 
+    @FXML
+    private Text countAppointment;
+
+    @FXML
+    private Text countDoctor;
+
+    @FXML
+    private Text countClient;
+
+    @FXML
+    private Text countAccount;
+
+    private final DoctorEntity doctorEntity = new DoctorEntity();
+    private final AccountEntity accountEntity = new AccountEntity();
+    private final UserEntity userEntity = new UserEntity();
+    private final BookingEntity bookingEntity = new BookingEntity();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Integer appointment = bookingEntity.getAllBookingInDay().size();
+        countAppointment.setText(appointment.toString());
+        Integer doctors = doctorEntity.getAllDoctor().size();
+        countDoctor.setText(doctors.toString());
+        Integer client = userEntity.getAllClient().size();
+        countClient.setText(client.toString());
+        Integer accounts = accountEntity.getAllAccount().size();
+        countAccount.setText(accounts.toString());
 
     }
-
-    @FXML
-    private void switchToHome() {
-        Router.switchToAdminPage();
-    }
-
-    @FXML
-    private void switchToBooking() {
-        Router.switchPage(Router.getAdminBooking());
-    }
-
-    @FXML
-    private void switchToServices() {
-        Router.switchPage(Router.getAdminServices());
-    }
-
-    @FXML
-    private void switchToMedicine() {
-        Router.switchPage(Router.getAdminMedicines());
-    }
-
-    @FXML
-    private void switchToManageAccount() {
-        Router.switchPage(Router.getAdminManageAccount());
-    }
-
-    @FXML
-    private void switchToChangeInfo() {
-        Router.switchPage(Router.getAdminInfo());
-    }
-
-    @FXML
-    private void SignOut() {
-        AdminMainController amc = new AdminMainController();
-        amc.SignOut();
-    }
-
 }

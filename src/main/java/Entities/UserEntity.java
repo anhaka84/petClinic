@@ -61,9 +61,14 @@ public class UserEntity {
         return db.getAll(query, new UserModel());
     }
 
-    public List<UserModel> getAllUserActive() {
+    public List<UserModel> getAllUserWithOutAdmin() {
         query = "SELECT * FROM User"
-                + " WHERE status = 1";
+                + " WHERE role_id <> 1";
+        return db.getAll(query, new UserModel());
+    }
+
+    public ArrayList<UserModel> getAllClient() {
+        query = "SELECT * FROM User WHERE role_id = 3";
         return db.getAll(query, new UserModel());
     }
 

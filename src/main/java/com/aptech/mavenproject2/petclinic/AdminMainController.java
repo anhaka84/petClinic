@@ -23,7 +23,6 @@ public class AdminMainController implements Initializable {
 
     private static final String HOME_TITLE = "Welcome to Pet Clinic";
     private static final String BOOKING_TITLE = "Booking";
-    private static final String BILL_TITLE = "Bill";
     private static final String SERVICES_TITLE = "Services";
     private static final String MEDICINES_TITLE = "Medicines";
     private static final String MANAGE_ACCOUNT_TITLE = "Account";
@@ -60,16 +59,6 @@ public class AdminMainController implements Initializable {
             Pane view = App.getPane(Router.getAdminBooking());
             mainPage.setCenter(view);
             setPageTitle(BOOKING_TITLE);
-        } catch (IOException ex) {
-        }
-    }
-
-    @FXML
-    private void getBill() {
-        try {
-            Pane view = App.getPane(Router.getAdminBill());
-            mainPage.setCenter(view);
-            setPageTitle(BILL_TITLE);
         } catch (IOException ex) {
         }
     }
