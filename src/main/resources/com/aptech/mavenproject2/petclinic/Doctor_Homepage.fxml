@@ -54,7 +54,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
+            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" onAction="#SignOut" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
             <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
                <font>
                   <Font size="24.0" />

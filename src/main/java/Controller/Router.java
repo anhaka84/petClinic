@@ -22,19 +22,19 @@ public class Router {
     private static final String ADMIN_MANAGE_ACCOUNT = "SPA_Admin_Manage_Account";
     private static final String ADMIN_YOUR_INFO = "SPA_Admin_Change_Info";
     //doctor
-    private static final String DOCTOR_PAGE = "SPA_Doctor_Main";
+    private static final String DOCTOR_PAGE = "Doctor_Homepage";
     private static final String DOCTOR_HOME = "SPA_Admin_HomePage";
-    private static final String DOCTOR_BOOKING = "SPA_Admin_Booking";
-    private static final String DOCTOR_SCHEDULE = "SPA_Admin_HomePage";
-    private static final String DOCTOR_YOUR_INFO = "SPA_Admin_Your_Info";
+    private static final String DOCTOR_BOOKING = "Doctor_Booking";
+    private static final String DOCTOR_SCHEDULE = "Doctor_Schedule";
+    private static final String DOCTOR_YOUR_INFO = "Doctor_ChangeInfo";
     //client
-    private static final String CLIENT_PAGE = "SPA_Customer_Main";
+    private static final String CLIENT_PAGE = "Customer_HomePage";
     private static final String CLIENT_HOME = "SPA_Admin_HomePage";
-    private static final String CLIENT_OUR_DOCTOR = "SPA_Admin_HomePage";
-    private static final String CLIENT_OUR_SERVICES = "SPA_Admin_Services";
-    private static final String CLIENT_YOUR_PET = "SPA_Admin_HomePage";
-    private static final String CLIENT_BOOKING = "SPA_Admin_Booking";
-    private static final String CLIENT_YOUR_INFO = "SPA_Admin_Change_Info";
+    private static final String CLIENT_OUR_DOCTOR = "Customer_Doctor";
+    private static final String CLIENT_OUR_SERVICES = "Customer_Services";
+    private static final String CLIENT_YOUR_PET = "Customer_pet";
+    private static final String CLIENT_BOOKING = "Customer_Booking";
+    private static final String CLIENT_YOUR_INFO = "Customer_ChangeInfo";
 
     //get sign page
     public static String getSignPage() {
