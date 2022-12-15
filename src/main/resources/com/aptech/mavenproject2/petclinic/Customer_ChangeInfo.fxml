@@ -153,11 +153,11 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="full_name" prefHeight="20.0" prefWidth="372.0" promptText="Enter full name" GridPane.columnIndex="1" />
+                        <TextField fx:id="fullName" prefHeight="20.0" prefWidth="372.0" promptText="Enter full name" GridPane.columnIndex="1" />
                         <TextField fx:id="username" layoutX="180.0" layoutY="18.0" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="email" layoutX="180.0" layoutY="103.0" promptText="Enter email" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="address" layoutX="180.0" layoutY="188.0" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <TextField fx:id="phone_number" layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="396.0" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="phoneNumber" layoutX="180.0" layoutY="231.0" prefHeight="26.0" prefWidth="396.0" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <RadioButton fx:id="male" mnemonicParsing="false" text="Male" GridPane.columnIndex="1" GridPane.rowIndex="4">
                             <toggleGroup>
                                 <ToggleGroup fx:id="gender" />
