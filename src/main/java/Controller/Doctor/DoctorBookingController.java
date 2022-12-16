@@ -1,5 +1,6 @@
 package Controller.Doctor;
 
+import Controller.Router;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.scene.control.TextField;
  * @author Acer
  */
 public class DoctorBookingController implements Initializable {
+    Router router = new Router();
 
     @FXML
     private TextField inputSearch;

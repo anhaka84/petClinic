@@ -4,6 +4,7 @@
  */
 package Controller.Doctor;
 
+import Controller.Router;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -27,6 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * @author Acer
  */
 public class DoctorChangeInfoController implements Initializable {
+    Router router = new Router();
 
     @FXML
     private Button btnRefresh;

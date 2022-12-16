@@ -17,6 +17,22 @@
     -fx-text-fill : #FFF;
 }
 
+.button_active {
+    /*-fx-effect: unset;*/
+    -fx-font-family: "System";
+    -fx-background-color : #947E72;
+    -fx-background-radius : 0px;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-text-fill : #fff;
+}
+.button_active:hover {
+    -fx-background-color : #F6E8E1;
+}
+.button_active:disabled {
+    -fx-opacity: 1;
+}
+
 .button_primary
 {
     /*-fx-effect: unset;*/

@@ -57,7 +57,7 @@
                </cursor>
             </Button>
             <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
-            <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+            <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_active" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -168,7 +168,7 @@
                                 <Insets left="270.0" />
                             </GridPane.margin>
                         </Button>
-                        <DatePicker fx:id="dob" prefHeight="18.0" prefWidth="435.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <DatePicker fx:id="dob" prefHeight="25.0" prefWidth="468.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <PasswordField fx:id="password" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label layoutX="10.0" layoutY="86.0" prefHeight="30.0" prefWidth="216.0" text="Confirm password" GridPane.rowIndex="4">
                             <font>

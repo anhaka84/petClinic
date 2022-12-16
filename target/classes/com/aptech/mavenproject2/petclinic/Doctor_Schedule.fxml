@@ -49,7 +49,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
+            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_active" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -127,15 +127,15 @@
                   </RadioButton>
                     </children>
                 </GridPane>
-            <TableView fx:id="tableDoctorSchedule" layoutX="26.0" layoutY="331.0" prefHeight="410.0" prefWidth="748.0">
+            <TableView fx:id="tableDoctorSchedule" layoutX="13.0" layoutY="334.0" prefHeight="410.0" prefWidth="748.0">
               <columns>
                 <TableColumn fx:id="scheduleID" prefWidth="191.1999568939209" text="ID" />
                 <TableColumn fx:id="scheduleDate" minWidth="0.0" prefWidth="266.39990234375" text="Date" />
                   <TableColumn fx:id="scheduleTime" minWidth="0.0" prefWidth="263.6000061035156" text="Time" />
               </columns>
             </TableView>
-            <Button fx:id="btnSearch" contentDisplay="RIGHT" layoutX="27.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
-            <TextField fx:id="search" layoutX="82.0" layoutY="303.0" prefHeight="25.0" prefWidth="690.0" />
+            <Button fx:id="btnSearch" contentDisplay="RIGHT" layoutX="14.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField fx:id="search" layoutX="83.0" layoutY="304.0" prefHeight="25.0" prefWidth="677.0" />
                   <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="538.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
                   <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
                   <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="399.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />

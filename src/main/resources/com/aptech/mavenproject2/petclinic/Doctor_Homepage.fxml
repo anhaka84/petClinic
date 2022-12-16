@@ -18,16 +18,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Doctor.DoctorHomepageController">
     <left>
         <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView disable="true" fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../../Img/logo.png" />
                     </image>
                 </ImageView>
-                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
+                <Button fx:id="btnHome" disable="true" layoutY="179.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="50.0" prefWidth="306.0" styleClass="button_active" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -38,7 +38,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-            <Button layoutY="248.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
+            <Button fx:id="btnBooking" layoutY="248.0" mnemonicParsing="false" onAction="#switchToBooking" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,7 +46,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
+            <Button fx:id="btnSchedule" layoutY="325.0" mnemonicParsing="false" onAction="#switchToSchedule" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -54,8 +54,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" onAction="#SignOut" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
-            <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
+            <Button fx:id="btnInfo" layoutY="397.0" mnemonicParsing="false" onAction="#switchToInfo" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -63,13 +62,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="btnSignOut" layoutX="126.0" layoutY="554.0" mnemonicParsing="false" onAction="#SignOut" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
             </children>
         </Pane>
     </left>
     <center>
         <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" styleClass="doctor_homepage" stylesheets="@../../../../CSS/Doctor.css" BorderPane.alignment="CENTER">
             <children>
-                <HBox layoutX="137.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxBooking" layoutX="137.0" layoutY="210.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -104,7 +104,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox layoutX="463.0" layoutY="210.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxSchedule" layoutX="463.0" layoutY="210.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -116,7 +116,7 @@
                             </rowConstraints>
                             <children>
                                 <!--<FontAwesomeIconView glyphName="USER_PLUS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doctors" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Schedule" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -139,7 +139,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox layoutX="463.0" layoutY="395.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxInfo" layoutX="299.0" layoutY="394.0" onMouseClicked="#switchToInfo" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -165,41 +165,6 @@
                            </image>
                            <GridPane.margin>
                               <Insets left="20.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                            </children>
-                        </GridPane>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </HBox>
-                <HBox layoutX="137.0" layoutY="395.0" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-                    <children>
-                        <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.59996337890624" minWidth="10.0" prefWidth="86.40003662109375" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.80002441406248" minWidth="10.0" prefWidth="167.19996337890626" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <!--<FontAwesomeIconView glyphName="USERS" size="50" textAlignment="CENTER" wrappingWidth="81.54282855987549" />-->
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="122.93670845031738" GridPane.columnIndex="1">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                    <GridPane.margin>
-                                        <Insets />
-                                    </GridPane.margin>
-                                </Text>
-                        <ImageView fitHeight="49.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../Img/employee_icon.png" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets left="18.0" />
                            </GridPane.margin>
                         </ImageView>
                             </children>

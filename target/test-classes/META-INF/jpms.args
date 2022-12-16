@@ -1,4 +1,0 @@
---patch-module
-com.aptech.mavenproject2.petclinic=_
---add-reads
-com.aptech.mavenproject2.petclinic=ALL-UNNAMED
