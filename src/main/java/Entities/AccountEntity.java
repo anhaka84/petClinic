@@ -25,8 +25,8 @@ public class AccountEntity {
         return userEntity.getOneUser(userId).getAccount();
     }
 
-    public List<AccountModel> getAllAccount() {
-        List<AccountModel> listAcc = new ArrayList<>();
+    public ArrayList<AccountModel> getAllAccount() {
+        ArrayList<AccountModel> listAcc = new ArrayList<>();
         userEntity.getAllUser().forEach(acc -> {
             listAcc.add(acc.getAccount());
         });

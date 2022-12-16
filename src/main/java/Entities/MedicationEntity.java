@@ -2,6 +2,7 @@ package Entities;
 
 import DB.main.DB;
 import Models.MedicationModel;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class MedicationEntity {
             + ")";
 
     public boolean addMedication(MedicationModel medication) {
-        query = "INSERT INTO " + columns
+        query = "INSERT INTO Medication " + columns
                 + " VALUES (?,?,?)";
         condition = Arrays.asList(
                 medication.getMedicationName(),
@@ -34,16 +35,22 @@ public class MedicationEntity {
         return db.getOne(query, condition, new MedicationModel());
     }
 
-    public List<MedicationModel> getAllMedication() {
+    public ArrayList<MedicationModel> getAllMedication() {
         query = "SELECT * FROM Medication";
         return db.getAll(query, new MedicationModel());
+    }
+
+    public ArrayList<MedicationModel> getAllMedication(String name) {
+        query = "SELECT * FROM Medication WHERE medication_name LIKE ?";
+        condition = Arrays.asList("%" + name + "%");
+        return db.getAll(query, condition, new MedicationModel());
     }
 
     public boolean updateMedication(MedicationModel medication) {
         query = "UPDATE Medication SET "
                 + "medication_name = ?,"
                 + "description = ?,"
-                + "price = ?,"
+                + "price = ?"
                 + " WHERE medication_id = ?";
         condition = Arrays.asList(
                 medication.getMedicationName(),
