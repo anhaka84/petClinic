@@ -129,6 +129,16 @@
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Title" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfTitle" maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
                </children>
             </GridPane>
             <TableView fx:id="tblAccount" prefHeight="187.0" prefWidth="680.0" style="-fx-background-radius: 0 0 10 10;" GridPane.rowIndex="4">
@@ -204,12 +214,12 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Degree/Pet Name">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pet Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Title/Pet Age" GridPane.columnIndex="2">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pet Age" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -229,24 +239,24 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
+                  <TextField fx:id="tfPetName" maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3">
+                  <TextField fx:id="tfPetAge" maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3">
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="tfPetWeight" maxHeight="30.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
                   <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Dog">
+                        <RadioButton fx:id="rbDog" maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Dog">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -254,7 +264,7 @@
                               <ToggleGroup fx:id="petType" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Cat" toggleGroup="$petType">
+                        <RadioButton fx:id="rbCat" maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Cat" toggleGroup="$petType">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -266,7 +276,7 @@
                   </HBox>
                   <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
-                        <RadioButton maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Male">
+                        <RadioButton fx:id="rbPetMale" maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Male">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -274,12 +284,12 @@
                               <ToggleGroup fx:id="petGender" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Female" toggleGroup="$petGender">
+                        <RadioButton fx:id="rbPetFemale" maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Female" toggleGroup="$petGender">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </RadioButton>
-                        <RadioButton maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Other" toggleGroup="$petGender" />
+                        <RadioButton fx:id="rbPetOther" maxHeight="1.7976931348623157E308" minWidth="60.0" mnemonicParsing="false" text="Other" toggleGroup="$petGender" />
                      </children>
                      <GridPane.margin>
                         <Insets right="10.0" />

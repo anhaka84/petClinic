@@ -40,6 +40,16 @@ public class PetEntity {
         return db.getOne(query, condition, new PetModel());
     }
 
+    public PetModel getOnePetUid(int userId) {
+        query = "SELECT p.* "
+                + "FROM pet_clinic.pet AS p "
+                + "INNER JOIN pet_clinic.user AS u "
+                + "ON p.user_id = u.user_id "
+                + "WHERE u.user_id = ?";
+        condition = Arrays.asList(userId);
+        return db.getOne(query, condition, new PetModel());
+    }
+
     public List<PetModel> getAll() {
         query = "SELECT * FORM Pet";
         return db.getAll(query, new PetModel());

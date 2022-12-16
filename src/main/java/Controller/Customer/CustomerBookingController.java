@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 
 public class CustomerBookingController implements Initializable {
 
@@ -15,7 +16,10 @@ public class CustomerBookingController implements Initializable {
     private ComboBox chooseDoctor;
 
     @FXML
-    private ComboBox chooseStype;
+    private ComboBox chooseStype, listServiceName;
+
+    @FXML
+    private TextArea listServiceChose;
 
     @FXML
     private DatePicker bookingDate;
@@ -37,6 +41,7 @@ public class CustomerBookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        listServiceChose.setText("abc");
     }
 
 }

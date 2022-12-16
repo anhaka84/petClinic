@@ -1,10 +1,17 @@
 package Controller.Admin;
 
 import Entities.AccountEntity;
+import Entities.DoctorEntity;
+import Entities.PetEntity;
 import Entities.UserEntity;
 import Models.AccountModel;
+import Models.DoctorLevelModel;
+import Models.PetModel;
 import Models.UserModel;
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -49,6 +56,12 @@ public class AdminManageAccountController implements Initializable {
     private RadioButton male, female, other;
 
     @FXML
+    private TextField tfTitle, tfPetName, tfPetAge, tfPetWeight;
+
+    @FXML
+    private RadioButton rbDog, rbCat, rbPetMale, rbPetFemale, rbPetOther;
+
+    @FXML
     private ComboBox<String> comboBoxAccount;
 
     @FXML
@@ -65,9 +78,12 @@ public class AdminManageAccountController implements Initializable {
 
     private final AccountEntity accountEntity = new AccountEntity();
     private final UserEntity userEntity = new UserEntity();
+    private final DoctorEntity doctorEntity = new DoctorEntity();
+    private final PetEntity petEntity = new PetEntity();
 
     private ObservableList<AccountModel> listAccount;
     private ObservableList<String> listType;
+    private final Date today = Date.valueOf(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
 
     int myIndex;
 
@@ -94,6 +110,8 @@ public class AdminManageAccountController implements Initializable {
     @FXML
     private void showDetail() {
         UserModel user = getRowData();
+        DoctorLevelModel doctor = getRowDoctor();
+        PetModel pet = getRowPet();
         if (user != null) {
             tfId.setText(String.valueOf(user.getUserId()));
             tfFullName.setText(user.getFullName());
@@ -115,6 +133,44 @@ public class AdminManageAccountController implements Initializable {
                     other.setSelected(true);
                     break;
             }
+
+            if (doctor != null) {
+                tfTitle.setText(doctor.getTitle());
+            } else {
+                tfTitle.setText("");
+            }
+
+            if (pet != null) {
+                tfPetName.setText(pet.getPetName());
+                tfPetWeight.setText(String.valueOf(pet.getPetWeight()));
+                tfPetAge.setText(String.valueOf(pet.getPetAge()));
+                if (pet.getPetType().toLowerCase().equals("dog")) {
+                    rbDog.setSelected(true);
+                }
+                if (pet.getPetType().toLowerCase().equals("cat")) {
+                    rbCat.setSelected(true);
+                }
+                switch (pet.getPetGender()) {
+                    case 0:
+                        rbPetMale.setSelected(true);
+                        break;
+                    case 1:
+                        rbPetFemale.setSelected(true);
+                        break;
+                    default:
+                        rbPetOther.setSelected(true);
+                        break;
+                }
+            } else {
+                tfPetName.setText("");
+                tfPetWeight.setText("");
+                tfPetAge.setText("");
+                rbDog.setSelected(false);
+                rbCat.setSelected(false);
+                rbPetMale.setSelected(false);
+                rbPetFemale.setSelected(false);
+                rbPetOther.setSelected(false);
+            }
         }
     }
 
@@ -134,8 +190,25 @@ public class AdminManageAccountController implements Initializable {
     @FXML
     private void resetData() {
         tfId.setText("");
+        tfFullName.setText("");
+        tfEmail.setText("");
+        tfPhone.setText("");
+        tfAddress.setText("");
+        dpDob.setValue(today.toLocalDate());
         tfUsername.setText("");
         tfPassword.setText("");
+        male.setSelected(false);
+        female.setSelected(false);
+        other.setSelected(false);
+        tfTitle.setText("");
+        tfPetName.setText("");
+        tfPetWeight.setText("");
+        tfPetAge.setText("");
+        rbDog.setSelected(false);
+        rbCat.setSelected(false);
+        rbPetMale.setSelected(false);
+        rbPetFemale.setSelected(false);
+        rbPetOther.setSelected(false);
     }
 
     @FXML
@@ -149,6 +222,26 @@ public class AdminManageAccountController implements Initializable {
         if (account != null) {
             int id = accountEntity.getAccountId(account.getUsername());
             return userEntity.getOneUser(id);
+        }
+        return null;
+    }
+
+    @FXML
+    private DoctorLevelModel getRowDoctor() {
+        AccountModel account = tblAccount.getSelectionModel().getSelectedItem();
+        if (account != null) {
+            int id = accountEntity.getAccountId(account.getUsername());
+            return (DoctorLevelModel) doctorEntity.getOneDoctorUid(id);
+        }
+        return null;
+    }
+
+    @FXML
+    private PetModel getRowPet() {
+        AccountModel account = tblAccount.getSelectionModel().getSelectedItem();
+        if (account != null) {
+            int id = accountEntity.getAccountId(account.getUsername());
+            return petEntity.getOnePetUid(id);
         }
         return null;
     }
