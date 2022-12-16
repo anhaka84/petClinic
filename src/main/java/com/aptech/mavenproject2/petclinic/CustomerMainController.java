@@ -7,6 +7,8 @@ import Session.SessionWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -91,6 +93,7 @@ public class CustomerMainController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(BOOKING_TITLE);
         } catch (IOException ex) {
+            Logger.getLogger(CustomerMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

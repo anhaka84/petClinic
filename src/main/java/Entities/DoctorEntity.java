@@ -106,18 +106,18 @@ public class DoctorEntity {
             for (int i = 1; rs.next(); i++) {
                 DoctorSchedualModel author = new DoctorSchedualModel();
 
-                author.setIndex(i);
-                author.setId(rs.getInt("id"));
-                author.setName(rs.getString("name"));
-                author.setDob(rs.getString("dob"));
-                author.setSign_name(rs.getString("sign_name"));
-                author.setCreatedAt(rs.getString("createdAt"));
-                author.setUpdatedAt(rs.getString("updatedAt"));
+//                author.setIndex(i);
+//                author.setId(rs.getInt("id"));
+//                author.setName(rs.getString("name"));
+//                author.setDob(rs.getString("dob"));
+//                author.setSign_name(rs.getString("sign_name"));
+//                author.setCreatedAt(rs.getString("createdAt"));
+//                author.setUpdatedAt(rs.getString("updatedAt"));
 
                 authors.add(author);
             }
 
-            return authors;
+//            return authors;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {

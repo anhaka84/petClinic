@@ -38,6 +38,12 @@ public class ServiceEntity {
         return db.getOne(query, condition, new ServiceModel());
     }
 
+    public int getServiceId(String name) {
+        query = "SELECT * FROM Service WHERE service_name LIKE ?";
+        condition = Arrays.asList("%" + name + "%");
+        return db.getOne(query, condition, new ServiceModel()).getServiceId();
+    }
+
     public ArrayList<ServiceModel> getAllService() {
         query = "SELECT * FROM Service";
         return db.getAll(query, new ServiceModel());
