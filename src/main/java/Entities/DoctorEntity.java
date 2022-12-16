@@ -94,7 +94,7 @@ public class DoctorEntity {
     }
 
     public ArrayList<DoctorSchedualModel> getAllSchedual() {
-        ObservableList<DoctorSchedualModel> authors = FXCollections.observableArrayList();
+        ObservableList<DoctorSchedualModel> dsms = FXCollections.observableArrayList();
 
         String sql = "SELECT * FROM doctorschedual";
 
@@ -104,20 +104,17 @@ public class DoctorEntity {
             rs = preparedStatement.executeQuery();
 
             for (int i = 1; rs.next(); i++) {
-                DoctorSchedualModel author = new DoctorSchedualModel();
+                DoctorSchedualModel dsm = new DoctorSchedualModel();
 
-                author.setIndex(i);
-                author.setId(rs.getInt("id"));
-                author.setName(rs.getString("name"));
-                author.setDob(rs.getString("dob"));
-                author.setSign_name(rs.getString("sign_name"));
-                author.setCreatedAt(rs.getString("createdAt"));
-                author.setUpdatedAt(rs.getString("updatedAt"));
-
-                authors.add(author);
+                dsm.setDoctorSchedualId(rs.getInt("doctor_schedual_id"));
+                dsm.setUserId(rs.getInt("user_id"));
+                dsm.setDoctorSchedualDate(rs.getDate("doctor_schedual_date"));
+                dsm.setDoctorSchedualTime(rs.getString("doctor_schedual_time"));
+                
+                dsms.add(dsm);
             }
 
-            return authors;
+            return dsms;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
