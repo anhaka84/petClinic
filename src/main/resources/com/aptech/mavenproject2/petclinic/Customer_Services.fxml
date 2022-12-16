@@ -1,100 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-    <left>
-        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../../Img/logo.png" />
-                    </image>
-                </ImageView>
-                <Button layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Doctor" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-                <Button layoutY="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Our Services" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-            <Button layoutY="364.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Pet" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="422.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="487.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
-            </children>
-        </Pane>
-    </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <center>
       <Pane prefHeight="700.0" prefWidth="744.0" styleClass="customer_homepage" stylesheets="@../../../../CSS/Customer.css" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="304.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Services" wrappingWidth="197.4705810546875">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <TableView fx:id="servicesTable" layoutX="28.0" layoutY="137.0" prefHeight="536.0" prefWidth="703.0">
+            <TableView fx:id="tableService" layoutX="29.0" layoutY="104.0" prefHeight="431.0" prefWidth="693.0">
               <columns>
-                <TableColumn fx:id="serviceId" prefWidth="131.99997520446777" text="Service ID" />
-                <TableColumn fx:id="serviceType" prefWidth="125.59994506835938" text="Service Type" />
-                  <TableColumn fx:id="serviceName" prefWidth="278.3999328613281" text="Service Name" />
-                  <TableColumn fx:id="servicePrice" prefWidth="170.4000244140625" text="Service Price" />
+                <TableColumn fx:id="ColsId" prefWidth="131.99997520446777" text="Service ID" />
+                <TableColumn fx:id="ColsType" prefWidth="125.59994506835938" text="Service Type" />
+                  <TableColumn fx:id="ColsName" prefWidth="278.3999328613281" text="Service Name" />
+                  <TableColumn fx:id="ColsPrice" prefWidth="170.4000244140625" text="Service Price" />
               </columns>
             </TableView>
-            <TextField fx:id="inputSearch" layoutX="80.0" layoutY="98.0" prefHeight="26.0" prefWidth="646.0" />
-            <Button fx:id="btnSearch" layoutX="32.0" layoutY="98.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+            <TextField fx:id="inputSearch" layoutX="81.0" layoutY="65.0" prefHeight="26.0" prefWidth="268.0" />
+            <Button fx:id="btnSearch" layoutX="33.0" layoutY="65.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
          </children>
       </Pane>
    </center>
