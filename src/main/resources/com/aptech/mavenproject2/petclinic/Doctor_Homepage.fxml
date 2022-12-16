@@ -5,8 +5,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -18,58 +16,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Doctor.DoctorHomepageController">
-    <left>
-        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView disable="true" fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../../Img/logo.png" />
-                    </image>
-                </ImageView>
-                <Button fx:id="btnHome" disable="true" layoutY="179.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="50.0" prefWidth="306.0" styleClass="button_active" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-            <Button fx:id="btnBooking" layoutY="248.0" mnemonicParsing="false" onAction="#switchToBooking" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnSchedule" layoutY="325.0" mnemonicParsing="false" onAction="#switchToSchedule" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnInfo" layoutY="397.0" mnemonicParsing="false" onAction="#switchToInfo" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnSignOut" layoutX="126.0" layoutY="554.0" mnemonicParsing="false" onAction="#SignOut" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
-            </children>
-        </Pane>
-    </left>
+<BorderPane maxHeight="600.0" maxWidth="680.0" prefHeight="600.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Doctor.DoctorHomepageController">
     <center>
-        <Pane prefHeight="822.0" prefWidth="976.0" style="-fx-background-color: #f1f2f6;" styleClass="doctor_homepage" stylesheets="@../../../../CSS/Doctor.css" BorderPane.alignment="CENTER">
+        <Pane prefHeight="822.0" prefWidth="976.0" stylesheets="@../../../../CSS/Doctor.css" BorderPane.alignment="CENTER">
             <children>
-                <HBox fx:id="hboxBooking" layoutX="137.0" layoutY="210.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxBooking" layoutX="50.0" layoutY="227.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -104,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox fx:id="hboxSchedule" layoutX="463.0" layoutY="210.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxSchedule" layoutX="376.0" layoutY="227.0" onMouseClicked="#switchToSchedule" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -139,7 +90,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-                <HBox fx:id="hboxInfo" layoutX="299.0" layoutY="394.0" onMouseClicked="#switchToInfo" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
+                <HBox fx:id="hboxInfo" layoutX="212.0" layoutY="411.0" onMouseClicked="#switchToInfo" prefHeight="100.0" prefWidth="254.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
                     <children>
                         <GridPane prefHeight="103.0" prefWidth="376.0" style="-fx-border-radius: 10px;" stylesheets="@../../../../CSS/Admin.css">
                             <columnConstraints>
@@ -174,21 +125,6 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </HBox>
-            <HBox alignment="CENTER" layoutX="218.0" layoutY="87.0" prefHeight="66.0" prefWidth="402.0" style="-fx-border-color: #000; -fx-border-radius: 10px;" styleClass="hBox" stylesheets="@../../../../CSS/Admin.css">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <children>
-                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Pet Clinic" textAlignment="CENTER" wrappingWidth="412.5365982055664">
-                          <font>
-                              <Font size="41.0" />
-                          </font>
-                          <effect>
-                              <Bloom />
-                          </effect>
-                      </Text>
-               </children>
-            </HBox>
             </children>
             <cursor>
                 <Cursor fx:constant="DEFAULT" />

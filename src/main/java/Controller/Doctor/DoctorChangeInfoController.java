@@ -1,43 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller.Doctor;
 
-import Controller.Router;
+import Entities.AccountEntity;
+import Entities.DoctorEntity;
+import Entities.UserEntity;
+import Models.DoctorLevelModel;
+import Models.UserModel;
 import java.net.URL;
+import java.sql.Date;
 import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-import Entities.ServiceEntity;
-import Models.ServiceModel;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- *
- * @author Acer
- */
 public class DoctorChangeInfoController implements Initializable {
-    Router router = new Router();
-
-    @FXML
-    private Button btnRefresh;
-
-    @FXML
-    private Button btnReset;
-
-    @FXML
-    private Button btnSave;
 
     @FXML
     private TextField fullName;
@@ -49,7 +27,7 @@ public class DoctorChangeInfoController implements Initializable {
     private TextField username;
 
     @FXML
-    private TextField password;
+    private PasswordField password, confirmPassword;
 
     @FXML
     private TextField email;
@@ -68,13 +46,67 @@ public class DoctorChangeInfoController implements Initializable {
 
     @FXML
     private RadioButton female;
-    
+
     @FXML
     private RadioButton other;
 
+    private final UserEntity userEntity = new UserEntity();
+    private final AccountEntity accountEntity = new AccountEntity();
+    private final DoctorEntity doctorEntity = new DoctorEntity();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        getData();
     }
 
+    @FXML
+    private void getData() {
+        UserModel user = userEntity.getSessionUser();
+        int id = user.getUserId();
+        DoctorLevelModel doctor = (DoctorLevelModel) doctorEntity.getOneDoctorUid(id);
+        fullName.setText(user.getFullName());
+        title.setText(doctor.getTitle());
+        phoneNumber.setText(user.getPhoneNumber());
+        email.setText(user.getEmail());
+        address.setText(user.getAddress());
+        username.setText(user.getAccount().getUsername());
+        password.setText(user.getAccount().getPassword());
+        confirmPassword.setText(user.getAccount().getPassword());
+        dob.setValue(user.getDob().toLocalDate());
+        switch (user.getGender()) {
+            case 0:
+                male.setSelected(true);
+                break;
+            case 1:
+                female.setSelected(true);
+                break;
+            default:
+                other.setSelected(true);
+                break;
+        }
+    }
+
+    @FXML
+    private void add() {
+        int id = userEntity.getSessionUser().getUserId();
+        int role = userEntity.getSessionUser().getRole();
+        String fullname = fullName.getText();
+        String phone = phoneNumber.getText();
+        String inemail = email.getText();
+        String inaddress = address.getText();
+        String inusername = username.getText();
+        String inpassword = password.getText();
+        int gender;
+        if (male.isSelected()) {
+            gender = 0;
+        } else if (female.isSelected()) {
+            gender = 1;
+        } else {
+            gender = 2;
+        }
+        Date daob = Date.valueOf(dob.getValue());
+        UserModel user = new UserModel(id, role, fullname, gender, daob, inemail, inaddress, phone);
+        userEntity.updateUser(user);
+        accountEntity.updateAccount(inusername, inpassword);
+    }
 }

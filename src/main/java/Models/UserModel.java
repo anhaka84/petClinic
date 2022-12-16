@@ -49,6 +49,17 @@ public class UserModel extends DBCommon<UserModel> {
         this.account = account;
     }
 
+    public UserModel(int userId, int role, String fullName, int gender, Date dob, String email, String address, String phoneNumber) {
+        this.userId = userId;
+        this.role = role;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dob = dob;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
     public UserModel(int userId, int role,
             String fullName, int gender, Date dob,
             String email, String address, String phoneNumber,

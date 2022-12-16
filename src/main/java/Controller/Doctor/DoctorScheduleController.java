@@ -87,7 +87,7 @@ public class DoctorScheduleController implements Initializable {
 //        UserModel sessionUser = user.getSessionUser();
 
         DoctorEntity de = new DoctorEntity();
-        ArrayList<UserModel> um = de.getAllSchedual();
+        ArrayList<DoctorSchedualModel> um = de.getAllSchedual();
         ObservableList<DoctorSchedualModel> dsms = FXCollections.observableArrayList();
 
         for (UserModel user : um) {
