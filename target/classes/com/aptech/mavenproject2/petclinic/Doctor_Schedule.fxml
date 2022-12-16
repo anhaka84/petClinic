@@ -10,77 +10,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-        <Pane prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #eee2dc;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="294.0" fitWidth="299.0" layoutX="6.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../../Img/logo.png" />
-                    </image>
-                </ImageView>
-                <Button layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" textFill="WHITE">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-            <Button layoutY="248.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutY="325.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_active" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="126.0" layoutY="554.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out" />
-            <Button layoutY="397.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="306.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your info" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            </children>
-        </Pane>
-    </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Doctor.DoctorScheduleController">
     <center>
         <Pane prefHeight="702.0" prefWidth="774.0" style="-fx-background-color: #f1f2f6;" styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
             <children>
-                <Text layoutX="194.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Your Schedule" underline="true" wrappingWidth="384.53662872314453">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                    <effect>
-                        <Bloom />
-                    </effect>
-                </Text>
-                <GridPane layoutX="194.0" layoutY="103.0" prefHeight="113.0" prefWidth="534.0">
+            <TextField fx:id="txtScheduleId" layoutX="338.0" layoutY="70.0" visible="false" />
+                <GridPane layoutX="140.0" layoutY="103.0" prefHeight="113.0" prefWidth="534.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.20001220703125" minWidth="10.0" prefWidth="81.59998779296876" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="502.40001983642577" minWidth="10.0" prefWidth="452.80001220703133" />
@@ -103,7 +45,7 @@
                         <ToggleGroup fx:id="time" />
                      </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="afernoon" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <RadioButton fx:id="afternoon" layoutX="180.0" layoutY="144.0" mnemonicParsing="false" text="Afternoon" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="120.0" />
                             </GridPane.margin>
@@ -116,7 +58,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                  <DatePicker fx:id="doctorScheduleDate" prefHeight="26.0" prefWidth="306.0" GridPane.columnIndex="1" />
+                  <DatePicker fx:id="doctorScheduleDate" prefHeight="26.0" prefWidth="462.0" GridPane.columnIndex="1" />
                   <RadioButton fx:id="all" layoutX="211.0" layoutY="105.0" mnemonicParsing="false" text="All" toggleGroup="$time" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="17.0" />
@@ -127,18 +69,18 @@
                   </RadioButton>
                     </children>
                 </GridPane>
-            <TableView fx:id="tableDoctorSchedule" layoutX="13.0" layoutY="334.0" prefHeight="410.0" prefWidth="748.0">
+            <TableView fx:id="tableDoctorSchedule" layoutX="137.0" layoutY="353.0" prefHeight="377.0" prefWidth="551.0">
               <columns>
-                <TableColumn fx:id="scheduleID" prefWidth="191.1999568939209" text="ID" />
-                <TableColumn fx:id="scheduleDate" minWidth="0.0" prefWidth="266.39990234375" text="Date" />
-                  <TableColumn fx:id="scheduleTime" minWidth="0.0" prefWidth="263.6000061035156" text="Time" />
+                <TableColumn fx:id="scheduleID" prefWidth="108.0" text="ID" />
+                <TableColumn fx:id="scheduleDate" minWidth="0.0" prefWidth="286.4000244140625" text="Date" />
+                  <TableColumn fx:id="scheduleTime" minWidth="0.0" prefWidth="145.5999755859375" text="Time" />
               </columns>
             </TableView>
-            <Button fx:id="btnSearch" contentDisplay="RIGHT" layoutX="14.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
-            <TextField fx:id="search" layoutX="83.0" layoutY="304.0" prefHeight="25.0" prefWidth="677.0" />
-                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="538.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="399.0" layoutY="224.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+            <Button fx:id="btnSearch" contentDisplay="RIGHT" layoutX="140.0" layoutY="303.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="55.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Search" />
+                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="624.0" layoutY="249.0" mnemonicParsing="false" prefWidth="60.0" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
+                  <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="554.0" layoutY="249.0" mnemonicParsing="false" prefWidth="60.0" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
+                  <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="484.0" layoutY="249.0" mnemonicParsing="false" prefWidth="60.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+            <DatePicker fx:id="txtSearch" layoutX="212.0" layoutY="303.0" onAction="#search" prefHeight="26.0" prefWidth="462.0" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />

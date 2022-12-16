@@ -86,6 +86,19 @@ public class BookingEntity {
         return db.getAll(query, list, new BookingModel());
     }
 
+    public ArrayList<BookingModel> getAllWithCustomerName(String cusName) {
+        query = "SELECT * "
+                + "FROM booking "
+                + "JOIN user ON booking.user_id = user.user_id "
+                + "WHERE user.full_name like ?";
+
+        condition = Arrays.asList(
+                "%" + cusName + "%"
+        );
+        
+        return db.getAll(query, condition, new BookingModel());
+    }
+
     public boolean updateBooking(BookingModel booking) {
         query = "UPDATE Booking SET "
                 + "booking_date = ?,"

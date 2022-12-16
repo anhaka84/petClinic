@@ -35,7 +35,7 @@ public class PetEntity {
     }
 
     public PetModel getOnePet(int petId) {
-        query = "SELECT * FORM Pet WHERE pet_id = ?";
+        query = "SELECT * FROM Pet WHERE pet_id = ?";
         condition = Arrays.asList(petId);
         return db.getOne(query, condition, new PetModel());
     }

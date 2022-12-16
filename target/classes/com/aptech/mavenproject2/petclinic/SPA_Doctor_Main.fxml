@@ -32,10 +32,10 @@
                                     <bottom>
                                         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                                             <children>
-                                                <Button mnemonicParsing="false" onAction="#getHome" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" />
-                                                <Button mnemonicParsing="false" onAction="#getBooking" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
-                                                <Button mnemonicParsing="false" onAction="#getSchedule" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" />
-                                                <Button mnemonicParsing="false" onAction="#getUserInfo" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
+                                                <Button fx:id="btnHome" mnemonicParsing="false" onAction="#getHome" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Home" />
+                                                <Button fx:id="btnBooking" mnemonicParsing="false" onAction="#getBooking" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Booking" />
+                                                <Button fx:id="btnSchedule" mnemonicParsing="false" onAction="#getSchedule" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text=" Your Schedule" />
+                                                <Button fx:id="btnInfo" mnemonicParsing="false" onAction="#getUserInfo" prefHeight="70.0" prefWidth="300.0" styleClass="button_deffault" stylesheets="@../../../../CSS/button.css" text="Your Info" />
                                                 <Button mnemonicParsing="false" onAction="#SignOut" prefHeight="30.0" prefWidth="60.0" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Log Out">
                                                     <VBox.margin>
                                                         <Insets top="240.0" />
@@ -54,16 +54,16 @@
                 </AnchorPane>
             </left>
             <center>
-                <AnchorPane BorderPane.alignment="CENTER">
+                <AnchorPane styleClass="admin_background" stylesheets="@../../../../CSS/Admin.css" BorderPane.alignment="CENTER">
                     <children>
-                        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <VBox alignment="TOP_CENTER" maxHeight="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <Label fx:id="labelTitlePage" alignment="CENTER" layoutX="245.0" prefHeight="50.0" text="Welcome to Pet Clinic">
                                     <font>
                                         <Font name="System Bold" size="30.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets top="150.0" />
+                                        <Insets />
                                     </VBox.margin>
                                 </Label>
                                 <AnchorPane minHeight="400.0" minWidth="600.0">

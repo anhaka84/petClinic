@@ -1,14 +1,23 @@
 package Entities;
 
+import DB.dao.*;
 import Models.*;
 import DB.main.DB;
+import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class DoctorEntity {
 
+    private Connection connection = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet rs = null;
     private final DB<DoctorLevelModel> db = new DB<>();
+    private final DB<DoctorSchedualModel> dbSchedual = new DB<>();
     private final UserEntity userEntity = new UserEntity();
 
     private String query;
@@ -17,6 +26,12 @@ public class DoctorEntity {
             + "user_id, "
             + "title, "
             + "update_date"
+            + ")";
+    private final String schedualColumns = "("
+            + "doctor_schedual_id, "
+            + "user_id, "
+            + "doctor_schedual_date, "
+            + "doctor_schedual_time"
             + ")";
     private final String dsColumns = "(user_id, "
             + "doctor_schedual_date, "
@@ -75,19 +90,50 @@ public class DoctorEntity {
         query = "SELECT * FROM DoctorSchedual"
                 + " WHERE doctor_schedual_id = ?";
         condition = Arrays.asList(doctorSdId);
-        return db.getOne(query, condition, new DoctorSchedualModel());
+        return dbSchedual.getOne(query, condition, new DoctorSchedualModel());
     }
 
-    public List<UserModel> getAllSchedual() {
-        query = "SELECT * FROM DoctorSchedual";
-        return db.getAll(query, new DoctorSchedualModel());
+    public ArrayList<DoctorSchedualModel> getAllSchedual() {
+        ObservableList<DoctorSchedualModel> authors = FXCollections.observableArrayList();
+
+        String sql = "SELECT * FROM doctorschedual";
+
+        try {
+            connection = JDBCConnect.getJDBCConnection();
+            preparedStatement = connection.prepareStatement(sql);
+            rs = preparedStatement.executeQuery();
+
+            for (int i = 1; rs.next(); i++) {
+                DoctorSchedualModel author = new DoctorSchedualModel();
+
+                author.setIndex(i);
+                author.setId(rs.getInt("id"));
+                author.setName(rs.getString("name"));
+                author.setDob(rs.getString("dob"));
+                author.setSign_name(rs.getString("sign_name"));
+                author.setCreatedAt(rs.getString("createdAt"));
+                author.setUpdatedAt(rs.getString("updatedAt"));
+
+                authors.add(author);
+            }
+
+            return authors;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            JDBCConnect.closeResultSet(rs);
+            JDBCConnect.closePreparedStatement(preparedStatement);
+            JDBCConnect.closeConnection(connection);
+        }
+
+        return null;
     }
 
-    public List<UserModel> getAllSchedualOf(int userId) {
+    public ArrayList<UserModel> getAllSchedualOf(int userId) {
         query = "SELECT * FROM DoctorSchedual"
                 + " WHERE user_id = ?";
         condition = Arrays.asList(userId);
-        return db.getAll(query, condition, new DoctorSchedualModel());
+        return dbSchedual.getAll(query, condition, new DoctorSchedualModel());
     }
 
     public boolean addSchedual(DoctorSchedualModel ds) {
@@ -98,14 +144,14 @@ public class DoctorEntity {
                 ds.getDoctorSchedualDate(),
                 ds.getDoctorSchedualTime()
         );
-        return db.setSqlDataRow(query, condition, new DoctorSchedualModel());
+        return dbSchedual.setSqlDataRow(query, condition, new DoctorSchedualModel());
     }
 
     public boolean deleteSchedual(int schedualId) {
         query = "DELETE FROM DoctorSchedual"
                 + " WHERE doctor_schedual_id = ?";
         condition = Arrays.asList(schedualId);
-        return db.setSqlDataRow(query, condition, new DoctorSchedualModel());
+        return dbSchedual.setSqlDataRow(query, condition, new DoctorSchedualModel());
     }
 
 }
