@@ -83,6 +83,7 @@ public class CustomerMainController implements Initializable {
             mainPage.setCenter(view);
             setPageTitle(PET_TITLE);
         } catch (IOException ex) {
+            Logger.getLogger(CustomerMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

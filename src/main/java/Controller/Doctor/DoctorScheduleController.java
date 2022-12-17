@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller.Doctor;
 
-import Controller.Router;
 import Models.*;
 import Entities.*;
 import java.net.URL;
@@ -26,10 +21,6 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author Acer
- */
 public class DoctorScheduleController implements Initializable {
 
     UserEntity user = new UserEntity();
@@ -76,6 +67,8 @@ public class DoctorScheduleController implements Initializable {
     @FXML
     private TableColumn<DoctorSchedualModel, String> scheduleTime;
 
+    private final DoctorEntity de = new DoctorEntity();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initData();
@@ -86,12 +79,11 @@ public class DoctorScheduleController implements Initializable {
     private void initData() {
 //        UserModel sessionUser = user.getSessionUser();
 
-        DoctorEntity de = new DoctorEntity();
-        ArrayList<DoctorSchedualModel> um = de.getAllSchedual();
+        ArrayList<UserModel> um = de.getAllSchedual();
         ObservableList<DoctorSchedualModel> dsms = FXCollections.observableArrayList();
 
-        for (UserModel user : um) {
-            DoctorSchedualModel doctor = (DoctorSchedualModel) user;
+        for (UserModel userLocal : um) {
+            DoctorSchedualModel doctor = (DoctorSchedualModel) userLocal;
             dsms.add(doctor);
         }
 
@@ -118,23 +110,23 @@ public class DoctorScheduleController implements Initializable {
     private void table(ObservableList<DoctorSchedualModel> dsms) {
         tableDoctorSchedule.setItems(dsms);
         scheduleID.setCellValueFactory(f -> {
-            StringProperty scheduleID = new SimpleStringProperty();
+            StringProperty scheduleId = new SimpleStringProperty();
 
             int id = f.getValue().getDoctorSchedualId();
-            scheduleID.setValue(String.valueOf(id));
-            return scheduleID;
+            scheduleId.setValue(String.valueOf(id));
+            return scheduleId;
         });
         scheduleDate.setCellValueFactory(f -> {
-            StringProperty scheduleDate = new SimpleStringProperty();
+            StringProperty ScheduleDate = new SimpleStringProperty();
 
-            scheduleDate.setValue(f.getValue().getDoctorSchedualDate().toString());
-            return scheduleDate;
+            ScheduleDate.setValue(f.getValue().getDoctorSchedualDate().toString());
+            return ScheduleDate;
         });
         scheduleTime.setCellValueFactory(f -> {
-            StringProperty scheduleTime = new SimpleStringProperty();
+            StringProperty ScheduleTime = new SimpleStringProperty();
 
-            scheduleTime.setValue(f.getValue().getDoctorSchedualTime());
-            return scheduleTime;
+            ScheduleTime.setValue(f.getValue().getDoctorSchedualTime());
+            return ScheduleTime;
         });
 
         tableDoctorSchedule.setRowFactory(tv -> {
@@ -170,9 +162,9 @@ public class DoctorScheduleController implements Initializable {
         boolean flag = false;
         String id = txtScheduleId.getText();
         LocalDate date = this.doctorScheduleDate.getValue();
-        boolean morning = this.morning.isSelected();
-        boolean afternoon = this.afternoon.isSelected();
-        boolean all = this.all.isSelected();
+        boolean Morning = this.morning.isSelected();
+        boolean Afternoon = this.afternoon.isSelected();
+        boolean All = this.all.isSelected();
 
         if (date == null) {
             flag = true;
@@ -180,7 +172,7 @@ public class DoctorScheduleController implements Initializable {
 
         }
 
-        if (morning || afternoon || all) {
+        if (Morning || Afternoon || All) {
 
         } else {
             flag = true;

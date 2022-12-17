@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customer.CustomerPetController">
     <center>
         <Pane prefHeight="542.0" prefWidth="698.0" style="-fx-background-color: #f1f2f6;" styleClass="customer_homepage_center" stylesheets="@../../../../CSS/Customer.css" BorderPane.alignment="CENTER">
             <children>
@@ -80,9 +80,7 @@
                   <TextField fx:id="petAge" layoutX="164.0" layoutY="211.0" prefHeight="20.0" prefWidth="372.0" promptText="Enter pet age (month)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
-                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="642.0" layoutY="424.0" mnemonicParsing="false" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
-                  <Button fx:id="btnReset" contentDisplay="RIGHT" layoutX="573.0" layoutY="424.0" mnemonicParsing="false" styleClass="button_danger" stylesheets="@../../../../CSS/button.css" text="Reset" />
-                  <Button fx:id="btnRefresh" contentDisplay="RIGHT" layoutX="496.0" layoutY="424.0" mnemonicParsing="false" styleClass="button_primary" stylesheets="@../../../../CSS/button.css" text="Refresh" />
+                  <Button fx:id="btnSave" contentDisplay="RIGHT" layoutX="642.0" layoutY="424.0" mnemonicParsing="false" onAction="#add" styleClass="button_success" stylesheets="@../../../../CSS/button.css" text="Save" />
             </children>
             <cursor>
                 <Cursor fx:constant="HAND" />

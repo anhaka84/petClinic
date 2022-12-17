@@ -1,21 +1,14 @@
 package Entities;
 
-import DB.dao.*;
 import Models.*;
 import DB.main.DB;
 import java.sql.*;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class DoctorEntity {
 
-    private Connection connection = null;
-    private PreparedStatement preparedStatement = null;
-    private ResultSet rs = null;
     private final DB<DoctorLevelModel> db = new DB<>();
     private final DB<DoctorSchedualModel> dbSchedual = new DB<>();
     private final UserEntity userEntity = new UserEntity();
@@ -67,6 +60,16 @@ public class DoctorEntity {
         return db.getAll(query, new DoctorLevelModel());
     }
 
+    public ArrayList<UserModel> getAllDoctor(String name) {
+        query = "SELECT u.*, dl.*"
+                + " FROM pet_clinic.User AS u"
+                + " INNER JOIN pet_clinic.DoctorLevel AS dl"
+                + " ON u.user_id = dl.user_id"
+                + " WHERE u.full_name LIKE ?";
+        condition = Arrays.asList("%" + name + "%");
+        return db.getAll(query, condition, new DoctorLevelModel());
+    }
+
     public boolean addDoctor(DoctorLevelModel doctor) {
         doctor.setRole(2);
         if (userEntity.addUser(doctor)) {
@@ -93,40 +96,11 @@ public class DoctorEntity {
         return dbSchedual.getOne(query, condition, new DoctorSchedualModel());
     }
 
-    public ArrayList<DoctorSchedualModel> getAllSchedual() {
-        ObservableList<DoctorSchedualModel> authors = FXCollections.observableArrayList();
-
-        String sql = "SELECT * FROM doctorschedual";
-
-        try {
-            connection = JDBCConnect.getJDBCConnection();
-            preparedStatement = connection.prepareStatement(sql);
-            rs = preparedStatement.executeQuery();
-
-            for (int i = 1; rs.next(); i++) {
-                DoctorSchedualModel author = new DoctorSchedualModel();
-
-//                author.setIndex(i);
-//                author.setId(rs.getInt("id"));
-//                author.setName(rs.getString("name"));
-//                author.setDob(rs.getString("dob"));
-//                author.setSign_name(rs.getString("sign_name"));
-//                author.setCreatedAt(rs.getString("createdAt"));
-//                author.setUpdatedAt(rs.getString("updatedAt"));
-
-                authors.add(author);
-            }
-
-//            return authors;
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } finally {
-            JDBCConnect.closeResultSet(rs);
-            JDBCConnect.closePreparedStatement(preparedStatement);
-            JDBCConnect.closeConnection(connection);
-        }
-
-        return null;
+    public ArrayList<UserModel> getAllSchedual() {
+        query = "SELECT ds.*, u.* FROM DoctorSchedual AS ds "
+                + "INNER JOIN User AS u "
+                + "ON ds.user_id = u.user_id";
+        return db.getAll(query, new DoctorSchedualModel());
     }
 
     public ArrayList<UserModel> getAllSchedualOf(int userId) {

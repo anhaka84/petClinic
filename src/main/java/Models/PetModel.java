@@ -17,6 +17,15 @@ public class PetModel extends DBCommon<PetModel> {
     public PetModel() {
     }
 
+    public PetModel(int userId, String petName, String petType, int petGender, float petWeight, int petAge) {
+        this.userId = userId;
+        this.petName = petName;
+        this.petType = petType;
+        this.petGender = petGender;
+        this.petWeight = petWeight;
+        this.petAge = petAge;
+    }
+
     public PetModel(int petId, int userId, String petName, String petType, int petGender, float petWeight, int petAge) {
         this.petId = petId;
         this.userId = userId;
